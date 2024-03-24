@@ -1,10 +1,9 @@
 {% load static %}
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" data-theme="dark">
     <head>
         <meta charset="utf-8" />
-        <meta name="viewport"
-              content="width=device-width, minimum-scale=1.0 minimal-ui" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="description" content="" />
         <meta name="keywords" content="Grégoire Layet" />
         <meta name="author" content="Grégoire Layet" />
@@ -17,12 +16,8 @@
         <script src="{% static 'htmx.min.js' %}" defer></script>
     </head>
     <body>
-        {% component "header" %}{% endcomponent %}
-        <main>
-            {% block content %}
-            {% endblock content %}
-        </main>
-        {% comment %} {% component "footer" %}{% endcomponent %} {% endcomment %}
+        {% block content %}
+        {% endblock content %}
         {% component_js_dependencies %}
     </body>
 </html>
