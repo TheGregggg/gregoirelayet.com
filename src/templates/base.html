@@ -10,12 +10,14 @@
         <link rel="icon" href="{% static "favicon.ico" %}" />
         <title>Grégoire Layet</title>
         <link rel="stylesheet" type="text/css" href="{% static "app.css" %}">
+        <link rel="preload" href="{% static "font/Montserrat-Bold.ttf" %}" as="font" type="font/ttf" crossorigin>
+        <link rel="preload" href="{% static "font/Poppins-Regular.ttf" %}" as="font" type="font/ttf" crossorigin>
         {% block head %}
         {% endblock head %}
         {% component_css_dependencies %}
         <script src="{% static 'htmx.min.js' %}" defer></script>
     </head>
-    <body>
+    <body class="{% block body_class %}{% endblock body_class %}">
         {% component "header" %}{% endcomponent %}
         {% block content %}
         {% endblock content %}
