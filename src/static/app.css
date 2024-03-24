@@ -142,3 +142,17 @@ html[data-theme="dark"] {
 
 	--background-light: oklab(20.62% 0.01 -0.02);
 }
+
+a {
+	color: var(--text);
+	cursor: pointer;
+	text-decoration: none;
+	transition-duration: 294ms;
+	transition-property: color;
+}
+
+body {
+	margin: 0 auto;
+	margin-top: 2rem;
+	max-width: 1000px;
+}
