@@ -156,3 +156,7 @@ body {
 	margin-top: 2rem;
 	max-width: 1000px;
 }
+
+figure#akira {
+	color: var(--accent);
+}
