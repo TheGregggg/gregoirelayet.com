@@ -13,3 +13,10 @@ header h1 {
 header > button {
 	margin-left: auto;
 }
+body.home header {
+	gap: 0;
+}
+body.home header h1 {
+	width: 0;
+	overflow: hidden;
+}
