@@ -1,0 +1,18 @@
+.component-theme_switcher .transparent {
+	opacity: 0.3;
+}
+.component-theme_switcher .logo-moon,
+.component-theme_switcher .logo-sun,
+.component-theme_switcher .logo-system {
+	display: none;
+	color: var(--primary);
+}
+.component-theme_switcher[data-current-theme-setting="dark"] .logo-moon {
+	display: block;
+}
+.component-theme_switcher[data-current-theme-setting="light"] .logo-sun {
+	display: block;
+}
+.component-theme_switcher[data-current-theme-setting="auto"] .logo-system {
+	display: block;
+}

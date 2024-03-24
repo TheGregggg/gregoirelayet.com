@@ -16,6 +16,7 @@
         <script src="{% static 'htmx.min.js' %}" defer></script>
     </head>
     <body>
+        {% component "header" %}{% endcomponent %}
         {% block content %}
         {% endblock content %}
         {% component_js_dependencies %}
