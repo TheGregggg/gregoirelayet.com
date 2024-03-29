@@ -1,9 +1,20 @@
+@font-face {
+	font-family: "Poppins";
+	src: url("/static/font/Poppins-Regular.ttf") format("truetype");
+}
+
+@font-face {
+	font-family: "Montserrat";
+	src: url("/static/font/Montserrat-Bold.ttf") format("opentype");
+}
+
 /*! minireset.css v0.0.6 | MIT License | github.com/jgthms/minireset.css */
 *,
 *::before,
 *::after {
 	box-sizing: inherit;
 }
+
 html,
 body,
 p,
@@ -60,6 +71,7 @@ video {
 	height: auto;
 	max-width: 100%;
 }
+
 svg {
 	display: block;
 }
@@ -77,8 +89,10 @@ td,
 th {
 	padding: 0;
 }
+
 html {
-	font-size: 100%; /* 16px */
+	font-size: 100%;
+	/* 16px */
 	box-sizing: border-box;
 	background-color: var(--background);
 	transition-duration: 200ms;
@@ -102,27 +116,33 @@ h5 {
 }
 
 h1 {
-	font-size: 5.652rem; /* 90.4px */
+	font-size: 5.652rem;
+	/* 90.4px */
 }
 
 h2 {
-	font-size: 3.997rem; /* 64px */
+	font-size: 3.997rem;
+	/* 64px */
 }
 
 h3 {
-	font-size: 2.827rem; /* 45.28px */
+	font-size: 2.827rem;
+	/* 45.28px */
 }
 
 h4 {
-	font-size: 1.999rem; /* 32px */
+	font-size: 1.999rem;
+	/* 32px */
 }
 
 h5 {
-	font-size: 1.414rem; /* 22.56px */
+	font-size: 1.414rem;
+	/* 22.56px */
 }
 
 small {
-	font-size: 0.707rem; /* 11.36px */
+	font-size: 0.707rem;
+	/* 11.36px */
 }
 
 html[data-theme="light"] {
@@ -132,6 +152,7 @@ html[data-theme="light"] {
 	--secondary: oklab(77.52% 0.043 0);
 	--accent: oklab(71.31% 0.166 0.07);
 }
+
 html[data-theme="dark"] {
 	--text: oklab(98.25% 0.004 -0);
 	--background: oklab(8.1% 0.014 0.01);
@@ -139,6 +160,7 @@ html[data-theme="dark"] {
 	--secondary: oklab(68.91% 0.102 0.07);
 	--accent: oklab(88.82% -0.111 0.11);
 }
+
 :root {
 	--duration: 294ms;
 	--sizer: 1.5;
