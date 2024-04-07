@@ -1,0 +1,14 @@
+.component-parralax_image {
+	border-radius: 1rem;
+	height: 400px;
+	width: 400px;
+	overflow: hidden;
+}
+.component-parralax_image img {
+	max-width: unset;
+	width: 450px;
+	position: relative;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+}

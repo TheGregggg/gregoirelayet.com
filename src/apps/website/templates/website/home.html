@@ -1,13 +1,5 @@
 {% extends base_template %}
 {% load static %}
-{% if base_template == "base.html" %}
-{% block head %}
-    <link rel="stylesheet" type="text/css" href="{% static "website/website.css" %}">
-{% endblock head %}
-{% block body_class %}
-    
-{% endblock body_class %}
-{% endif %}
 {% block content %}
     <main class="home">
         <h1>Grégoire Layet</h1>
@@ -23,7 +15,7 @@
                  xml:space="preserve"
                  fill="none"
                  stroke="currentColor"
-                 stroke-width="0.6px">
+                 stroke-width="1.3px">
                 <g>
                 <path d="M102.359,79.213l-0.018,2.161" />
                 <path d="M116.502,78.866l-0.022,2.487" />
@@ -67,5 +59,7 @@
                 </g>
             </svg>
         </figure>
+	    {% component "parralax_image" image="website/rx7_small.jpg" %}{% endcomponent %}
+        
     </main>
 {% endblock content %}

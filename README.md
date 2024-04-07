@@ -12,5 +12,4 @@ HTMX
 
 ## Legals
 
-font Evangelion : https://fontstruct.com/fontstructions/show/857439/evangelion_1
-font Akira : https://fonts.google.com/specimen/Anton?preview.text=AKIRA&stroke=Sans+Serif
+rx7 image : https://unsplash.com/fr/photos/porsche-911-blanche-garee-sur-un-terrain-dherbe-verte-K0mf6Hd3Ehc
