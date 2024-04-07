@@ -177,3 +177,15 @@ a {
 body {
 	padding: calc(var(--sizer) * 3rem);
 }
+
+#main_page_content.htmx-swapping {
+	opacity: 0;
+	transition: opacity 50ms ease-out;
+}
+#main_page_content.htmx-added {
+	opacity: 0;
+}
+#main_page_content {
+	opacity: 1;
+	transition: opacity 100ms ease-out;
+}
