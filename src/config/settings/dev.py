@@ -12,3 +12,7 @@ ALLOWED_HOSTS = ["*"]
 EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 
 ASGI_APPLICATION = "config.asgi_dev.app"
+
+DATABASES["default"]["OPTIONS"]["passfile"] = os.path.join(
+    Path(__file__).resolve().parent, ".pg_passfile_dev"
+)
