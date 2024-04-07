@@ -1,21 +1,16 @@
 /* home */
 
-
-.home main h1 {
+.home h1 {
 	margin-top: 2rem;
 	margin-bottom: 3rem;
-
-	text-transform: uppercase;
 
 	position: relative;
 	z-index: 10;
 
 	width: fit-content;
-	/* border-bottom: 2px solid var(--accent); */
-
 }
 
-.home main h1::after {
+.home h1::after {
 	position: absolute;
 	left: 50%;
 	bottom: 15px;
@@ -29,8 +24,7 @@
 	z-index: -1;
 }
 
-
-.home main h3 {
+.home h3 {
 	line-height: 1.25;
 	font-weight: 400;
 	font-family: "Poppins";
@@ -40,8 +34,8 @@
 	color: var(--primary);
 	position: absolute;
 	bottom: 0;
-	right: 0;
-	width: 70%;
+	left: 10%;
+	width: 15%;
 }
 
 .Akira-stuff,
@@ -55,4 +49,10 @@ html[data-theme="light"] .home .Akira-stuff {
 
 html[data-theme="dark"] .home .Evangelion-stuff {
 	display: block;
+}
+.home .component-parralax_image {
+	position: absolute;
+	right: 25%;
+	top: 50%;
+	transform: translate(50%, -50%);
 }
