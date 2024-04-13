@@ -315,6 +315,12 @@ p {
 	line-height: var(--body-line-height);
 }
 
+b,
+strong {
+	font-weight: bold;
+}
+
+
 a {
 	color: var(--primary);
 	cursor: pointer;
@@ -327,7 +333,16 @@ a:visited {
 	color: var(--secondary);
 }
 
-b,
-strong {
-	font-weight: bold;
+#main_page_content.htmx-swapping {
+	opacity: 0;
+	transition: opacity 50ms ease-out;
+}
+
+#main_page_content.htmx-added {
+	opacity: 0;
+}
+
+#main_page_content {
+	opacity: 1;
+	transition: opacity 100ms ease-out;
 }

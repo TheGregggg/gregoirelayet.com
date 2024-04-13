@@ -10,6 +10,7 @@
         <link rel="icon" href="{% static "favicon.ico" %}" />
         <title>Grégoire Layet</title>
         <link rel="stylesheet" type="text/css" href="{% static "app.css" %}">
+        <link rel="stylesheet" type="text/css" href="{% static "website/website.css" %}">
         <link rel="preload" href="{% static "font/Montserrat-Bold.ttf" %}" as="font" type="font/ttf" crossorigin>
         <link rel="preload" href="{% static "font/Poppins-Regular.ttf" %}" as="font" type="font/ttf" crossorigin>
         {% block head %}
@@ -19,8 +20,10 @@
     </head>
     <body class="{% block body_class %}{% endblock body_class %}">
         {% component "header" %}{% endcomponent %}
-        {% block content %}
-        {% endblock content %}
+        <div id="main_page_content">
+            {% block content %}
+            {% endblock content %}
+        </div>
         {% component_js_dependencies %}
     </body>
 </html>

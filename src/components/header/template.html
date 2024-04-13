@@ -1,7 +1,7 @@
-<header>
-	<h1>Grégoire Layet</h1>
+<header hx-boost='true' hx-target='#main_page_content' hx-swap='innerHTML swap:50ms settle:100ms' >
+	<a href="{% url 'home' %}" id="main-title"><h1>Grégoire Layet</h1></a>
 	<nav>
-		<a href="">Mes projets</a>
+		<a href="{% url 'projects' %}">Mes projets</a>
 	</nav>
 	{% component "theme_switcher" %}{% endcomponent %}
 </header>
