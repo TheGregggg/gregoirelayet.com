@@ -95,6 +95,7 @@ html[data-theme="light"] {
 	--text: oklab(10.98% 0.015 0);
 	--background: oklab(98.74% 0.003 0);
 	--primary: oklab(47% 0.168 0.09);
+	--primary-light: oklab(67% 0.168 0.09);
 	--secondary: oklab(77.52% 0.043 0);
 	--accent: oklab(71.31% 0.166 0.07);
 }
@@ -103,6 +104,7 @@ html[data-theme="dark"] {
 	--text: oklab(98.25% 0.004 -0);
 	--background: oklab(8.1% 0.014 0.01);
 	--primary: oklab(39.93% 0.053 -0.09);
+	--primary-light: oklab(59.93% 0.053 -0.09);
 	--secondary: oklab(68.91% 0.102 0.07);
 	--accent: oklab(88.82% -0.111 0.11);
 }
@@ -159,6 +161,8 @@ html[data-theme="dark"] {
 
 	/* components padding */
 	--component-padding: var(--space-sm);
+
+	--radius: var(--space-sm-fixed);
 }
 
 @media (min-width: 1060px) {
@@ -300,7 +304,7 @@ h2,
 h3,
 h4,
 form legend {
-	color: var(--color-text-heading);
+	color: var(--text);
 	margin-bottom: var(--space-xxs);
 	line-height: var(--heading-line-height);
 }
@@ -373,4 +377,48 @@ a:visited {
 #main_page_content {
 	opacity: 1;
 	transition: opacity 100ms ease-out;
+}
+
+main.center {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+main.login {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: center;
+}
+
+/* Forms and Input */
+
+form {
+	display: flex;
+	flex-direction: column;
+	gap: var(--space-md);
+	width: fit-content;
+	padding: var(--space-md);
+	background-color: var(--primary-light);
+	border-radius: var(--radius);
+	padding-top: calc(var(--space-md) * 0.7);
+}
+
+form>div {
+	display: flex;
+	flex-direction: column;
+	gap: var(--space-xxxs);
+}
+
+form label,
+form input {
+	font-size: var(--text-sm);
+}
+
+form input {
+	padding: var(--space-xxs);
+	border-radius: calc(var(--radius) / 1.5);
+	border: 1px solid var(--primary);
 }
