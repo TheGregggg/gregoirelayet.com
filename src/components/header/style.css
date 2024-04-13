@@ -9,12 +9,15 @@ header {
 }
 
 header h1 {
-	font-size: 1.5rem;
 	white-space: nowrap;
+	margin: 0;
+	font-size: var(--text-lg);
 }
-header > button {
+
+header>button {
 	margin-left: auto;
 }
+
 header:has(~ #main_page_content > main.home) {
 	gap: 0;
 }
@@ -23,7 +26,16 @@ header #main-title {
 	overflow: hidden;
 	transition: width 300ms ease-in-out;
 }
+
 header:has(~ #main_page_content > main.home) #main-title {
 	width: 0px !important;
 	transition: width 300ms ease-in-out;
+}
+
+header a {
+	color: var(--text);
+}
+
+header a:visited {
+	color: var(--text);
 }
