@@ -1,18 +1,22 @@
 .component-theme_switcher .transparent {
 	opacity: 0.2;
 }
+
 .component-theme_switcher .logo-moon,
 .component-theme_switcher .logo-sun,
 .component-theme_switcher .logo-system {
 	display: none;
 	color: var(--primary);
 }
-.component-theme_switcher[data-current-theme-setting="dark"] .logo-moon {
+
+html[data-theme="dark"] .component-theme_switcher .logo-moon {
 	display: block;
 }
-.component-theme_switcher[data-current-theme-setting="light"] .logo-sun {
+
+html[data-theme="light"] .component-theme_switcher .logo-sun {
 	display: block;
 }
-.component-theme_switcher[data-current-theme-setting="auto"] .logo-system {
+
+html[data-theme="auto"] .component-theme_switcher .logo-system {
 	display: block;
 }
