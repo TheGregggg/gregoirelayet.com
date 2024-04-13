@@ -49,8 +49,21 @@
 	display: none;
 }
 
+@media (prefers-color-scheme: light) {
+	html[data-theme="auto"] .home .Akira-stuff {
+		display: block;
+	}
+}
+
 html[data-theme="light"] .home .Akira-stuff {
 	display: block;
+}
+
+@media (prefers-color-scheme: dark) {
+	html[data-theme="auto"] .home .Evangelion-stuff {
+		display: block;
+
+	}
 }
 
 html[data-theme="dark"] .home .Evangelion-stuff {

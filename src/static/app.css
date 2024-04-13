@@ -109,6 +109,29 @@ html[data-theme="dark"] {
 	--accent: oklab(88.82% -0.111 0.11);
 }
 
+@media (prefers-color-scheme: dark) {
+	html[data-theme="auto"] {
+		--text: oklab(98.25% 0.004 -0);
+		--background: oklab(8.1% 0.014 0.01);
+		--primary: oklab(39.93% 0.053 -0.09);
+		--primary-light: oklab(59.93% 0.053 -0.09);
+		--secondary: oklab(68.91% 0.102 0.07);
+		--accent: oklab(88.82% -0.111 0.11);
+	}
+}
+
+@media (prefers-color-scheme: light) {
+	html[data-theme="auto"] {
+		--text: oklab(10.98% 0.015 0);
+		--background: oklab(98.74% 0.003 0);
+		--primary: oklab(47% 0.168 0.09);
+		--primary-light: oklab(67% 0.168 0.09);
+		--secondary: oklab(77.52% 0.043 0);
+		--accent: oklab(71.31% 0.166 0.07);
+	}
+}
+
+
 /* Typography and Spacing */
 :root {
 	/* Typography */
@@ -417,8 +440,35 @@ form input {
 	font-size: var(--text-sm);
 }
 
+form label {
+	width: fit-content;
+}
+
 form input {
 	padding: var(--space-xxs);
 	border-radius: calc(var(--radius) / 1.5);
 	border: 1px solid var(--primary);
+}
+
+form button {
+	width: fit-content;
+}
+
+/* Button */
+.btn {
+	display: inline-flex;
+	position: relative;
+	white-space: nowrap;
+	text-decoration: none;
+	line-height: 1;
+
+	padding: var(--space-xs) var(--space-sm);
+	border-radius: var(--radius);
+	font-size: var(--text-sm);
+	color: var(--accent);
+}
+
+.btn--accent {
+	background-color: var(--accent);
+	color: var(--text);
 }
