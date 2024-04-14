@@ -90,8 +90,13 @@ os.environ["PGSERVICEFILE"] = os.path.join(
     Path(__file__).resolve().parent, ".pg_service.conf"
 )
 
+from typing_extensions import TypedDict
 
-DATABASES = {
+DB_Options_Typing = TypedDict("DB_Options_Typing", {"service": str, "passfile": str})
+DB_Typing = TypedDict("DB_Typing", {"ENGINE": str, "OPTIONS": DB_Options_Typing})
+
+
+DATABASES: dict[str, DB_Typing] = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
         "OPTIONS": {
