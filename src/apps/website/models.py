@@ -21,7 +21,9 @@ class Skill(models.Model):
         ordering = ["skill_order"]
 
     text = models.TextField(max_length=300)
-    category = models.ForeignKey(SkillCategory, on_delete=models.CASCADE)
+    category = models.ForeignKey(
+        SkillCategory, related_name="skill", on_delete=models.CASCADE
+    )
 
     skill_order = models.PositiveSmallIntegerField(
         default=0, blank=False, null=False, db_index=True
