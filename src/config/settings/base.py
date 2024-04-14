@@ -25,6 +25,7 @@ THIRD_PARTY_APPS = [
     "django_htmx",
     "django_components",
     "django_components.safer_staticfiles",
+    "adminsortable2",
 ]
 
 INSTALLED_APPS = (
