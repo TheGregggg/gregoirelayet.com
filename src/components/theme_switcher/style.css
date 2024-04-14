@@ -6,7 +6,7 @@
 .component-theme_switcher .logo-sun,
 .component-theme_switcher .logo-system {
 	display: none;
-	color: var(--primary);
+	color: var(--accent);
 }
 
 html[data-theme="dark"] .component-theme_switcher .logo-moon {

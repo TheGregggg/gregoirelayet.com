@@ -92,45 +92,51 @@ th {
 
 /* Colors */
 html[data-theme="light"] {
-	--text: oklab(10.98% 0.015 0);
-	--background: oklab(98.74% 0.003 0);
-	--primary: oklab(47% 0.168 0.09);
-	--primary-light: oklab(67% 0.168 0.09);
-	--secondary: oklab(77.52% 0.043 0);
-	--accent: oklab(71.31% 0.166 0.07);
+	--text: hsl(30, 25%, 6%);
+	--background: hsl(40, 20%, 97%);
+	--primary: hsl(33, 95%, 83%);
+	--secondary: hsl(147, 31%, 79%);
+	--accent: hsl(0, 76%, 50%);
 }
 
 html[data-theme="dark"] {
-	--text: oklab(98.25% 0.004 -0);
-	--background: oklab(8.1% 0.014 0.01);
-	--primary: oklab(39.93% 0.053 -0.09);
-	--primary-light: oklab(59.93% 0.053 -0.09);
-	--secondary: oklab(68.91% 0.102 0.07);
-	--accent: oklab(88.82% -0.111 0.11);
+	--text: hsl(269, 43%, 90%);
+	--background: hsl(261, 44%, 8%);
+	--primary: hsl(266, 35%, 34%);
+	--primary-light: hsl(266, 35%, 15%);
+	--secondary: hsl(11, 89%, 78%);
+	--accent: hsl(97, 76%, 67%);
 }
 
 @media (prefers-color-scheme: dark) {
 	html[data-theme="auto"] {
-		--text: oklab(98.25% 0.004 -0);
-		--background: oklab(8.1% 0.014 0.01);
-		--primary: oklab(39.93% 0.053 -0.09);
-		--primary-light: oklab(59.93% 0.053 -0.09);
-		--secondary: oklab(68.91% 0.102 0.07);
-		--accent: oklab(88.82% -0.111 0.11);
+		--text: hsl(269, 43%, 90%);
+		--background: hsl(261, 44%, 8%);
+		--primary: hsl(266, 35%, 34%);
+		--primary-light: hsl(266, 35%, 15%);
+		--secondary: hsl(11, 89%, 78%);
+		--accent: hsl(97, 76%, 67%);
 	}
 }
 
 @media (prefers-color-scheme: light) {
 	html[data-theme="auto"] {
-		--text: oklab(10.98% 0.015 0);
-		--background: oklab(98.74% 0.003 0);
-		--primary: oklab(47% 0.168 0.09);
-		--primary-light: oklab(67% 0.168 0.09);
-		--secondary: oklab(77.52% 0.043 0);
-		--accent: oklab(71.31% 0.166 0.07);
+		--text: hsl(30, 25%, 6%);
+		--background: hsl(40, 20%, 97%);
+		--primary: hsl(33, 95%, 83%);
+		--secondary: hsl(147, 31%, 79%);
+		--accent: hsl(0, 76%, 50%);
 	}
 }
 
+html {
+	--linearPrimarySecondary: linear-gradient(90deg, var(--primary), var(--secondary));
+	--linearPrimaryAccent: linear-gradient(90deg, var(--primary), var(--accent));
+	--linearSecondaryAccent: linear-gradient(90deg, var(--gradient-secondary), var(--accent));
+	--radialPrimarySecondary: radial-gradient(var(--primary), var(--secondary));
+	--radialPrimaryAccent: radial-gradient(var(--primary), var(--accent));
+	--radialSecondaryAccent: radial-gradient(var(--secondary), var(--accent));
+}
 
 /* Typography and Spacing */
 :root {
