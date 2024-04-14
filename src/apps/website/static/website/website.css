@@ -27,7 +27,7 @@
 	content: "";
 	width: 4.7ch;
 	height: 0.1ch;
-	background-color: var(--primary);
+	background-color: var(--accent);
 	z-index: -1;
 	border-radius: 20px;
 }
@@ -37,7 +37,7 @@
 }
 
 .home figure#akira {
-	color: var(--primary);
+	color: var(--accent);
 	position: absolute;
 	bottom: 0;
 	left: 10%;
@@ -74,5 +74,8 @@ html[data-theme="dark"] .home .Evangelion-stuff {
 	align-self: center;
 	justify-self: center;
 	max-height: 500px;
-	border-radius: var(--space-sm-fixed);
+	border-radius: var(--radius);
+	border: var(--space-xxxs) solid var(--accent);
+	border-top: 0;
+	border-left: 0;
 }
