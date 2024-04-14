@@ -95,6 +95,7 @@ html[data-theme="light"] {
 	--text: hsl(30, 25%, 6%);
 	--background: hsl(40, 20%, 97%);
 	--primary: hsl(33, 95%, 83%);
+	--primary-light: hsl(33, 95%, 90%);
 	--secondary: hsl(147, 31%, 79%);
 	--accent: hsl(0, 76%, 50%);
 }
@@ -130,9 +131,21 @@ html[data-theme="dark"] {
 }
 
 html {
-	--linearPrimarySecondary: linear-gradient(90deg, var(--primary), var(--secondary));
-	--linearPrimaryAccent: linear-gradient(90deg, var(--primary), var(--accent));
-	--linearSecondaryAccent: linear-gradient(90deg, var(--gradient-secondary), var(--accent));
+	--linearPrimarySecondary: linear-gradient(
+		90deg,
+		var(--primary),
+		var(--secondary)
+	);
+	--linearPrimaryAccent: linear-gradient(
+		90deg,
+		var(--primary),
+		var(--accent)
+	);
+	--linearSecondaryAccent: linear-gradient(
+		90deg,
+		var(--gradient-secondary),
+		var(--accent)
+	);
 	--radialPrimarySecondary: radial-gradient(var(--primary), var(--secondary));
 	--radialPrimaryAccent: radial-gradient(var(--primary), var(--accent));
 	--radialSecondaryAccent: radial-gradient(var(--secondary), var(--accent));
@@ -153,10 +166,24 @@ html {
 	--text-sm: calc(1em / var(--text-scale-ratio));
 	--text-md: calc(1em * var(--text-scale-ratio));
 	--text-lg: calc(1em * var(--text-scale-ratio) * var(--text-scale-ratio));
-	--text-xl: calc(1em * var(--text-scale-ratio) * var(--text-scale-ratio) * var(--text-scale-ratio));
-	--text-xxl: calc(1em * var(--text-scale-ratio) * var(--text-scale-ratio) * var(--text-scale-ratio) * var(--text-scale-ratio));
-	--text-xxxl: calc(1em * var(--text-scale-ratio) * var(--text-scale-ratio) * var(--text-scale-ratio) * var(--text-scale-ratio) * var(--text-scale-ratio));
-	--text-xxxxl: calc(1em * var(--text-scale-ratio) * var(--text-scale-ratio) * var(--text-scale-ratio) * var(--text-scale-ratio) * var(--text-scale-ratio) * var(--text-scale-ratio));
+	--text-xl: calc(
+		1em * var(--text-scale-ratio) * var(--text-scale-ratio) *
+			var(--text-scale-ratio)
+	);
+	--text-xxl: calc(
+		1em * var(--text-scale-ratio) * var(--text-scale-ratio) *
+			var(--text-scale-ratio) * var(--text-scale-ratio)
+	);
+	--text-xxxl: calc(
+		1em * var(--text-scale-ratio) * var(--text-scale-ratio) *
+			var(--text-scale-ratio) * var(--text-scale-ratio) *
+			var(--text-scale-ratio)
+	);
+	--text-xxxxl: calc(
+		1em * var(--text-scale-ratio) * var(--text-scale-ratio) *
+			var(--text-scale-ratio) * var(--text-scale-ratio) *
+			var(--text-scale-ratio) * var(--text-scale-ratio)
+	);
 
 	/* line-height */
 	--heading-line-height: 1.2;
@@ -256,7 +283,6 @@ html {
 }
 
 @media (min-width: 1060px) {
-
 	.mt,
 	.mt--md {
 		margin-top: var(--space-lg);
@@ -381,7 +407,6 @@ strong {
 	font-weight: bold;
 }
 
-
 a {
 	color: var(--primary);
 	cursor: pointer;
@@ -430,12 +455,13 @@ form {
 	gap: var(--space-md);
 	width: fit-content;
 	padding: var(--space-md);
-	background-color: var(--primary-light);
-	border-radius: var(--radius);
 	padding-top: calc(var(--space-md) * 0.7);
+	border-radius: calc(var(--radius) / 1.3);
+
+	background-color: var(--primary-light);
 }
 
-form>div {
+form > div {
 	display: flex;
 	flex-direction: column;
 	gap: var(--space-xxxs);
@@ -451,9 +477,11 @@ form label {
 }
 
 form input {
-	padding: var(--space-xxs);
+	padding: var(--space-xxs) var(--space-xs);
 	border-radius: calc(var(--radius) / 1.5);
-	border: 1px solid var(--primary);
+	border: 2px solid var(--primary);
+	background-color: var(--background);
+	color: var(--text);
 }
 
 form button {
@@ -468,13 +496,24 @@ form button {
 	text-decoration: none;
 	line-height: 1;
 
-	padding: var(--space-xs) var(--space-sm);
-	border-radius: var(--radius);
+	padding: var(--space-xs) var(--space-md);
+	border-radius: calc(var(--radius) / 1.5);
 	font-size: var(--text-sm);
 	color: var(--accent);
+
+	transition-property: color, background-color;
+	transition-duration: var(--duration);
+}
+.btn:hover {
+	transition-property: color, background-color;
+	transition-duration: var(--duration);
 }
 
 .btn--accent {
 	background-color: var(--accent);
-	color: var(--text);
+	color: var(--background);
+}
+.btn--accent:hover {
+	background-color: var(--background);
+	color: var(--accent);
 }
