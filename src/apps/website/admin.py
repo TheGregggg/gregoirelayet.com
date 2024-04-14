@@ -1,3 +1,13 @@
+from adminsortable2.admin import SortableAdminMixin
 from django.contrib import admin
 
-# Register your models here.
+from .models import Skill
+
+
+class SkillInline(admin.TabularInline):
+    model = Skill
+    extra = 0
+
+
+class SkillCategoryAdmin(SortableAdminMixin, admin.ModelAdmin):
+    inlines = [SkillInline]
