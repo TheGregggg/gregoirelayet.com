@@ -1,25 +1,22 @@
-"""
-URL configuration for src project.
-
-The `urlpatterns` list routes URLs to views. For more information please see:
-    https://docs.djangoproject.com/en/5.0/topics/http/urls/
-Examples:
-Function views
-    1. Add an import:  from my_app import views
-    2. Add a URL to urlpatterns:  path('', views.home, name='home')
-Class-based views
-    1. Add an import:  from other_app.views import Home
-    2. Add a URL to urlpatterns:  path('', Home.as_view(), name='home')
-Including another URLconf
-    1. Import the include() function: from django.urls import include, path
-    2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
-"""
-
 from django.urls import path, include
+
+from wagtail import urls as wagtail_urls
+from wagtail.admin import urls as wagtailadmin_urls
 
 from config.admin import admin_site
 
 urlpatterns = [
-    path("admin/", admin_site.urls),
+    path("superadmin/", admin_site.urls),
+    path("admin/", include(wagtailadmin_urls)),
     path("", include("apps.website.urls")),
+    path("", include(wagtail_urls)),
 ]
+
+# if settings.DEBUG:
+#     from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+
+#     urlpatterns += staticfiles_urlpatterns() # tell gunicorn where static files are in dev mode
+#     urlpatterns += static(settings.MEDIA_URL + 'images/', document_root=os.path.join(settings.MEDIA_ROOT, 'images'))
+#     urlpatterns += [
+#         path('favicon.ico', RedirectView.as_view(url=settings.STATIC_URL + 'myapp/images/favicon.ico'))
+#     ]

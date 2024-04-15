@@ -2,8 +2,6 @@ from django.shortcuts import render
 from django.http import HttpRequest, HttpResponse
 from typing import Any
 
-from .service import get_all_skills_categories
-
 
 def htmx_render(
     request: HttpRequest, template: str, context: dict[str, Any] | None = None
@@ -20,12 +18,8 @@ def htmx_render(
     return render(request, template, context)
 
 
-async def index(request):
-    skills_categories = await get_all_skills_categories()
-
-    return htmx_render(
-        request, "website/home.html", {"skills_categories": skills_categories}
-    )
+def index(request):
+    return htmx_render(request, "website/home.html")
 
 
 def projects(request):
