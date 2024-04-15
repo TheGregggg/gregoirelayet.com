@@ -1,3 +1,13 @@
+:root {
+	--header-height: calc(var(--text-lg) * var(--heading-line-height));
+	--header-margin-top: var(--space-xl);
+	--header-margin-bottom: var(--space-xl);
+	--total-header-height: calc(
+		var(--header-height) + var(--header-margin-top) +
+			var(--header-margin-bottom)
+	);
+}
+
 header {
 	display: flex;
 	flex-direction: row;
@@ -6,6 +16,10 @@ header {
 
 	width: 100%;
 	gap: 2rem;
+	margin-top: var(--header-margin-top);
+	margin-bottom: var(--header-margin-bottom);
+
+	height: var(--header-height);
 }
 
 header h1 {
@@ -14,7 +28,7 @@ header h1 {
 	font-size: var(--text-lg);
 }
 
-header>button {
+header > button {
 	margin-left: auto;
 }
 
@@ -38,4 +52,9 @@ header a {
 
 header a:visited {
 	color: var(--text);
+}
+
+header .component-theme_switcher svg {
+	height: var(--header-height);
+	width: auto;
 }
