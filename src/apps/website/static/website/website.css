@@ -3,6 +3,7 @@
 .home #home {
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
+	min-height: calc(110vh - var(--total-header-height));
 }
 
 .home #home div:first-child {
@@ -23,7 +24,6 @@
 	right: -0.3ch;
 	bottom: 0.2ch;
 
-
 	content: "";
 	width: 4.7ch;
 	height: 0.1ch;
@@ -39,8 +39,9 @@
 .home figure#akira {
 	color: var(--accent);
 	position: absolute;
-	bottom: 0;
-	left: 10%;
+	transform: translate(-50%, 50%) rotateZ(90deg) translate(-50%, -50%);
+	bottom: var(--space-xs);
+	left: 0;
 	width: 15%;
 }
 
@@ -62,7 +63,6 @@ html[data-theme="light"] .home .Akira-stuff {
 @media (prefers-color-scheme: dark) {
 	html[data-theme="auto"] .home .Evangelion-stuff {
 		display: block;
-
 	}
 }
 
@@ -71,11 +71,43 @@ html[data-theme="dark"] .home .Evangelion-stuff {
 }
 
 .home #profile-picture {
-	align-self: center;
+	align-self: self-start;
 	justify-self: center;
 	max-height: 500px;
 	border-radius: var(--radius);
 	border: var(--space-xxxs) solid var(--accent);
 	border-top: 0;
 	border-left: 0;
+}
+
+.home #aboutme {
+	padding-left: 0;
+	display: grid;
+	grid-template-columns: 3fr 4fr;
+	gap: var(--space-lg);
+}
+.home #aboutme aside {
+	padding-left: var(--space-xl);
+	display: flex;
+	justify-content: end;
+
+	background-color: var(--primary);
+
+	padding-top: var(--space-lg);
+	padding-right: var(--space-lg);
+}
+.home #aboutme aside h2 {
+	text-transform: uppercase;
+	line-height: 0.75;
+	width: fit-content;
+	color: var(--accent);
+	font-size: var(--text-xxxl);
+	font-family: var(--font-secondary);
+}
+.home #aboutme article {
+	padding-top: var(--space-lg);
+}
+.home #aboutme p {
+	text-align: justify;
+	padding-bottom: var(--space-sm);
 }
