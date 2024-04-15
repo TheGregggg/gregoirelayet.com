@@ -1,0 +1,12 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"mypy.configFile": "src/mypy.ini",
+		"mypy.dmypyExecutable": "${workspaceFolder}/env/Scripts/dmypy.exe",
+		"mypy.targets": ["src"]
+	}
+}
