@@ -62,6 +62,7 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    "django_components.middleware.ComponentDependencyMiddleware",
     "wagtail.contrib.redirects.middleware.RedirectMiddleware",
 ]
 
@@ -166,3 +167,9 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 WAGTAIL_SITE_NAME = "Greg's website"
 WAGTAILADMIN_BASE_URL = ""
 TAGGIT_CASE_INSENSITIVE = True
+
+# Django components
+COMPONENTS = {
+    "RENDER_DEPENDENCIES": True,
+    "context_behavior": "isolated",
+}
