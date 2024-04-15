@@ -8,7 +8,6 @@ from config.admin import admin_site
 urlpatterns = [
     path("superadmin/", admin_site.urls),
     path("admin/", include(wagtailadmin_urls)),
-    path("", include("apps.website.urls")),
     path("", include(wagtail_urls)),
 ]
 

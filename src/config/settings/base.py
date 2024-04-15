@@ -28,6 +28,7 @@ THIRD_PARTY_APPS = [
 ]
 WAGTAIL_APPS = [
     "wagtail.sites",
+    "wagtail.contrib.redirects",
     "wagtail.users",
     "wagtail.snippets",
     "wagtail.images",
