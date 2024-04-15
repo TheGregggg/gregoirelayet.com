@@ -21,11 +21,22 @@ BASE_DIR = Path(__file__).resolve().parent.parent.parent
 APPS = ["apps.website"]
 
 THIRD_PARTY_APPS = [
-    "daphne",
     "django_htmx",
     "django_components",
     "django_components.safer_staticfiles",
     "adminsortable2",
+]
+WAGTAIL_APPS = [
+    "wagtail.sites",
+    "wagtail.users",
+    "wagtail.snippets",
+    "wagtail.images",
+    "wagtail.documents",
+    "wagtail.search",
+    "wagtail.admin",
+    "wagtail",
+    "taggit",
+    "modelcluster",
 ]
 
 INSTALLED_APPS = (
@@ -38,6 +49,7 @@ INSTALLED_APPS = (
     ]
     + APPS
     + THIRD_PARTY_APPS
+    + WAGTAIL_APPS
 )
 
 MIDDLEWARE = [
@@ -49,6 +61,7 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    "wagtail.contrib.redirects.middleware.RedirectMiddleware",
 ]
 
 ROOT_URLCONF = "config.urls"
@@ -80,9 +93,6 @@ TEMPLATES = [
         },
     },
 ]
-
-WSGI_APPLICATION = "config.wsgi.application"
-
 
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
@@ -150,3 +160,8 @@ STATICFILES_DIRS = [
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+# WAGTAIL
+WAGTAIL_SITE_NAME = "Greg's website"
+WAGTAILADMIN_BASE_URL = ""
+TAGGIT_CASE_INSENSITIVE = True

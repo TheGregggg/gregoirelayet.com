@@ -64,11 +64,5 @@
                 </svg>
             </figure>
         </section>
-        <section class="skills">
-            {% for category in skills_categories %}
-                <h3>{{ category.name }}</h3>
-                {% for skill in category.skills.all %}<h6>{{ skill.text }}</h6>{% endfor %}
-            {% endfor %}
-        </section>
     </main>
 {% endblock content %}
