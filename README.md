@@ -1,5 +1,7 @@
 # gregoirelayet.com
 
+All rights reserved
+
 My personal website V2
 
 Goal : simple, reliable, fast, beautiful
