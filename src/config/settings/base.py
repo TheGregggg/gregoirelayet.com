@@ -18,7 +18,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent.parent
 
 
 # Application definition
-APPS = ["apps.website"]
+APPS = ["apps.website", "apps.project"]
 
 THIRD_PARTY_APPS = [
     "django_htmx",
