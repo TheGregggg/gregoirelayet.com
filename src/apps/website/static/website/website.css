@@ -92,36 +92,49 @@ html[data-theme="dark"] .home .Evangelion-stuff {
 	border-left: 0;
 }
 
+/* about me section */
+
 .home #aboutme {
-	padding-left: 0;
-	display: grid;
-	grid-template-columns: 3fr 4fr;
-	gap: var(--space-lg);
+	max-width: 70ch;
+	margin: 0 auto;
 }
 
-.home #aboutme aside {
-	padding-left: var(--space-xl);
-	display: flex;
-	justify-content: end;
+.home #aboutme h2 {
+	position: relative;
 
-	background-color: var(--primary);
-
-	padding-top: var(--space-lg);
-	padding-right: var(--space-lg);
-}
-
-.home #aboutme aside h2 {
 	text-transform: uppercase;
 	line-height: 0.75;
 	width: fit-content;
+
 	color: var(--accent);
-	font-size: var(--text-xxxl);
+	font-size: var(--text-xl);
 	font-family: var(--font-secondary);
+
+	margin-bottom: calc(var(--space-sm) * 2);
 }
 
-.home #aboutme article {
-	padding-top: var(--space-lg);
+.home #aboutme h2::before {
+	content: "";
+	background-color: var(--primary);
+
+	position: absolute;
+	box-sizing: content-box;
+	width: 50vw;
+	height: 0.755em;
+	z-index: -1;
+
+	padding: var(--space-sm);
+	border-top-right-radius: var(--radius);
+	border-bottom-right-radius: var(--radius);
+
+	right: calc(-1 * var(--space-sm));
+	top: calc(-1 * var(--space-sm));
+
+	box-shadow: var(--space-xxxs-fixed) var(--space-xxxs-fixed) 0px var(--accent);
+
 }
+
+.home #aboutme article {}
 
 .home #aboutme p {
 	text-align: justify;
