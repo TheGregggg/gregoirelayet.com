@@ -95,7 +95,7 @@ html[data-theme="light"] {
 	--text: hsl(30, 25%, 6%);
 	--background: hsl(40, 20%, 97%);
 	--primary: hsl(33, 95%, 83%);
-	--primary-light: hsl(33, 95%, 90%);
+	--primary-light: hsl(33, 95%, 93%);
 	--secondary: hsl(147, 31%, 79%);
 	--accent: hsl(0, 76%, 50%);
 }
@@ -104,7 +104,7 @@ html[data-theme="dark"] {
 	--text: hsl(269, 43%, 90%);
 	--background: hsl(261, 44%, 8%);
 	--primary: hsl(266, 35%, 34%);
-	--primary-light: hsl(266, 35%, 15%);
+	--primary-light: hsl(266, 35%, 20%);
 	--secondary: hsl(11, 89%, 78%);
 	--accent: hsl(97, 76%, 67%);
 }
@@ -114,7 +114,7 @@ html[data-theme="dark"] {
 		--text: hsl(269, 43%, 90%);
 		--background: hsl(261, 44%, 8%);
 		--primary: hsl(266, 35%, 34%);
-		--primary-light: hsl(266, 35%, 15%);
+		--primary-light: hsl(266, 35%, 20%);
 		--secondary: hsl(11, 89%, 78%);
 		--accent: hsl(97, 76%, 67%);
 	}
@@ -125,27 +125,22 @@ html[data-theme="dark"] {
 		--text: hsl(30, 25%, 6%);
 		--background: hsl(40, 20%, 97%);
 		--primary: hsl(33, 95%, 83%);
+		--primary-light: hsl(33, 95%, 93%);
 		--secondary: hsl(147, 31%, 79%);
 		--accent: hsl(0, 76%, 50%);
 	}
 }
 
 html {
-	--linearPrimarySecondary: linear-gradient(
-		90deg,
-		var(--primary),
-		var(--secondary)
-	);
-	--linearPrimaryAccent: linear-gradient(
-		90deg,
-		var(--primary),
-		var(--accent)
-	);
-	--linearSecondaryAccent: linear-gradient(
-		90deg,
-		var(--gradient-secondary),
-		var(--accent)
-	);
+	--linearPrimarySecondary: linear-gradient(90deg,
+			var(--primary),
+			var(--secondary));
+	--linearPrimaryAccent: linear-gradient(90deg,
+			var(--primary),
+			var(--accent));
+	--linearSecondaryAccent: linear-gradient(90deg,
+			var(--gradient-secondary),
+			var(--accent));
 	--radialPrimarySecondary: radial-gradient(var(--primary), var(--secondary));
 	--radialPrimaryAccent: radial-gradient(var(--primary), var(--accent));
 	--radialSecondaryAccent: radial-gradient(var(--secondary), var(--accent));
@@ -166,24 +161,10 @@ html {
 	--text-sm: calc(1em / var(--text-scale-ratio));
 	--text-md: calc(1em * var(--text-scale-ratio));
 	--text-lg: calc(1em * var(--text-scale-ratio) * var(--text-scale-ratio));
-	--text-xl: calc(
-		1em * var(--text-scale-ratio) * var(--text-scale-ratio) *
-			var(--text-scale-ratio)
-	);
-	--text-xxl: calc(
-		1em * var(--text-scale-ratio) * var(--text-scale-ratio) *
-			var(--text-scale-ratio) * var(--text-scale-ratio)
-	);
-	--text-xxxl: calc(
-		1em * var(--text-scale-ratio) * var(--text-scale-ratio) *
-			var(--text-scale-ratio) * var(--text-scale-ratio) *
-			var(--text-scale-ratio)
-	);
-	--text-xxxxl: calc(
-		1em * var(--text-scale-ratio) * var(--text-scale-ratio) *
-			var(--text-scale-ratio) * var(--text-scale-ratio) *
-			var(--text-scale-ratio) * var(--text-scale-ratio)
-	);
+	--text-xl: calc(1em * var(--text-scale-ratio) * var(--text-scale-ratio) * var(--text-scale-ratio));
+	--text-xxl: calc(1em * var(--text-scale-ratio) * var(--text-scale-ratio) * var(--text-scale-ratio) * var(--text-scale-ratio));
+	--text-xxxl: calc(1em * var(--text-scale-ratio) * var(--text-scale-ratio) * var(--text-scale-ratio) * var(--text-scale-ratio) * var(--text-scale-ratio));
+	--text-xxxxl: calc(1em * var(--text-scale-ratio) * var(--text-scale-ratio) * var(--text-scale-ratio) * var(--text-scale-ratio) * var(--text-scale-ratio) * var(--text-scale-ratio));
 
 	/* line-height */
 	--heading-line-height: 1.2;
@@ -283,6 +264,7 @@ html {
 }
 
 @media (min-width: 1060px) {
+
 	.mt,
 	.mt--md {
 		margin-top: var(--space-lg);
@@ -351,6 +333,7 @@ body {
 	font-family: var(--font-primary);
 	color: var(--text);
 }
+
 .container,
 section {
 	padding: 0 var(--space-xl);
@@ -463,7 +446,7 @@ form {
 	background-color: var(--primary-light);
 }
 
-form > div {
+form>div {
 	display: flex;
 	flex-direction: column;
 	gap: var(--space-xxxs);
@@ -506,6 +489,7 @@ form button {
 	transition-property: color, background-color;
 	transition-duration: var(--duration);
 }
+
 .btn:hover {
 	transition-property: color, background-color;
 	transition-duration: var(--duration);
@@ -515,6 +499,7 @@ form button {
 	background-color: var(--accent);
 	color: var(--background);
 }
+
 .btn--accent:hover {
 	background-color: var(--background);
 	color: var(--accent);

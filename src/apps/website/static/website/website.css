@@ -1,4 +1,16 @@
 /* home */
+.gradient {
+	height: 200vh;
+	width: 100vw;
+	max-width: 100%;
+	position: absolute;
+	overflow: hidden;
+
+	top: 0;
+	left: 0;
+	z-index: -2;
+	background: radial-gradient(ellipse at 150% center, var(--primary-light), var(--background));
+}
 
 .home #home {
 	display: grid;
@@ -86,6 +98,7 @@ html[data-theme="dark"] .home .Evangelion-stuff {
 	grid-template-columns: 3fr 4fr;
 	gap: var(--space-lg);
 }
+
 .home #aboutme aside {
 	padding-left: var(--space-xl);
 	display: flex;
@@ -96,6 +109,7 @@ html[data-theme="dark"] .home .Evangelion-stuff {
 	padding-top: var(--space-lg);
 	padding-right: var(--space-lg);
 }
+
 .home #aboutme aside h2 {
 	text-transform: uppercase;
 	line-height: 0.75;
@@ -104,9 +118,11 @@ html[data-theme="dark"] .home .Evangelion-stuff {
 	font-size: var(--text-xxxl);
 	font-family: var(--font-secondary);
 }
+
 .home #aboutme article {
 	padding-top: var(--space-lg);
 }
+
 .home #aboutme p {
 	text-align: justify;
 	padding-bottom: var(--space-sm);
