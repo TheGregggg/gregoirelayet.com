@@ -424,6 +424,27 @@ a:visited {
 	color: var(--secondary);
 }
 
+span.underlined {
+	position: relative;
+	z-index: 10;
+
+	width: fit-content;
+}
+
+span.underlined::after {
+	position: absolute;
+	left: 50%;
+	transform: translate(-50%, 0);
+	bottom: 0.2ch;
+
+	content: "";
+	width: 108%;
+	height: 0.1ch;
+	background-color: var(--accent);
+	z-index: -1;
+	border-radius: 20px;
+}
+
 /* 
 #main_page_content.htmx-swapping {
 	opacity: 0;
