@@ -64,7 +64,7 @@ html[data-theme="light"] .halftone {
 	display: grid;
 	grid-template-rows: auto 1fr;
 	gap: var(--space-md);
-	min-height: calc(100vh - var(--total-header-height));
+	min-height: calc(100vh - var(--total-header-height) + var(--space-md));
 }
 
 @media (min-width: 700px) {
@@ -132,7 +132,7 @@ html[data-theme="dark"] .home .Evangelion-stuff {
 .home #profile-picture {
 	display: block;
 	margin-left: auto;
-	max-height: 95%;
+	max-height: 90%;
 	max-width: 85%;
 	border-radius: var(--radius);
 	box-shadow: var(--box-shadox);
@@ -164,7 +164,7 @@ html[data-theme="dark"] .home .Evangelion-stuff {
 	font-size: var(--text-xl);
 	font-family: var(--font-secondary);
 
-	margin-bottom: calc(var(--space-sm) * 2);
+	margin-bottom: calc(var(--space-sm) * 2 + var(--space-xxxs-fixed));
 	margin-top: var(--space-sm);
 	/* to compensate the before effect */
 }
