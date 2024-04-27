@@ -202,6 +202,7 @@ html {
 	--radius: var(--space-sm-fixed);
 
 	--box-shadox: var(--space-xxxs-fixed) var(--space-xxxs-fixed) 0px var(--accent);
+	--color-transition: color var(--duration) ease-out;
 }
 
 @media (min-width: 481px) {
@@ -335,7 +336,7 @@ html {
 	/* 16px */
 	box-sizing: border-box;
 	background-color: var(--background);
-	transition-duration: 200ms;
+	transition-duration: var(--duration);
 	transition-property: background-color;
 	transition-timing-function: ease-out;
 }
@@ -359,6 +360,7 @@ form legend {
 	color: var(--text);
 	margin-bottom: var(--space-xxs);
 	line-height: var(--heading-line-height);
+	transition: var(--color-transition);
 }
 
 /* text size */
@@ -397,6 +399,7 @@ small {
 
 p {
 	line-height: var(--body-line-height);
+	transition: var(--color-transition);
 }
 
 b,
