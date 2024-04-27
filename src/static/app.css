@@ -348,15 +348,7 @@ body {
 
 .container,
 section {
-	padding: 0 var(--space-md);
-}
-
-@media (min-width: 481px) {
-
-	.container,
-	section {
-		padding: 0 var(--space-xl);
-	}
+	padding: 0 var(--space-xl);
 }
 
 h1,
