@@ -87,9 +87,7 @@ html[data-theme="dark"] .home .Evangelion-stuff {
 	justify-self: center;
 	max-height: 500px;
 	border-radius: var(--radius);
-	border: var(--space-xxxs) solid var(--accent);
-	border-top: 0;
-	border-left: 0;
+	box-shadow: var(--box-shadox);
 }
 
 /* about me section */
@@ -130,7 +128,7 @@ html[data-theme="dark"] .home .Evangelion-stuff {
 	right: calc(-1 * var(--space-sm));
 	top: calc(-1 * var(--space-sm));
 
-	box-shadow: var(--space-xxxs-fixed) var(--space-xxxs-fixed) 0px var(--accent);
+	box-shadow: var(--box-shadox);
 
 }
 
