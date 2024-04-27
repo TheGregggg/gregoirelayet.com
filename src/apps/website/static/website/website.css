@@ -8,8 +8,56 @@
 
 	top: 0;
 	left: 0;
+	z-index: -3;
+	background: radial-gradient(ellipse at 110% 42%, var(--primary-light), var(--background));
+}
+
+@keyframes animatedBackground {
+	0% {
+		background-position: 0% 0%, var(--bgPosition) var(--bgPosition)
+	}
+
+	100% {
+		background-position: 100% -100%, calc(-100% + var(--bgPosition)) calc(100% + var(--bgPosition))
+	}
+}
+
+.halftone {
+	--dotSize: 0.2rem;
+	--bgSize: 1.8rem;
+	--bgPosition: calc(var(--bgSize) / 2);
+
+
+	height: 200vh;
+	width: 100vw;
+	max-width: 100%;
+	position: absolute;
+	overflow: hidden;
+
+	top: 0;
+	left: 0;
 	z-index: -2;
-	background: radial-gradient(ellipse at 100% center, var(--primary-light), var(--background));
+
+	background-image: radial-gradient(circle at center,
+			var(--primary) var(--dotSize),
+			transparent 0), radial-gradient(circle at center, var(--primary-light) var(--dotSize), transparent 0);
+	background-size: var(--bgSize) var(--bgSize);
+	background-position: 0 0, var(--bgPosition) var(--bgPosition);
+
+	mask-image: radial-gradient(ellipse at 110% 42%, rgb(0 0 0 / 0.3), rgb(0 0 0 / 0) 30%);
+
+	animation: animatedBackground 300s linear infinite;
+}
+
+@media (prefers-color-scheme: light) {
+	.halftone {
+		mask-image: radial-gradient(ellipse at 110% 42%, rgb(0 0 0 / 0.7), rgb(0 0 0 / 0) 30%);
+	}
+}
+
+html[data-theme="light"] .halftone {
+	mask-image: radial-gradient(ellipse at 110% 42%, rgb(0 0 0 / 0.7), rgb(0 0 0 / 0) 30%);
+
 }
 
 .home #home {
@@ -127,7 +175,7 @@ html[data-theme="dark"] .home .Evangelion-stuff {
 
 	position: absolute;
 	box-sizing: content-box;
-	width: 50vw;
+	width: 100vw;
 	height: 0.755em;
 	z-index: -1;
 
