@@ -18,7 +18,7 @@ header {
 
 	height: var(--header-height);
 
-	transition: gap 300ms ease-in-out;
+	transition: gap var(--duration) ease-in-out;
 }
 
 header h1 {
@@ -33,17 +33,17 @@ header>button {
 
 header:has(~ #main_page_content > main.home) {
 	gap: 0px;
-	transition: gap 300ms ease-in-out;
+	transition: gap var(--duration) ease-in-out;
 }
 
 header #main-title {
 	overflow: hidden;
-	transition: width 300ms ease-in-out;
+	transition: width var(--duration) ease-in-out;
 }
 
 header:has(~ #main_page_content > main.home) #main-title {
 	width: 0px !important;
-	transition: width 300ms ease-in-out;
+	transition: width var(--duration) ease-in-out;
 }
 
 header a {
