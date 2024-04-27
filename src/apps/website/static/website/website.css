@@ -9,17 +9,22 @@
 	top: 0;
 	left: 0;
 	z-index: -2;
-	background: radial-gradient(ellipse at 150% center, var(--primary-light), var(--background));
+	background: radial-gradient(ellipse at 100% center, var(--primary-light), var(--background));
 }
 
 .home #home {
 	display: grid;
-	grid-template-columns: repeat(3, 1fr);
-	min-height: calc(110vh - var(--total-header-height));
+	grid-template-rows: auto 1fr;
+	gap: var(--space-md);
+	min-height: calc(100vh - var(--total-header-height));
 }
 
-.home #home div:first-child {
-	grid-column: 1/3;
+@media (min-width: 700px) {
+	.home #home {
+		gap: 0;
+		grid-template-columns: 2fr 1fr;
+		grid-template-rows: none;
+	}
 }
 
 .home h1 {
@@ -54,7 +59,15 @@
 	transform: translate(-50%, 50%) rotateZ(90deg) translate(-50%, -50%);
 	bottom: var(--space-xs);
 	left: 0;
-	width: 15%;
+	width: 35%;
+}
+
+@media (min-width: 481px) {
+	.home figure#akira {
+		width: 20%;
+		max-width: 200px;
+
+	}
 }
 
 .Akira-stuff,
@@ -82,12 +95,25 @@ html[data-theme="dark"] .home .Evangelion-stuff {
 	display: block;
 }
 
+.home #profile-picture-wrapper {
+	contain: size;
+}
+
 .home #profile-picture {
-	align-self: self-start;
-	justify-self: center;
-	max-height: 500px;
+	display: block;
+	margin-left: auto;
+	max-height: 95%;
+	max-width: 85%;
 	border-radius: var(--radius);
 	box-shadow: var(--box-shadox);
+}
+
+@media (min-width: 700px) {
+	.home #profile-picture {
+		margin-right: auto;
+		max-height: min(100%, 500px);
+		max-width: 100%;
+	}
 }
 
 /* about me section */
@@ -109,6 +135,8 @@ html[data-theme="dark"] .home .Evangelion-stuff {
 	font-family: var(--font-secondary);
 
 	margin-bottom: calc(var(--space-sm) * 2);
+	margin-top: var(--space-sm);
+	/* to compensate the before effect */
 }
 
 .home #aboutme h2::before {
