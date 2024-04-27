@@ -153,8 +153,8 @@ html {
 	--font-secondary: "Montserrat";
 
 	/* set base values */
-	--text-base-size: 1em;
-	--text-scale-ratio: 1.2;
+	--text-base-size: 0.9em;
+	--text-scale-ratio: 1.17;
 
 	/* type scale */
 	--text-xs: calc(1em / (var(--text-scale-ratio) * var(--text-scale-ratio)));
@@ -174,7 +174,7 @@ html {
 	--duration: 294ms;
 
 	/* Spacing */
-	--space-unit: 1em;
+	--space-unit: 0.9em;
 	--space-xxxs: calc(0.25 * var(--space-unit));
 	--space-xxs: calc(0.375 * var(--space-unit));
 	--space-xs: calc(0.5 * var(--space-unit));
@@ -185,7 +185,7 @@ html {
 	--space-xxl: calc(5.25 * var(--space-unit));
 	--space-xxxl: calc(8.5 * var(--space-unit));
 
-	--space-unit-fixed: 1rem;
+	--space-unit-fixed: 0.9rem;
 	--space-xxxs-fixed: calc(0.25 * var(--space-unit-fixed));
 	--space-xxs-fixed: calc(0.375 * var(--space-unit-fixed));
 	--space-xs-fixed: calc(0.5 * var(--space-unit-fixed));
@@ -202,6 +202,16 @@ html {
 	--radius: var(--space-sm-fixed);
 
 	--box-shadox: var(--space-xxxs-fixed) var(--space-xxxs-fixed) 0px var(--accent);
+}
+
+@media (min-width: 481px) {
+	:root {
+		--text-base-size: 1em;
+		--text-scale-ratio: 1.2;
+
+		--space-unit: 1em;
+		--component-padding: var(--space-sm);
+	}
 }
 
 @media (min-width: 1060px) {
@@ -338,7 +348,15 @@ body {
 
 .container,
 section {
-	padding: 0 var(--space-xl);
+	padding: 0 var(--space-md);
+}
+
+@media (min-width: 481px) {
+
+	.container,
+	section {
+		padding: 0 var(--space-xl);
+	}
 }
 
 h1,
