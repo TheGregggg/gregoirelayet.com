@@ -151,20 +151,18 @@ html[data-theme="dark"] .home .Evangelion-stuff {
 	display: block;
 }
 
-.home #profile-picture-wrapper {
-	contain: size;
-}
 @media (min-width: 700px) {
 	.home #profile-picture-wrapper {
 		grid-column: 2/3;
 		grid-row: 1/3;
 	}
+	.home #profile-picture {
+		position: sticky;
+		top: var(--space-xxl);
+	}
 }
 
 .home #profile-picture {
-	position: sticky;
-	top: var(--space-xxl);
-
 	display: block;
 	margin-left: auto;
 	max-height: 90%;
