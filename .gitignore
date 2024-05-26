@@ -154,3 +154,5 @@ cython_debug/
 
 secret.txt
 dev-db/
+src/images
+src/original_images
