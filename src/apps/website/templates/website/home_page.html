@@ -72,5 +72,11 @@
                 <article>{{ page.about_me|richtext }}</article>
             </div>
         </section>
+        <section id="Projects">
+            <h2>Projets mis en avant</h2>
+            {% for project in projects %}
+                {% component "project" project only %}{% endcomponent %}
+            {% endfor %}
+        </section>
     </main>
 {% endblock content %}
