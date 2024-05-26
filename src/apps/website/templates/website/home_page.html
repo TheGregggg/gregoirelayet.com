@@ -5,18 +5,6 @@
     {% comment %} <div class="gradient"></div> {% endcomment %}
     <main class="home">
         <section id="home">
-            <div>
-                <h1 class="margin-bottom--sm">
-                    Grégoire <span class="underlined">Layet</span>
-                </h1>
-                <h3>Developpeur web et Python</h3>
-                <h3>Etudiant à Polytech Nantes</h3>
-                <h3 class="Akira-stuff">Aime bien Akira</h3>
-                <h3 class="Evangelion-stuff">Aime bien Evangelion</h3>
-            </div>
-            <div id="profile-picture-wrapper">
-                <img id="profile-picture" src="{% static "website/rx7_small.jpg" %}" alt="">
-            </div>
             <figure id="akira">
                 <svg width="100%"
                      height="100%"
@@ -69,10 +57,22 @@
                     </g>
                 </svg>
             </figure>
-        </section>
-        <section id="aboutme">
-            <h2>A propos</h2>
-            <article>{{ page.about_me|richtext }}</article>
+            <div>
+                <h1 class="margin-bottom--sm">
+                    Grégoire <span class="underlined">Layet</span>
+                </h1>
+                <h3>Developpeur web et Python</h3>
+                <h3>Etudiant à Polytech Nantes</h3>
+                <h3 class="Akira-stuff">Aime bien Akira</h3>
+                <h3 class="Evangelion-stuff">Aime bien Evangelion</h3>
+            </div>
+            <div id="profile-picture-wrapper">
+                <img id="profile-picture" src="{% static "website/rx7_small.jpg" %}" alt="">
+            </div>
+            <div id="aboutme">
+                <h2 class="bar_title">A propos</h2>
+                <article>{{ page.about_me|richtext }}</article>
+            </div>
         </section>
     </main>
 {% endblock content %}
