@@ -1,0 +1,11 @@
+[
+{
+  "model": "website.homepage",
+  "pk": 3,
+  "fields": {
+    "about_me": "<p data-block-key=\"zsudm\">Passionné par l’informatique, j’aime réaliser des projets innovants et captivants. J'apprécie tout particulièrement la création de systèmes bien réfléchis, évolutifs et possédant un code de grande qualité. Je suis en effet à la recherche des meilleures solutions pour créer des sites web scalables ou comment organiser la hiérarchie d'un projet pour qu’il y ait le moins de friction possibles. Tout cela m'intéresse énormément.</p><p data-block-key=\"r3at\">Je m'intéresse aussi à l’électronique. Je souhaite connaitre et comprendre toutes les couches des ordinateurs : du circuit électronique au logiciel. J’aime l’idée d'optimiser des logiciels à ce point là, bien que pour des projets réels cela n’est pas envisageable. Simplement pour le défi et afin de voir ce qui est possible, optimiser des systèmes mé fascine. Cela me permet de coder en étant conscient des problèmes d'optimisation et de performance.</p><p data-block-key=\"2emds\">Je suis aussi intéressé par le déploiement d'applications continu, les serveurs et la sécurité, internet et créer des réseaux redondant, stable et de qualité, linux.</p>",
+    "timeline": "[{\"id\": \"6d7fcc86-6fea-461a-8adc-4f67085e1613\", \"type\": \"Event\", \"value\": {\"year\": \"20\", \"title\": \"qsd\"}}]",
+    "passions": "[{\"id\": \"2ddff805-69da-436c-a685-e5d6a9a14397\", \"type\": \"Passion\", \"value\": {\"title\": \"qsd\", \"content\": \"<p data-block-key=\\\"idn1z\\\">0</p>\"}}]"
+  }
+}
+]
