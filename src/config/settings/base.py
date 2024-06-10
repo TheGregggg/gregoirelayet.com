@@ -106,7 +106,9 @@ os.environ["PGSERVICEFILE"] = os.path.join(
 
 from typing_extensions import TypedDict
 
-DB_Options_Typing = TypedDict("DB_Options_Typing", {"service": str, "passfile": str})
+DB_Options_Typing = TypedDict(
+    "DB_Options_Typing", {"service": str, "passfile": str, "options": str}
+)
 DB_Typing = TypedDict("DB_Typing", {"ENGINE": str, "OPTIONS": DB_Options_Typing})
 
 
@@ -116,6 +118,7 @@ DATABASES: dict[str, DB_Typing] = {
         "OPTIONS": {
             "service": "db",
             "passfile": "",
+            "options": "-c search_path=gregoirelayet.com.schema",
         },
     }
 }
