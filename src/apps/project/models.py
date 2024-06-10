@@ -2,7 +2,7 @@ from apps.website.base import HtmxPage
 from django.db import models
 from wagtail import blocks
 from wagtail.fields import RichTextField, StreamField
-from wagtail.admin.panels import FieldPanel
+from wagtail.admin.panels import FieldPanel, FieldRowPanel
 
 
 class ProjectsPage(HtmxPage):
@@ -35,12 +35,16 @@ class ProjectPage(HtmxPage):
     )
 
     content_panels = HtmxPage.content_panels + [
+        FieldPanel("show_on_home_page"),
         FieldPanel("description"),
         FieldPanel("image"),
         FieldPanel("technologies"),
-        FieldPanel("website_link"),
-        FieldPanel("repo_link"),
-        FieldPanel("show_on_home_page"),
+        FieldRowPanel(
+            (
+                FieldPanel("website_link"),
+                FieldPanel("repo_link"),
+            )
+        ),
     ]
 
     parent_page_types = ["ProjectsPage"]
