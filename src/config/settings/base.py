@@ -16,6 +16,8 @@ import os
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
 
+SECRET_KEY = "this_is_not_secret"
+
 
 # Application definition
 APPS = ["apps.website", "apps.project"]
