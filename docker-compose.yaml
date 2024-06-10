@@ -7,13 +7,16 @@ services:
     restart: always
     shm_size: 128mb
     environment:
-      POSTGRES_PASSWORD: gerg_pass
-      POSTGRES_USER: gerg
-      POSTGRES_DB: gregoirelayet.com
+      POSTGRES_PASSWORD: gerg_pass_2
+      POSTGRES_USER: gerg_db_admin
+      POSTGRES_DB: postgres
     volumes:
       - type: bind
         source:  ./dev-db
         target: /var/lib/postgresql/data
+      - type: bind
+        source:  ./db
+        target: /var/lib/postgresql/sql_script
     
     ports:
       - 5432:5432
