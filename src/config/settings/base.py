@@ -106,19 +106,38 @@ os.environ["PGSERVICEFILE"] = os.path.join(
 
 from typing_extensions import TypedDict
 
-DB_Options_Typing = TypedDict(
-    "DB_Options_Typing", {"service": str, "passfile": str, "options": str}
+DB_Options_Typing = TypedDict("DB_Options_Typing", {"options": str})
+DB_Test_Typing = TypedDict("DB_Test_Typing", {"OPTIONS": DB_Options_Typing})
+DB_Typing = TypedDict(
+    "DB_Typing",
+    {
+        "ENGINE": str,
+        "NAME": str,
+        "USER": str,
+        "PASSWORD": str,
+        "HOST": str,
+        "PORT": str,
+        "OPTIONS": DB_Options_Typing,
+        "TEST": DB_Test_Typing,
+    },
 )
-DB_Typing = TypedDict("DB_Typing", {"ENGINE": str, "OPTIONS": DB_Options_Typing})
 
 
 DATABASES: dict[str, DB_Typing] = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
+        "NAME": "gregoirelayet.com",
+        "USER": "gerg",
+        "PASSWORD": "gerg_pass",
+        "HOST": "127.0.0.1",
+        "PORT": "5432",
         "OPTIONS": {
-            "service": "db",
-            "passfile": "",
             "options": "-c search_path=gregoirelayet.com.schema",
+        },
+        "TEST": {
+            "OPTIONS": {
+                "options": "-c search_path=test_gregoirelayet.com.schema",
+            },
         },
     }
 }
