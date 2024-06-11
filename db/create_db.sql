@@ -1,4 +1,5 @@
-CREATE ROLE gerg WITH LOGIN PASSWORD 'gerg_pass';    
+CREATE ROLE gerg WITH LOGIN PASSWORD 'gerg_pass';
+GRANT CONNECT ON DATABASE "postgres" TO gerg;
 
 --- Django user recommendation
 ALTER ROLE gerg SET client_encoding TO 'utf8';

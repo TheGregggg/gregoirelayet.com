@@ -34,4 +34,4 @@ loaddata:
   done
 
 test:
-  cd src; python manage.py test
+  cd src; python manage.py test --keepdb
