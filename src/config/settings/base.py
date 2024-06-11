@@ -99,10 +99,13 @@ TEMPLATES = [
 ]
 
 # Database
-# https://docs.djangoproject.com/en/5.0/ref/settings/#databases
-os.environ["PGSERVICEFILE"] = os.path.join(
-    Path(__file__).resolve().parent, ".pg_service.conf"
-)
+with open(
+    os.path.join(
+        Path(__file__).resolve().parent.parent.parent.parent,
+        "secrets/db_user_password.txt",
+    )
+) as f:
+    DB_PASSWORD = f.read().strip()
 
 from typing_extensions import TypedDict
 
@@ -128,7 +131,7 @@ DATABASES: dict[str, DB_Typing] = {
         "ENGINE": "django.db.backends.postgresql",
         "NAME": "gregoirelayet.com",
         "USER": "gerg",
-        "PASSWORD": "gerg_pass",
+        "PASSWORD": DB_PASSWORD,
         "HOST": "127.0.0.1",
         "PORT": "5432",
         "OPTIONS": {

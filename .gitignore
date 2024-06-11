@@ -156,3 +156,6 @@ secret.txt
 dev-db/
 src/images
 src/original_images
+
+secrets/*
+!secrets/*.exemple
