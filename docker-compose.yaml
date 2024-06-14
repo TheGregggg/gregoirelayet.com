@@ -15,9 +15,6 @@ services:
       - type: bind
         source:  ./dev-db
         target: /var/lib/postgresql/data
-      - type: bind
-        source:  ./db
-        target: /var/lib/postgresql/sql_script
     ports:
       - 5432:5432
 
