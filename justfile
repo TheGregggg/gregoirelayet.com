@@ -13,6 +13,8 @@ migrate:
 makemigrations:
   cd src; python manage.py makemigrations
 
+createsuperuser:
+  cd src; python manage.py createsuperuser
 
 makefixtures:
   #!/usr/bin/env bash
