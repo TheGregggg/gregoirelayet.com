@@ -360,6 +360,16 @@ html {
 	transition-property: background-color;
 	transition-timing-function: ease-out;
 }
+@media (min-width: 2880px) {
+	html {
+		font-size: 150%;
+	}
+}
+@media (min-width: 3839px) {
+	html {
+		font-size: 200%;
+	}
+}
 
 body {
 	font-size: var(--text-base-size);
