@@ -1,3 +1,69 @@
+.component-project-container {
+	container: project / inline-size;
+}
 .component-project {
-    background: red;
+	display: grid;
+	column-gap: var(--space-xl);
+}
+.component-project .title {
+	grid-row: 1;
+	color: var(--accent);
+	font-size: var(--text-xl);
+	font-family: var(--font-secondary);
+}
+.component-project img {
+	grid-row: 2;
+
+	width: 100%;
+	height: auto;
+	border-radius: var(--radius);
+	box-shadow: var(--box-shadox);
+	margin-bottom: var(--space-sm);
+}
+.component-project .technologies {
+	margin-bottom: var(--space-sm);
+	grid-row: 3;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	gap: var(--space-xs);
+}
+
+.component-project .technologies li {
+	padding: var(--space-xxs) var(--space-sm);
+	background-color: var(--text);
+	color: var(--background);
+	font-weight: 700;
+	font-size: var(--text-sm);
+	border-radius: var(--radius);
+}
+.component-project .description {
+	margin-bottom: var(--space-sm);
+}
+
+@container (min-width: 700px) {
+	.component-project {
+		grid-template-columns: 1fr 1fr;
+	}
+	.component-project .title {
+		grid-column: 2;
+	}
+	.component-project img {
+		grid-row: 1/6;
+		grid-column: 1;
+		margin-bottom: 0;
+	}
+	.component-project .technologies {
+		grid-row: 2;
+		grid-column: 2;
+	}
+	.component-project .btn {
+		grid-row: 5;
+		grid-column: 2;
+		width: fit-content;
+		margin-left: auto;
+	}
+	.component-project .description {
+		margin-bottom: 0;
+	}
 }
