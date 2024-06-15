@@ -68,12 +68,12 @@
                 <img id="profile-picture" src="{% static "website/rx7_small.jpg" %}" alt="">
             </div>
             <div id="aboutme">
-                <h2 class="bar_title">A propos</h2>
+                <h2 class="bar_title styled_title">A propos</h2>
                 <article>{{ page.about_me|richtext }}</article>
             </div>
         </section>
-        <section id="Projects">
-            <h2>Projets mis en avant</h2>
+        <section id="projects">
+            <h2 class="styled_title" id="title_project_section">Projets mis en avant</h2>
             {% for project in projects %}
                 {% component "project" project only %}{% endcomponent %}
             {% endfor %}

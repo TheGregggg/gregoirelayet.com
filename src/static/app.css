@@ -563,7 +563,9 @@ form button {
 	transition-property: color, background-color;
 	transition-duration: var(--duration);
 }
-
+.btn:visited {
+	color: var(--accent);
+}
 .btn:hover {
 	transition-property: color, background-color;
 	transition-duration: var(--duration);
@@ -573,7 +575,9 @@ form button {
 	background-color: var(--accent);
 	color: var(--background);
 }
-
+.btn--accent:visited {
+	color: var(--background);
+}
 .btn--accent:hover {
 	background-color: var(--background);
 	color: var(--accent);
