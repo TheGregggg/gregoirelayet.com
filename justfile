@@ -36,4 +36,4 @@ loaddata:
   done
 
 test:
-  cd src; python manage.py test --keepdb
+  cd src; python manage.py test --keepdb --settings=config.settings.dev
