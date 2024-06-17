@@ -471,7 +471,7 @@ span.underlined::after {
 
 	content: "";
 	width: 108%;
-	height: 0.1ch;
+	height: max(0.1ch, 2px);
 	background-color: var(--accent);
 	z-index: -1;
 	border-radius: 20px;
@@ -508,7 +508,7 @@ main.login {
 
 /* Forms and Input */
 
-form {
+form.gl {
 	display: flex;
 	flex-direction: column;
 	gap: var(--space-md);
@@ -520,22 +520,22 @@ form {
 	background-color: var(--primary-light);
 }
 
-form > div {
+form.gl > div {
 	display: flex;
 	flex-direction: column;
 	gap: var(--space-xxxs);
 }
 
-form label,
-form input {
+form.gl label,
+form.gl input {
 	font-size: var(--text-sm);
 }
 
-form label {
+form.gl label {
 	width: fit-content;
 }
 
-form input {
+form.gl input {
 	padding: var(--space-xxs) var(--space-xs);
 	border-radius: calc(var(--radius) / 1.5);
 	border: 2px solid var(--primary);
@@ -543,7 +543,7 @@ form input {
 	color: var(--text);
 }
 
-form button {
+form.gl button {
 	width: fit-content;
 }
 

@@ -3,7 +3,7 @@
     <main class="login mt--xl">
         <h2>Login</h2>
         {% if form.errors %}<div class="alert alert-danger">{{ form.non_field_errors }}</div>{% endif %}
-        <form method="post">
+        <form method="post" class="gl">
             {% csrf_token %}
             {% for field in form %}
                 <div>
