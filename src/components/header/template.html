@@ -4,12 +4,12 @@
 	hx-swap="innerHTML swap:50ms settle:100ms show:none"
 	class="container"
 >
-	<a href="/" id="main-title">
-		<h1>Grégoire Layet</h1>
-	</a>
+	<a href="/" id="main-title"><h1>Grégoire Layet</h1></a>
 	<nav>
 		<a href="/projects/">Mes projets</a>
 	</nav>
-	{% component "theme_switcher" %} {% endcomponent %}
-	{% component "lang_switcher"%} {% endcomponent %}
+	<div class="buttons">
+		{% component "theme_switcher" %} {% endcomponent %}
+		{% component "lang_switcher"%} {% endcomponent %}
+	</div>
 </header>
