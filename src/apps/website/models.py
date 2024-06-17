@@ -1,6 +1,7 @@
 from django.http import HttpRequest
 from .base import HtmxPage
 from wagtail import blocks
+from wagtail.models import Locale
 from wagtail.fields import RichTextField, StreamField
 from wagtail.admin.panels import FieldPanel
 
@@ -37,5 +38,7 @@ class HomePage(HtmxPage):
     def get_context(self, request: HttpRequest, *args, **kwargs):
         context = super().get_context(request, *args, **kwargs)
 
-        context["projects"] = ProjectPage.objects.filter(show_on_home_page=True).live()
+        context["projects"] = ProjectPage.objects.filter(
+            show_on_home_page=True, locale=Locale.get_active()
+        ).live()
         return context
