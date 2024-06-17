@@ -121,7 +121,7 @@ h2.styled_title {
 	font-weight: 400;
 }
 
-.home figure#akira {
+/* .home figure#akira {
 	color: var(--accent);
 	position: absolute;
 	transform: translate(-50%, 50%) rotateZ(90deg) translate(-50%, -50%);
@@ -140,7 +140,7 @@ h2.styled_title {
 .Akira-stuff,
 .Evangelion-stuff {
 	display: none;
-}
+} */
 
 @media (prefers-color-scheme: light) {
 	html[data-theme="auto"] .home .Akira-stuff {
