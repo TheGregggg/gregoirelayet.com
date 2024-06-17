@@ -10,6 +10,7 @@ from config.admin import admin_site
 urlpatterns = [
     path("superadmin/", admin_site.urls),
     path("admin/", include(wagtailadmin_urls)),
+    path("i18n/", include("django.conf.urls.i18n")),
     path("", include(wagtail_urls)),
 ]
 

@@ -1,0 +1,47 @@
+.component-lang_switcher {
+	height: 100%;
+}
+.component-lang_switcher .transparent {
+	opacity: 0.2;
+}
+.component-lang_switcher .logo-lang {
+	display: block;
+	color: var(--accent);
+}
+.component-lang_switcher {
+	position: relative;
+}
+.component-lang_switcher .dropdown {
+	position: absolute;
+	left: calc(50% - calc(var(--space-xxxs-fixed) / 2));
+	transform: translate(-50%, 0);
+	background-color: var(--primary);
+	z-index: 20;
+	padding: var(--space-sm);
+	border-radius: var(--radius);
+	box-shadow: var(--box-shadox);
+
+	display: flex;
+	flex-direction: column;
+	gap: var(--space-xs);
+
+	visibility: hidden;
+	opacity: 0;
+	transition: opacity ease-in-out var(--duration),
+		visibility 0s var(--duration);
+}
+.component-lang_switcher .dropdown.open {
+	visibility: visible;
+	opacity: 1;
+	transition: opacity ease-in-out var(--duration);
+}
+.component-lang_switcher input {
+	border-radius: unset;
+	border: unset;
+	color: var(--text);
+	background-color: unset;
+	font-size: inherit;
+	font-family: inherit;
+	cursor: pointer;
+	padding: 0;
+}
