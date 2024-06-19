@@ -1,21 +1,4 @@
 /* home */
-.gradient {
-	height: 200vh;
-	width: 100vw;
-	max-width: 100%;
-	position: absolute;
-	overflow: hidden;
-
-	top: 0;
-	left: 0;
-	z-index: -3;
-	background: radial-gradient(
-		ellipse at 110% 42%,
-		var(--primary-light),
-		var(--background)
-	);
-}
-
 @keyframes animatedBackground {
 	0% {
 		background-position: 0% 0%, var(--bgPosition) var(--bgPosition);
@@ -124,47 +107,6 @@ h2.styled_title {
 
 .home h3 {
 	font-weight: 400;
-}
-
-/* .home figure#akira {
-	color: var(--accent);
-	position: absolute;
-	transform: translate(-50%, 50%) rotateZ(90deg) translate(-50%, -50%);
-	bottom: var(--space-xs);
-	left: 0;
-	width: 35%;
-}
-
-@media (min-width: 481px) {
-	.home figure#akira {
-		width: 20%;
-		max-width: 200px;
-	}
-}
-
-.Akira-stuff,
-.Evangelion-stuff {
-	display: none;
-} */
-
-@media (prefers-color-scheme: light) {
-	html[data-theme="auto"] .home .Akira-stuff {
-		display: block;
-	}
-}
-
-html[data-theme="light"] .home .Akira-stuff {
-	display: block;
-}
-
-@media (prefers-color-scheme: dark) {
-	html[data-theme="auto"] .home .Evangelion-stuff {
-		display: block;
-	}
-}
-
-html[data-theme="dark"] .home .Evangelion-stuff {
-	display: block;
 }
 
 @media (min-width: 700px) {
