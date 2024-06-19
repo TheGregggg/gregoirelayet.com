@@ -74,9 +74,11 @@
         </section>
         <section id="experiences">
             <h2 class="styled_title bar_title " id="title_experiences_section">Mes expériences</h2>
-            {% for event in page.timeline %}
-                {% include_block event %}
-            {% endfor %}
+            <div id="experiences_list">
+                {% for event in page.timeline %}
+                    {% include_block event %}
+                {% endfor %}
+            </div>
         </section>
     </main>
 {% endblock content %}

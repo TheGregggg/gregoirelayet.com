@@ -94,6 +94,8 @@ html[data-theme="light"] .halftone {
 	min-height: var(--main-hero-height);
 
 	margin-bottom: var(--space-xl);
+	padding-top: 0;
+	padding-bottom: 0;
 }
 
 @media (min-width: 700px) {
@@ -242,12 +244,22 @@ section#projects {
 }
 
 /* events/experiences sections */
+#experiences_list {
+	display: flex;
+	flex-direction: column;
+	gap: var(--space-xl);
+}
 .block-event {
 	display: grid;
 }
 .block-event time {
 	display: flex;
+}
+.block-event .title {
 	font-family: var(--font-secondary);
+}
+.block-event article p {
+	text-align: justify;
 }
 .block-event time::before {
 	content: "";
