@@ -206,36 +206,22 @@ html[data-theme="dark"] .home .Evangelion-stuff {
 
 .bar_title {
 	position: relative;
-	line-height: 0.75;
+	left: calc(-1 * var(--space-xl));
 	width: fit-content;
 
 	color: var(--accent);
+	background-color: var(--primary);
+	padding: var(--space-sm);
+	padding-left: var(--space-xl);
+
+	border-top-right-radius: var(--radius);
+	border-bottom-right-radius: var(--radius);
+
+	box-shadow: var(--box-shadox);
 
 	margin-bottom: calc(
 		var(--space-sm) + var(--space-md) + var(--space-xxxs-fixed)
 	);
-	margin-top: var(--space-sm);
-	/* to compensate the before effect */
-}
-
-.bar_title::before {
-	content: "";
-	background-color: var(--primary);
-
-	position: absolute;
-	box-sizing: content-box;
-	width: 100vw;
-	height: 0.755em;
-	z-index: -1;
-
-	padding: var(--space-sm);
-	border-top-right-radius: var(--radius);
-	border-bottom-right-radius: var(--radius);
-
-	right: calc(-1 * var(--space-sm));
-	top: calc(-1 * var(--space-sm));
-
-	box-shadow: var(--box-shadox);
 }
 
 .home #aboutme p {
