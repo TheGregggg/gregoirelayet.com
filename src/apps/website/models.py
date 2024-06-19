@@ -11,9 +11,11 @@ from apps.project.models import ProjectPage
 class TimelineBlock(blocks.StructBlock):
     title = blocks.CharBlock()
     year = blocks.CharBlock()
+    description = blocks.RichTextBlock()
 
     class Meta:
         icon = "calendar-alt"
+        template = "website/blocks/event.html"
 
 
 class PassionBlock(blocks.StructBlock):
@@ -26,8 +28,8 @@ class PassionBlock(blocks.StructBlock):
 
 class HomePage(HtmxPage):
     about_me = RichTextField(blank=True)
-    timeline = StreamField([("Event", TimelineBlock())])
-    passions = StreamField([("Passion", PassionBlock())])
+    timeline = StreamField([("Event", TimelineBlock())], blank=True)
+    passions = StreamField([("Passion", PassionBlock())], blank=True)
 
     content_panels = HtmxPage.content_panels + [
         FieldPanel("about_me"),

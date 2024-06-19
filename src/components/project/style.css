@@ -7,7 +7,7 @@
 .component-project .title {
 	grid-row: 1;
 	color: var(--accent);
-	font-size: var(--text-xl);
+	font-size: var(--text-md);
 	font-family: var(--font-secondary);
 }
 .component-project img {
@@ -44,7 +44,7 @@
 	margin-bottom: var(--space-xxxs);
 }
 
-@container (min-width: 1005px) {
+@container project (min-width: 1005px) {
 	.component-project {
 		grid-template-columns: 1fr 1fr;
 		column-gap: var(--space-md);
@@ -52,6 +52,7 @@
 	.component-project .title {
 		grid-column: 1/3;
 		grid-row: 1;
+		font-size: var(--text-xl);
 	}
 	.component-project img {
 		grid-row: 3/6;
