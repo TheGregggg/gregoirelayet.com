@@ -48,8 +48,9 @@ just dev
 
 ## Stack
 
-Python 3.12.1
-Django 5.0
+Python 3.12.1  
+Django 5.0  
+Postgresql  
 HTMX
 
 ## Legals
