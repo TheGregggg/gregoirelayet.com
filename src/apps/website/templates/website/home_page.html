@@ -15,7 +15,7 @@
                 <img id="profile-picture" src="{% static "website/rx7_small.jpg" %}" alt="">
             </div>
             <div id="aboutme">
-                <h2 class="bar_title styled_title">A propos</h2>
+                <h2 class="styled_title">A propos</h2>
                 <article>{{ page.about_me|richtext }}</article>
             </div>
         </section>
@@ -27,7 +27,7 @@
             {% endfor %}
         </section>
         <section id="experiences">
-            <h2 class="styled_title bar_title " id="title_experiences_section">Mes expériences</h2>
+            <h2 class="styled_title " id="title_experiences_section">Mes expériences</h2>
             <div id="experiences_list">
                 {% for event in page.timeline %}
                     {% include_block event %}
@@ -35,7 +35,7 @@
             </div>
         </section>
         <section id="other-passions">
-            <h2 class="styled_title bar_title" id="title_other-passions_section">Mes autres centres d'intérêt</h2>
+            <h2 class="styled_title" id="title_other-passions_section">Mes autres centres d'intérêt</h2>
             <div id="other-passions_list-wrapper">
                 <div id="other-passions_list">
                     {% for other_passion in page.passions %}

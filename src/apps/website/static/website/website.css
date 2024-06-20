@@ -99,10 +99,9 @@ html[data-theme="light"] .halftone {
 
 h2.styled_title {
 	text-transform: uppercase;
-
 	color: var(--accent);
-	font-size: var(--text-xl);
 	font-family: var(--font-secondary);
+	margin-bottom: var(--space-md);
 }
 
 .home h3 {
@@ -148,26 +147,6 @@ h2.styled_title {
 	}
 }
 
-.bar_title {
-	position: relative;
-	left: calc(-1 * var(--space-xl));
-	width: fit-content;
-
-	color: var(--accent);
-	background-color: var(--primary);
-	padding: var(--space-sm);
-	padding-left: var(--space-xl);
-
-	border-top-right-radius: var(--radius);
-	border-bottom-right-radius: var(--radius);
-
-	box-shadow: var(--box-shadox);
-
-	margin-bottom: calc(
-		var(--space-sm) + var(--space-md) + var(--space-xxxs-fixed)
-	);
-}
-
 .home #aboutme p {
 	text-align: justify;
 	padding-bottom: var(--space-sm);
@@ -179,7 +158,7 @@ h2.styled_title {
 }
 /* projects sections */
 section#projects {
-	background-color: var(--primary);
+	background-color: var(--primary-light);
 }
 #title_project_section {
 	margin-bottom: var(--space-md);
@@ -239,6 +218,7 @@ section#projects {
 	gap: var(--space-md);
 }
 .block-other-passion {
+	background-color: var(--primary-light);
 	border-radius: var(--radius);
 	box-shadow: var(--box-shadox);
 	padding: var(--space-sm);
