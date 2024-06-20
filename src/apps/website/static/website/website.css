@@ -231,3 +231,30 @@ section#projects {
 		grid-column: 2;
 	}
 }
+
+/* Other passions sections */
+#other-passions_list {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: var(--space-md);
+}
+.block-other-passion {
+	border-radius: var(--radius);
+	box-shadow: var(--box-shadox);
+	padding: var(--space-sm);
+}
+
+#other-passions_list-wrapper {
+	container: other-passion-list / inline-size;
+}
+@container other-passion-list (min-width: 550px) {
+	#other-passions_list {
+		grid-template-columns: 1fr 1fr;
+	}
+}
+
+@container other-passion-list (min-width: 900px) {
+	#other-passions_list {
+		grid-template-columns: 1fr 1fr 1fr;
+	}
+}
