@@ -13,4 +13,3 @@ class Project(component.Component):
 
     class Media:
         css = "project/style.css"
-        js = "project/script.js"
