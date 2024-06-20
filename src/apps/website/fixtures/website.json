@@ -3,9 +3,28 @@
   "model": "website.homepage",
   "pk": 3,
   "fields": {
-    "about_me": "<p data-block-key=\"zsudm\">PassionnÃ© par lâ€™informatique, jâ€™aime rÃ©aliser des projets innovants et captivants. J'apprÃ©cie tout particuliÃ¨rement la crÃ©ation de systÃ¨mes bien rÃ©flÃ©chis, Ã©volutifs et possÃ©dant un code de grande qualitÃ©. Je suis en effet Ã  la recherche des meilleures solutions pour crÃ©er des sites web scalables ou comment organiser la hiÃ©rarchie d'un projet pour quâ€™il y ait le moins de friction possibles. Tout cela m'intÃ©resse Ã©normÃ©ment.</p><p data-block-key=\"r3at\">Je m'intÃ©resse aussi Ã  lâ€™Ã©lectronique. Je souhaite connaitre et comprendre toutes les couches des ordinateurs : du circuit Ã©lectronique au logiciel. Jâ€™aime lâ€™idÃ©e d'optimiser des logiciels Ã  ce point lÃ , bien que pour des projets rÃ©els cela nâ€™est pas envisageable. Simplement pour le dÃ©fi et afin de voir ce qui est possible, optimiser des systÃ¨mes mÃ© fascine. Cela me permet de coder en Ã©tant conscient des problÃ¨mes d'optimisation et de performance.</p><p data-block-key=\"2emds\">Je suis aussi intÃ©ressÃ© par le dÃ©ploiement d'applications continu, les serveurs et la sÃ©curitÃ©, internet et crÃ©er des rÃ©seaux redondant, stable et de qualitÃ©, linux.</p>",
-    "timeline": "[{\"id\": \"6d7fcc86-6fea-461a-8adc-4f67085e1613\", \"type\": \"Event\", \"value\": {\"year\": \"20\", \"title\": \"qsd\"}}]",
-    "passions": "[{\"id\": \"2ddff805-69da-436c-a685-e5d6a9a14397\", \"type\": \"Passion\", \"value\": {\"title\": \"qsd\", \"content\": \"<p data-block-key=\\\"idn1z\\\">0</p>\"}}]"
+    "about_me": "<p data-block-key=\"by500\">Passionné par l’informatique, j’aime réaliser des projets innovants et captivants. J'apprécie tout particulièrement la création de systèmes bien réfléchis, évolutifs et possédant un code de grande qualité. Je suis en effet à la recherche des meilleures solutions pour créer des sites web scalables ou comment organiser la hiérarchie d'un projet pour qu’il y ait le moins de friction possibles. Tout cela m'intéresse énormément.</p><p data-block-key=\"9g5e9\">Je m'intéresse aussi à l’électronique. Je souhaite connaitre et comprendre toutes les couches des ordinateurs : du circuit électronique au logiciel. J’aime l’idée d'optimiser des logiciels à ce point là, bien que pour des projets réels cela n’est pas envisageable. Simplement pour le défi et afin de voir ce qui est possible, optimiser des systèmes mé fascine. Cela me permet de coder en étant conscient des problèmes d'optimisation et de performance.</p><p data-block-key=\"9dtgi\">Je suis aussi intéressé par le déploiement d'applications continu, les serveurs et la sécurité, internet et créer des réseaux redondant, stable et de qualité, linux.</p>",
+    "timeline": "[{\"id\": \"e6a90429-94ba-49df-b7c9-4a3ca3acfffb\", \"type\": \"Event\", \"value\": {\"year\": \"2022 - 2027\", \"title\": \"Polytech Nantes - Ing\\u00e9nieur en Electronique et Technologies Num\\u00e9riques\", \"description\": \"<p data-block-key=\\\"p9mid\\\">oui</p>\"}}]",
+    "passions": "[{\"id\": \"0bb5f174-73ac-47df-ad42-7354fceb004f\", \"type\": \"Passion\", \"value\": {\"title\": \"voitures\", \"content\": \"<p data-block-key=\\\"30glt\\\">oui</p>\"}}]"
+  }
+},
+{
+  "model": "website.homepage",
+  "pk": 7,
+  "fields": {
+    "about_me": "<p data-block-key=\"by500\">english Passionné par l’informatique, j’aime réaliser des projets innovants et captivants. J'apprécie tout particulièrement la création de systèmes bien réfléchis, évolutifs et possédant un code de grande qualité. Je suis en effet à la recherche des meilleures solutions pour créer des sites web scalables ou comment organiser la hiérarchie d'un projet pour qu’il y ait le moins de friction possibles. Tout cela m'intéresse énormément.</p><p data-block-key=\"9g5e9\">Je m'intéresse aussi à l’électronique. Je souhaite connaitre et comprendre toutes les couches des ordinateurs : du circuit électronique au logiciel. J’aime l’idée d'optimiser des logiciels à ce point là, bien que pour des projets réels cela n’est pas envisageable. Simplement pour le défi et afin de voir ce qui est possible, optimiser des systèmes mé fascine. Cela me permet de coder en étant conscient des problèmes d'optimisation et de performance.</p><p data-block-key=\"9dtgi\">Je suis aussi intéressé par le déploiement d'applications continu, les serveurs et la sécurité, internet et créer des réseaux redondant, stable et de qualité, linux.</p>",
+    "timeline": "[{\"id\": \"e6a90429-94ba-49df-b7c9-4a3ca3acfffb\", \"type\": \"Event\", \"value\": {\"year\": \"2022 - 2027\", \"title\": \"Polytech Nantes - Ing\\u00e9nieur en Electronique et Technologies Num\\u00e9riques\", \"description\": \"<p data-block-key=\\\"p9mid\\\">oui</p>\"}}]",
+    "passions": "[{\"id\": \"0bb5f174-73ac-47df-ad42-7354fceb004f\", \"type\": \"Passion\", \"value\": {\"title\": \"voitures\", \"content\": \"<p data-block-key=\\\"30glt\\\">oui</p>\"}}]"
+  }
+},
+{
+  "model": "website.footer",
+  "pk": 1,
+  "fields": {
+    "pages": "[{\"id\": \"c7feb8ab-b3af-4f6a-84e4-21a615372122\", \"type\": \"Page\", \"value\": 3}, {\"id\": \"5c70ef46-5ffa-4b44-9ae3-5a0735e5281c\", \"type\": \"Page\", \"value\": 4}]",
+    "github_link": "https://github.com/TheGregggg",
+    "github_username": "TheGregggg",
+    "email": "contact@gregoirelayet.com"
   }
 }
 ]
