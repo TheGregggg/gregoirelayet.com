@@ -370,11 +370,18 @@ html {
 		font-size: 200%;
 	}
 }
-
 body {
 	font-size: var(--text-base-size);
 	font-family: var(--font-primary);
 	color: var(--text);
+
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+}
+
+#main_page_content {
+	flex-grow: 1;
 }
 
 .container,
