@@ -196,6 +196,7 @@ STATIC_URL = "static/"
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
     os.path.join(BASE_DIR, "components"),
+    os.path.join(BASE_DIR, "apps", "project", "components"),
 ]
 
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
@@ -214,4 +215,7 @@ TAGGIT_CASE_INSENSITIVE = True
 # Django components
 COMPONENTS = {
     "context_behavior": "isolated",
+    "libraries": [
+        "apps.project.components.lib",
+    ],
 }
