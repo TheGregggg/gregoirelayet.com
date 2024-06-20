@@ -24,6 +24,7 @@ class PassionBlock(blocks.StructBlock):
 
     class Meta:
         icon = "pick"
+        template = "website/blocks/other_passion.html"
 
 
 class HomePage(HtmxPage):

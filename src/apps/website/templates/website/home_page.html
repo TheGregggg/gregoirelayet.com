@@ -34,5 +34,15 @@
                 {% endfor %}
             </div>
         </section>
+        <section id="other-passions">
+            <h2 class="styled_title bar_title" id="title_other-passions_section">Mes autres centres d'intérêt</h2>
+            <div id="other-passions_list-wrapper">
+                <div id="other-passions_list">
+                    {% for other_passion in page.passions %}
+                        {% include_block other_passion %}
+                    {% endfor %}
+                </div>
+            </div>
+        </section>
     </main>
 {% endblock content %}
