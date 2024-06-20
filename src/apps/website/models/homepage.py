@@ -1,5 +1,5 @@
 from django.http import HttpRequest
-from .base import HtmxPage
+from apps.website.base import HtmxPage
 from wagtail import blocks
 from wagtail.models import Locale
 from wagtail.fields import RichTextField, StreamField

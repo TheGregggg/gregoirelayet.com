@@ -1,8 +1,5 @@
 from django_components import component
-from django.db.models import Model
-from apps.website.components_models.footer import Footer as FooterModel
-from wagtail.models import Page, Locale
-from typing import cast
+from apps.website.models.components.footer import Footer as FooterModel
 
 
 @component.register("footer")
