@@ -67,7 +67,6 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
-    "django_components.middleware.ComponentDependencyMiddleware",
     "wagtail.contrib.redirects.middleware.RedirectMiddleware",
 ]
 
@@ -214,6 +213,5 @@ TAGGIT_CASE_INSENSITIVE = True
 
 # Django components
 COMPONENTS = {
-    "RENDER_DEPENDENCIES": True,
     "context_behavior": "isolated",
 }
