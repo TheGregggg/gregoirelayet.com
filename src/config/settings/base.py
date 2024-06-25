@@ -29,6 +29,7 @@ THIRD_PARTY_APPS = [
     "adminsortable2",
 ]
 WAGTAIL_APPS = [
+    "wagtail.contrib.settings",
     "wagtail.sites",
     "wagtail_localize",
     "wagtail_localize.locales",
@@ -197,6 +198,7 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
     os.path.join(BASE_DIR, "components"),
     os.path.join(BASE_DIR, "apps", "project", "components"),
+    os.path.join(BASE_DIR, "apps", "website", "components"),
 ]
 
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
@@ -217,5 +219,6 @@ COMPONENTS = {
     "context_behavior": "isolated",
     "libraries": [
         "apps.project.components.lib",
+        "apps.website.components.lib",
     ],
 }

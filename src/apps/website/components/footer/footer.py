@@ -7,7 +7,7 @@ class Footer(component.Component):
     template_name = "footer/template.html"
 
     def get_context_data(self):
-        data = FooterModel.objects.first()
+        data = FooterModel.for_request(request=self.request)
         return {"data": data}
 
     class Media:
