@@ -19,12 +19,14 @@
         <script src="{% static 'htmx.min.js' %}" defer></script>
     </head>
     <body class="{% block body_class %}{% endblock body_class %}">
-        {% component "header" %}{% endcomponent %}
+        {% component "header" request %}
+        {% endcomponent %}
         <div id="main_page_content">
             {% block content %}
             {% endblock content %}
         </div>
-        {% component "footer" %}{% endcomponent %}
+        {% component "footer" request %}
+        {% endcomponent %}
         {% component_js_dependencies %}
     </body>
 </html>

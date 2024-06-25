@@ -1,15 +1,22 @@
-<header
-	hx-boost="true"
-	hx-target="#main_page_content"
-	hx-swap="innerHTML swap:50ms settle:100ms show:none"
-	class="container"
->
+{% load wagtailcore_tags %}
+<header hx-boost="true"
+        hx-target="#main_page_content"
+        hx-swap="innerHTML swap:50ms settle:100ms show:none"
+        class="container">
+    {# djlint:off #}
 	<a href="/" id="main-title"><h1>Grégoire Layet</h1></a>
-	<nav>
-		<a href="/projects/">Mes projets</a>
-	</nav>
-	<div class="buttons">
-		{% component "theme_switcher" %} {% endcomponent %}
-		{% component "lang_switcher"%} {% endcomponent %}
-	</div>
+    {# djlint:on #}
+    <nav>
+        {% for block_page in data.pages %}
+            {% with local_page=block_page.value.localized %}
+                <a href="{% pageurl local_page %}">{{ local_page.title }}</a>
+            {% endwith %}
+        {% endfor %}
+    </nav>
+    <div class="buttons">
+        {% component "theme_switcher" %}
+        {% endcomponent %}
+        {% component "lang_switcher" %}
+        {% endcomponent %}
+    </div>
 </header>
