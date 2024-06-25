@@ -12,12 +12,14 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 
 from pathlib import Path
 import os
+import sys
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
 
 SECRET_KEY = "this_is_not_secret"
 
+TESTING = "test" in sys.argv
 
 # Application definition
 APPS = ["apps.website", "apps.project"]

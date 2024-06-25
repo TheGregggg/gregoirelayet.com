@@ -17,10 +17,10 @@ urlpatterns = [
 if settings.DEBUG:
     from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
-    urlpatterns += (
-        staticfiles_urlpatterns()
-    )  # tell gunicorn where static files are in dev mode
+    urlpatterns += staticfiles_urlpatterns()
     urlpatterns += static(
         settings.MEDIA_URL + "images/",
         document_root=os.path.join(settings.MEDIA_ROOT, "images"),
     )
+    if not settings.TESTING:
+        urlpatterns += [path("__debug__/", include("debug_toolbar.urls"))]
