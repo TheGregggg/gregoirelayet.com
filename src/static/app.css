@@ -382,6 +382,7 @@ body {
 
 #main_page_content {
 	flex-grow: 1;
+	padding-bottom: var(--space-xl);
 }
 
 .container,

@@ -1,7 +1,10 @@
 {% extends base_template %}
 {% load static %}
 {% block content %}
-    <main class="projects">
-        
+    <main class="projects container">
+        {% for project in projects %}
+            {% component "project" project only %}
+            {% endcomponent %}
+        {% endfor %}
     </main>
 {% endblock content %}
