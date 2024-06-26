@@ -95,17 +95,18 @@ html[data-theme="light"] .halftone {
 
 .home h1 {
 	font-size: var(--text-xxxxl);
+	margin-bottom: var(--space-xxs);
 }
 
 h2.styled_title {
 	text-transform: uppercase;
 	color: var(--accent);
 	font-family: var(--font-secondary);
-	margin-bottom: var(--space-md);
 }
 
-.home h3 {
+#hero-text h3 {
 	font-weight: 400;
+	margin-bottom: var(--space-xxs);
 }
 
 @media (min-width: 700px) {
@@ -172,6 +173,9 @@ section#projects {
 }
 .block-event {
 	display: grid;
+}
+.block-event aside h3 {
+	font-weight: 400;
 }
 .block-event time {
 	display: flex;

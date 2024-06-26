@@ -9,6 +9,7 @@
 	color: var(--accent);
 	font-size: var(--text-md);
 	font-family: var(--font-secondary);
+	margin-bottom: var(--space-xs);
 }
 .component-project img {
 	grid-row: 2;
