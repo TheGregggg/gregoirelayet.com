@@ -8,7 +8,7 @@
 			<li>{{ techno }}</li>
 			{% endfor %}
 		</ul>
-		<div class="description">{{ project.description|richtext }}</div>
+		<div class="description">{{ project.short_description|richtext }}</div>
 		<a href="{% pageurl project %}" class="btn btn--accent"
 			>Voir ce projet</a
 		>
