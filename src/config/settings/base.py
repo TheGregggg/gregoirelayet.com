@@ -29,6 +29,7 @@ THIRD_PARTY_APPS = [
     "django_components",
     "django_components.safer_staticfiles",
     "adminsortable2",
+    "compressor",
 ]
 WAGTAIL_APPS = [
     "wagtail.contrib.settings",
@@ -196,12 +197,18 @@ LANGUAGE_COOKIE_AGE = 60 * 60 * 24 * 30  # 1 month
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
 STATIC_URL = "static/"
+STATIC_ROOT = os.path.join(BASE_DIR, "static", "dist")
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
     os.path.join(BASE_DIR, "components"),
     os.path.join(BASE_DIR, "apps", "project", "components"),
     os.path.join(BASE_DIR, "apps", "website", "components"),
 ]
+STATICFILES_FINDERS = (
+    "django.contrib.staticfiles.finders.FileSystemFinder",
+    "django.contrib.staticfiles.finders.AppDirectoriesFinder",
+    "compressor.finders.CompressorFinder",
+)
 
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 MEDIA_URL = "/media/"
@@ -224,3 +231,6 @@ COMPONENTS = {
         "apps.website.components.lib",
     ],
 }
+
+# django compress
+COMPRESS_ENABLED = False

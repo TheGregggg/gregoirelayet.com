@@ -1,4 +1,4 @@
-{% load static %}
+{% load static compress %}
 <!DOCTYPE html>
 <html lang="fr" data-theme="dark">
     <head>
@@ -9,17 +9,24 @@
         <meta name="author" content="Grégoire Layet" />
         <link rel="icon" href="{% static "favicon.ico" %}" />
         <title>Grégoire Layet</title>
-        <link rel="stylesheet" type="text/css" href="{% static "app.css" %}">
-        <link rel="stylesheet" type="text/css" href="{% static "website/website.css" %}">
-        <link rel="stylesheet" type="text/css" href="{% static "project/project.css" %}">
+        {% compress css %}
+            <link rel="stylesheet"
+                  type="text/css"
+                  media="all"
+                  href="{% static "app.css" %}">
+            <link rel="stylesheet" type="text/css" media="all" href="{% static "website/website.css" %}">
+            <link rel="stylesheet" type="text/css" media="all" href="{% static "project/project.css" %}">
+            {% component_css_dependencies %}
+        {% endcompress %}
         <link rel="preload" href="{% static "font/Montserrat-Bold.ttf" %}" as="font" type="font/ttf" crossorigin>
         <link rel="preload" href="{% static "font/Poppins-Regular.ttf" %}" as="font" type="font/ttf" crossorigin>
         <link rel="preload" href="{% static "font/Poppins-Medium.ttf" %}" as="font" type="font/ttf" crossorigin>
         <link rel="preload" href="{% static "font/Poppins-Bold.ttf" %}" as="font" type="font/ttf" crossorigin>
         {% block head %}
         {% endblock head %}
-        {% component_css_dependencies %}
-        <script src="{% static 'htmx.min.js' %}" defer></script>
+        {% compress js %}
+            <script src="{% static 'htmx.min.js' %}" defer></script>
+        {% endcompress %}
     </head>
     <body class="{% block body_class %}{% endblock body_class %}">
         {% component "header" request %}
@@ -30,6 +37,8 @@
         </div>
         {% component "footer" request %}
         {% endcomponent %}
-        {% component_js_dependencies %}
+        {% compress js %}
+            {% component_js_dependencies %}
+        {% endcompress %}
     </body>
 </html>
