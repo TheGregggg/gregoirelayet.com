@@ -11,7 +11,7 @@ footer a:visited {
 }
 footer h4 {
 	font-size: var(--text-xxxl);
-	font-weight: 700;
+	font-weight: 500;
 }
 footer nav {
 	display: flex;
