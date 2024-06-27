@@ -7,7 +7,7 @@
 .component-project .title {
 	grid-row: 1;
 	color: var(--accent);
-	font-size: var(--text-md);
+	font-size: var(--text-m);
 	font-family: var(--font-secondary);
 	margin-bottom: var(--space-xs);
 }
@@ -18,10 +18,10 @@
 	height: auto;
 	border-radius: var(--radius);
 	box-shadow: var(--box-shadox);
-	margin-bottom: var(--space-sm);
+	margin-bottom: var(--space-s);
 }
 .component-project .technologies {
-	margin-bottom: var(--space-sm);
+	margin-bottom: var(--space-s);
 	grid-row: 3;
 	display: flex;
 	flex-direction: row;
@@ -30,15 +30,15 @@
 }
 
 .component-project .technologies li {
-	padding: var(--space-xxs) var(--space-sm);
+	padding: var(--space-xxs) var(--space-s);
 	background-color: var(--text);
 	color: var(--background);
 	font-weight: 700;
-	font-size: var(--text-sm);
+	font-size: var(--text-s);
 	border-radius: var(--radius);
 }
 .component-project .description {
-	margin-bottom: var(--space-sm);
+	margin-bottom: var(--space-s);
 }
 .component-project .description p {
 	text-align: justify;
@@ -52,7 +52,7 @@
 @container project (min-width: 1005px) {
 	.component-project {
 		grid-template-columns: 1fr 1fr;
-		column-gap: var(--space-md);
+		column-gap: var(--space-m);
 	}
 	.component-project .title {
 		grid-column: 1/3;
