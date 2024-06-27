@@ -22,7 +22,7 @@ footer nav {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	gap: var(--space-md);
+	gap: var(--space-m);
 }
 #footer-sociales svg {
 	height: 1.4em;
@@ -45,7 +45,7 @@ footer nav {
 @container footer (min-width: 280px) {
 	#footer-content {
 		grid-template-columns: 1fr 1fr;
-		gap: var(--space-md);
+		gap: var(--space-m);
 		column-gap: var(--space-xl);
 	}
 	footer h4 {

@@ -1,5 +1,5 @@
 :root {
-	--header-height: calc(var(--text-lg) * var(--heading-line-height));
+	--header-height: calc(var(--text-l) * var(--heading-line-height));
 	--header-margin-top: var(--space-xl);
 	--header-margin-bottom: var(--space-xl);
 	--total-header-height: calc(
@@ -15,7 +15,7 @@ header {
 	justify-content: space-between;
 
 	width: 100%;
-	gap: var(--space-md);
+	gap: var(--space-m);
 	margin-top: var(--header-margin-top);
 	margin-bottom: var(--header-margin-bottom);
 
@@ -27,14 +27,14 @@ header {
 header h1 {
 	white-space: nowrap;
 	margin: 0;
-	font-size: var(--text-lg);
+	font-size: var(--text-l);
 }
 
 header .buttons {
 	height: 100%;
 	display: flex;
 	flex-direction: row;
-	gap: var(--space-sm);
+	gap: var(--space-s);
 	margin-left: auto;
 }
 
