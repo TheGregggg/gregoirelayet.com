@@ -1,6 +1,17 @@
 @font-face {
 	font-family: "Poppins";
+	font-weight: 400;
 	src: url("/static/font/Poppins-Regular.ttf") format("truetype");
+}
+@font-face {
+	font-family: "Poppins";
+	font-weight: 500;
+	src: url("/static/font/Poppins-Medium.ttf") format("truetype");
+}
+@font-face {
+	font-family: "Poppins";
+	font-weight: 700;
+	src: url("/static/font/Poppins-Bold.ttf") format("truetype");
 }
 
 @font-face {
@@ -285,7 +296,7 @@ html {
 .mb--xxl {
 	margin-bottom: var(--space-xxl);
 }
-
+/* 
 @media (min-width: 1060px) {
 	.mt,
 	.mt--m {
@@ -336,7 +347,7 @@ html {
 	.mb--xxl {
 		margin-bottom: var(--space-xxxl);
 	}
-}
+} */
 
 /* Base style */
 

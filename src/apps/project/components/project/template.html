@@ -2,13 +2,15 @@
 <div class="component-project-container">
 	<div class="component-project">
 		{% image project.image width-900 %}
-		<h2 class="title">{{project.title}}</h2>
-		<ul class="technologies">
+		<h3 class="title mb--xs">{{project.title}}</h3>
+		<ul class="technologies mb--s">
 			{% for techno in project.technologies %}
 			<li>{{ techno }}</li>
 			{% endfor %}
 		</ul>
-		<div class="description">{{ project.short_description|richtext }}</div>
+		<div class="description mb--s">
+			{{ project.short_description|richtext }}
+		</div>
 		<a href="{% pageurl project %}" class="btn btn--accent"
 			>Voir ce projet</a
 		>
