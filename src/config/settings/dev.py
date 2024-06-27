@@ -13,7 +13,7 @@ EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 
 WSGI_APPLICATION = "config.wsgi.app"
 
-if not TESTING and False:
+if not TESTING:
     INSTALLED_APPS += [
         "debug_toolbar",
     ]
