@@ -201,9 +201,11 @@ STATIC_ROOT = os.path.join(BASE_DIR, "static", "dist")
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
     os.path.join(BASE_DIR, "components"),
-    os.path.join(BASE_DIR, "apps", "project", "components"),
-    os.path.join(BASE_DIR, "apps", "website", "components"),
 ]
+for apps in APPS:
+    # apps = "apps.APP_NAME"
+    STATICFILES_DIRS += [os.path.join(BASE_DIR, *apps.split("."), "components")]
+
 STATICFILES_FINDERS = (
     "django.contrib.staticfiles.finders.FileSystemFinder",
     "django.contrib.staticfiles.finders.AppDirectoriesFinder",
