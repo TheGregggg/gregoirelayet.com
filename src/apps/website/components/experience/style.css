@@ -2,24 +2,20 @@
 	display: grid;
 }
 
-.component-experience aside h3 {
+.component-experience__year {
 	font-weight: 400;
-}
-
-.component-experience time {
 	display: flex;
 }
-
-.component-experience .title {
-	font-family: var(--font-secondary);
-}
-
-.component-experience time::before {
+.component-experience__year::before {
 	content: "";
 	display: block;
 	border-radius: var(--radius);
 	border-left: var(--space-xxxs-fixed) solid var(--accent);
 	margin-right: var(--space-xs);
+}
+
+.component-experience__title {
+	font-family: var(--font-secondary);
 }
 
 .component-experience-container {
@@ -32,17 +28,17 @@
 		column-gap: var(--space-m);
 	}
 
-	.component-experience aside {
+	.component-experience__year-container {
 		grid-row: 1;
 		grid-column: 1;
 	}
 
-	.component-experience .title {
+	.component-experience__title {
 		grid-row: 1;
 		grid-column: 2;
 	}
 
-	.component-experience article {
+	.component-experience__description {
 		grid-row: 2;
 		grid-column: 2;
 	}
