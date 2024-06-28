@@ -4,3 +4,53 @@ main.projects {
 	grid-template-columns: 1fr;
 	gap: var(--space-xl);
 }
+
+/* a project page */
+main.project article p {
+	font-size: calc(var(--text-s) / var(--text-quarter-scale));
+	line-height: 1.45;
+	letter-spacing: 0.02em;
+	margin-bottom: var(--space-xs);
+	font-weight: 400;
+}
+
+.project__article {
+	max-width: 64ch;
+	margin: 0 auto;
+}
+
+.project__grid {
+	display: grid;
+	grid-template-columns: 1fr;
+	row-gap: var(--space-m);
+	max-width: 64ch;
+	margin: 0 auto;
+}
+.project__technos {
+	grid-row: 1;
+}
+
+@media (min-width: 1370px) {
+	.project__grid {
+		grid-template-columns: minmax(max-content, 1fr) minmax(300px, 500px);
+		column-gap: var(--space-m);
+		max-width: unset;
+		margin: 0;
+	}
+	.project__technos {
+		grid-row: unset;
+		grid-column: 2;
+	}
+	.project__links {
+		grid-column: 2;
+	}
+	.project__article {
+		grid-row: 1/4;
+	}
+}
+
+@media (min-width: 1620px) {
+	.project__grid {
+		column-gap: var(--space-xl);
+	}
+}

@@ -125,8 +125,6 @@ h2.styled_title {
 	margin-left: auto;
 	max-height: 90%;
 	max-width: 85%;
-	border-radius: var(--radius);
-	box-shadow: var(--box-shadox);
 }
 
 @media (min-width: 700px) {

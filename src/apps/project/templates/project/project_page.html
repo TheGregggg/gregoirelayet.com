@@ -1,0 +1,24 @@
+{% extends base_template %}
+{% load static wagtailcore_tags wagtailimages_tags %}
+{% block content %}
+    <main class="project container">
+        <h1 class="mb--xs">{{ page.title }}</h1>
+        <div class="project__grid">
+            <div class="project__article">
+                {% image page.image width-900 class="styled mb--m" %}
+                <article>{{ page.description|richtext }}</article>
+            </div>
+            <aside class="project__technos">
+                <h4 class="mb--xxs">Technologies utilisées</h4>
+                {% component "project_technologies" technologies=page.technologies only %}
+                {% endcomponent %}
+            </aside>
+            <aside class="project__links">
+                <h4 class="mb--xxs">Liens</h4>
+                <p>
+                    <a href="{{ page.website_link }}">{{ page.website_link }}</a>
+                </p>
+            </aside>
+        </div>
+    </main>
+{% endblock content %}
