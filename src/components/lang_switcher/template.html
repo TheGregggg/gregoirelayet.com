@@ -12,6 +12,7 @@
         </svg>
     </button>
     <div class="dropdown">
+        {% get_available_languages as LANGUAGES %}
         {% get_current_language as CURRENT_LANGUAGE_CODE %}
         {% for language_code, language_name in LANGUAGES %}
             {% get_language_info for language_code as lang %}

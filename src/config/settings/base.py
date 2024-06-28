@@ -86,7 +86,6 @@ TEMPLATES = [
                 "django.template.context_processors.request",
                 "django.contrib.auth.context_processors.auth",
                 "django.contrib.messages.context_processors.messages",
-                "django.template.context_processors.i18n",
             ],
             "loaders": [
                 (
@@ -227,7 +226,7 @@ TAGGIT_CASE_INSENSITIVE = True
 
 # Django components
 COMPONENTS = {
-    "context_behavior": "isolated",
+    "context_behavior": "django",
     "libraries": [
         "apps.project.components.lib",
         "apps.website.components.lib",
