@@ -13,6 +13,9 @@ main.project article p {
 	margin-bottom: var(--space-xs);
 	font-weight: 400;
 }
+main.project img {
+	width: 100%;
+}
 
 .project__article {
 	max-width: 64ch;
