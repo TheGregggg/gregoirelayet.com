@@ -1,0 +1,49 @@
+.component-experience {
+	display: grid;
+}
+
+.component-experience aside h3 {
+	font-weight: 400;
+}
+
+.component-experience time {
+	display: flex;
+}
+
+.component-experience .title {
+	font-family: var(--font-secondary);
+}
+
+.component-experience time::before {
+	content: "";
+	display: block;
+	border-radius: var(--radius);
+	border-left: var(--space-xxxs-fixed) solid var(--accent);
+	margin-right: var(--space-xs);
+}
+
+.component-experience-container {
+	container: component-experience / inline-size;
+}
+
+@container component-experience (min-width: 752px) {
+	.component-experience {
+		grid-template-columns: 1fr 3fr;
+		column-gap: var(--space-m);
+	}
+
+	.component-experience aside {
+		grid-row: 1;
+		grid-column: 1;
+	}
+
+	.component-experience .title {
+		grid-row: 1;
+		grid-column: 2;
+	}
+
+	.component-experience article {
+		grid-row: 2;
+		grid-column: 2;
+	}
+}

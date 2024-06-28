@@ -7,16 +7,17 @@ from wagtail.models import Locale
 from apps.project.models import ProjectPage
 from apps.website.base import ComponentStructBlock, HtmxPage
 from apps.website.components.other_passion.other_passion import Other_passion
+from apps.website.components.experience.experience import Experience
 
 
-class TimelineBlock(blocks.StructBlock):
+class TimelineBlock(ComponentStructBlock):
     title = blocks.CharBlock()
     year = blocks.CharBlock()
     description = blocks.RichTextBlock()
 
     class Meta:
         icon = "calendar-alt"
-        template = "website/blocks/event.html"
+        component = Experience
 
 
 class PassionBlock(ComponentStructBlock):
