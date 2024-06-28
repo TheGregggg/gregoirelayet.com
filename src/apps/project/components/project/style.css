@@ -6,33 +6,17 @@
 }
 .component-project .title {
 	grid-row: 1;
-	color: var(--accent);
 	font-family: var(--font-secondary);
 }
 .component-project img {
 	grid-row: 2;
-
 	width: 100%;
-	border-radius: var(--radius);
-	box-shadow: var(--box-shadox);
 	margin-bottom: calc(var(--space-s) + var(--space-xxxs-fixed));
 }
-.component-project .technologies {
+.component-project .component-project_technologies {
 	grid-row: 3;
-	display: flex;
-	flex-direction: row;
-	flex-wrap: wrap;
-	gap: var(--space-xs);
 }
 
-.component-project .technologies li {
-	line-height: var(--body-line-height);
-	padding: calc(var(--space-xxs) / var(--body-line-height)) var(--space-xs);
-	border-radius: var(--radius);
-	background-color: var(--text);
-	color: var(--background);
-	font-size: var(--text-s);
-}
 .component-project .description p {
 	margin-bottom: var(--space-xxxs);
 }
@@ -55,7 +39,7 @@
 		grid-column: 1;
 		margin-bottom: 0;
 	}
-	.component-project .technologies {
+	.component-project .component-project_technologies {
 		grid-column: 2;
 		grid-row: 2;
 	}
@@ -71,13 +55,11 @@
 }
 
 @media (prefers-color-scheme: dark) {
-	html[data-theme="auto"] .component-project .technologies li,
 	html[data-theme="auto"] .component-project .btn {
 		font-weight: 500;
 	}
 }
 
-html[data-theme="dark"] .component-project .technologies li,
 html[data-theme="dark"] .component-project .btn {
 	font-weight: 500;
 }

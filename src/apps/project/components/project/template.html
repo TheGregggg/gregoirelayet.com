@@ -1,11 +1,10 @@
 {% load wagtailimages_tags wagtailcore_tags %}
 <div class="component-project-container">
     <div class="component-project">
-        {% image project.image width-900 %}
+        {% image project.image width-900 class="styled" %}
         <h3 class="title mb--xs">{{ project.title }}</h3>
-        <ul class="technologies mb--s">
-            {% for techno in project.technologies %}<li>{{ techno }}</li>{% endfor %}
-        </ul>
+        {% component "project_technologies" technologies=project.technologies attrs:class="mb--s" only %}
+        {% endcomponent %}
         <div class="description mb--s">{{ project.short_description|richtext }}</div>
         <a href="{% pageurl project %}" class="btn btn--accent">Voir ce projet</a>
     </div>
