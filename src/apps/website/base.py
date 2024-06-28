@@ -1,5 +1,7 @@
-from wagtail.models import Page
 from django.http import HttpRequest
+from django_components.component import Component
+from wagtail.blocks import StructBlock
+from wagtail.models import Page
 
 
 class HtmxPage(Page):
@@ -15,3 +17,13 @@ class HtmxPage(Page):
             base_template = "base.html"
         context["base_template"] = base_template
         return context
+
+
+class ComponentStructBlock(StructBlock):
+    class Meta:
+        component: None | Component = None
+
+    def render(self, value, context=None):
+        if self.meta.component:
+            return self.meta.component.render(kwargs=value)
+        return ""

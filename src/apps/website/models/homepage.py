@@ -1,11 +1,12 @@
 from django.http import HttpRequest
-from apps.website.base import HtmxPage
 from wagtail import blocks
-from wagtail.models import Locale
-from wagtail.fields import RichTextField, StreamField
 from wagtail.admin.panels import FieldPanel
+from wagtail.fields import RichTextField, StreamField
+from wagtail.models import Locale
 
 from apps.project.models import ProjectPage
+from apps.website.base import ComponentStructBlock, HtmxPage
+from apps.website.components.other_passion.other_passion import Other_passion
 
 
 class TimelineBlock(blocks.StructBlock):
@@ -18,13 +19,13 @@ class TimelineBlock(blocks.StructBlock):
         template = "website/blocks/event.html"
 
 
-class PassionBlock(blocks.StructBlock):
+class PassionBlock(ComponentStructBlock):
     title = blocks.CharBlock()
     content = blocks.RichTextBlock()
 
     class Meta:
         icon = "pick"
-        template = "website/blocks/other_passion.html"
+        component = Other_passion
 
 
 class HomePage(HtmxPage):

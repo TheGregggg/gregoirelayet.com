@@ -226,20 +226,6 @@ section#projects {
 	grid-template-columns: 1fr;
 	gap: var(--space-m);
 }
-
-.block-other-passion {
-	background-color: var(--primary-light);
-	border-radius: var(--radius);
-	box-shadow: var(--box-shadox);
-
-	padding: var(--text-l);
-	padding-top: calc(var(--text-l) / var(--heading-line-height));
-}
-
-.block-other-passion .title {
-	margin-bottom: var(--space-xxs);
-}
-
 #other-passions_list-wrapper {
 	container: other-passion-list / inline-size;
 }
