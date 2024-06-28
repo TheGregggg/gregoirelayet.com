@@ -4,7 +4,29 @@ All rights reserved
 
 My personal website V2
 
-Goal : simple, reliable, fast, beautiful
+### 🏆 Goal
+
+#### 👨‍💻 As a developper:
+
+-   Dimple to host
+-   Don't break easily
+-   Fast to add feature
+-   Beautiful and usable code
+
+#### 🌐 As a user:
+
+-   Simple to use as user and admin
+-   Fast to load
+-   Beautiful design
+
+### Things used :
+
+-   Django, Wagtail and PostgreSQL : rock solid stack and DB
+-   HTMX for SPA-like fealing in page transition and infinite scroll capabilities
+-   django-components and BEM css methodology for easy reusable component and styling
+-   django-compress for single file css in production
+-   automated script for easy life
+-   automated tests for stress free development (WIP)
 
 ## Dev setup
 
