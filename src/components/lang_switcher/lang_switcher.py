@@ -1,4 +1,6 @@
+from django.http import HttpRequest
 from django_components import component
+from django.template import RequestContext, Context
 
 
 @component.register("lang_switcher")

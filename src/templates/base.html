@@ -29,13 +29,13 @@
         {% endcompress %}
     </head>
     <body class="{% block body_class %}{% endblock body_class %}">
-        {% component "header" request %}
+        {% component "header" %}
         {% endcomponent %}
         <div id="main_page_content">
             {% block content %}
             {% endblock content %}
         </div>
-        {% component "footer" request %}
+        {% component "footer" only %}
         {% endcomponent %}
         {% compress js %}
             {% component_js_dependencies %}
