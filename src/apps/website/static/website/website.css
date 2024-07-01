@@ -130,7 +130,7 @@ h2.styled_title {
 @media (min-width: 700px) {
 	.home #profile-picture {
 		margin-right: auto;
-		max-height: min(100%, calc(var(--space-m) * 30));
+		max-height: min(100%, calc(var(--space-s) * 25));
 		max-width: 100%;
 	}
 }
@@ -147,10 +147,6 @@ h2.styled_title {
 	}
 }
 
-.home #aboutme p {
-	padding-bottom: var(--space-xs);
-}
-
 .home section {
 	padding-top: var(--space-xl);
 	padding-bottom: var(--space-xl);
@@ -160,16 +156,20 @@ h2.styled_title {
 section#projects {
 	background-color: var(--primary-light);
 }
-
+.projects__list {
+	display: flex;
+	flex-direction: column;
+	gap: var(--space-xl);
+}
 /* events/experiences sections */
-#experiences_list {
+.experiences__list {
 	display: flex;
 	flex-direction: column;
 	gap: var(--space-xl);
 }
 
 /* Other passions sections */
-#other-passions_list {
+.other-passions__grid {
 	display: grid;
 	grid-template-columns: repeat(auto-fill, minmax(14em, 1fr));
 	gap: var(--space-m);

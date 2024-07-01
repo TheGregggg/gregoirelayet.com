@@ -1,5 +1,5 @@
 {% extends base_template %}
-{% load static wagtailcore_tags %}
+{% load static wagtailcore_tags i18n %}
 {% block content %}
     <div class="halftone"></div>
     <main class="home">
@@ -8,40 +8,40 @@
                 <h1 class="mb--xxs">
                     Grégoire <span class="underlined">Layet</span>
                 </h1>
-                <h3 class="mb--xxs">Developpeur freelance Django, FastAPI et Python</h3>
-                <h3 class="mb--xxs">Etudiant à Polytech Nantes</h3>
+                <h3 class="mb--xxs">{% translate "Developpeur freelance Django, FastAPI et Python" %}</h3>
+                <h3 class="mb--xxs">{% translate "Etudiant à Polytech Nantes" %}</h3>
             </div>
             <div id="profile-picture-wrapper">
                 <img id="profile-picture" src="{% static "website/rx7_small.jpg" %}" alt="" class="styled">
             </div>
             <div id="aboutme">
-                <h2 class="styled_title">A propos</h2>
+                <h2 class="styled_title">{% translate "A propos" %}</h2>
                 <article>{{ page.about_me|richtext }}</article>
             </div>
         </section>
         <section id="projects">
-            <h2 class="styled_title mb--m">Projets mis en avant</h2>
-            {% for project in projects %}
-                {% component "project" project only %}
-                {% endcomponent %}
-            {% endfor %}
+            <h2 class="styled_title mb--m">{% translate "Projets mis en avant" %}</h2>
+            <div class="projects__list">
+                {% for project in projects %}
+                    {% component "project" project only %}
+                    {% endcomponent %}
+                {% endfor %}
+            </div>
         </section>
         <section id="experiences">
-            <h2 class="styled_title " id="title_experiences_section">Mes expériences</h2>
-            <div id="experiences_list">
+            <h2 class="styled_title">{% translate "Expériences" %}</h2>
+            <div class="experiences__list">
                 {% for event in page.timeline %}
                     {% include_block event %}
                 {% endfor %}
             </div>
         </section>
         <section id="other-passions">
-            <h2 class="styled_title" id="title_other-passions_section">Mes autres centres d'intérêt</h2>
-            <div id="other-passions_list-wrapper">
-                <div id="other-passions_list">
-                    {% for other_passion in page.passions %}
-                        {% include_block other_passion %}
-                    {% endfor %}
-                </div>
+            <h2 class="styled_title">{% translate "Autres centres d'intérêt" %}</h2>
+            <div class="other-passions__grid">
+                {% for other_passion in page.passions %}
+                    {% include_block other_passion %}
+                {% endfor %}
             </div>
         </section>
     </main>
