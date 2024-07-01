@@ -227,10 +227,6 @@ TAGGIT_CASE_INSENSITIVE = True
 # Django components
 COMPONENTS = {
     "context_behavior": "django",
-    "libraries": [
-        "apps.project.components.lib",
-        "apps.website.components.lib",
-    ],
 }
 
 # django compress
