@@ -231,6 +231,7 @@ html {
 	/* Transitions */
 	--duration: 294ms;
 	--color-transition: color var(--duration) ease-out;
+	--bg-color-transition: background-color var(--duration) ease-out;
 }
 
 @media (min-width: 481px) {
@@ -329,10 +330,29 @@ body {
 	flex-direction: column;
 	min-height: 100vh;
 }
-* {
+html,
+body,
+div,
+header,
+footer {
+	transition: var(--bg-color-transition);
+}
+a,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+span,
+form legend {
+	transition: var(--color-transition);
+}
+li {
+	transition-property: color, background-color;
 	transition-duration: var(--duration);
-	transition-property: background-color;
-	transition-timing-function: ease-out;
+	transition-timing-function: ease-in-out;
 }
 
 #main_page_content {
@@ -373,7 +393,6 @@ form legend {
 	color: var(--text);
 	margin-bottom: var(--space-s);
 	line-height: var(--heading-line-height);
-	transition: var(--color-transition);
 }
 
 /* text size */
@@ -412,7 +431,7 @@ small {
 
 p {
 	line-height: var(--body-line-height);
-	transition: var(--color-transition);
+	padding-bottom: var(--space-xs);
 }
 
 b,
@@ -424,8 +443,6 @@ a {
 	color: var(--primary);
 	cursor: pointer;
 	text-decoration: none;
-	transition-duration: var(--duration);
-	transition-property: color;
 }
 
 a:visited {
@@ -456,6 +473,9 @@ span.underlined::after {
 img.styled {
 	border-radius: var(--radius);
 	box-shadow: var(--box-shadox);
+	transition-property: box-shadow;
+	transition-duration: var(--duration);
+	transition-timing-function: ease-in-out;
 }
 
 /* 
@@ -543,6 +563,7 @@ form.gl button {
 
 	transition-property: color, background-color;
 	transition-duration: var(--duration);
+	transition-timing-function: ease-in-out;
 }
 .btn:visited {
 	color: var(--accent);

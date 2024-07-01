@@ -6,13 +6,6 @@ main.projects {
 }
 
 /* a project page */
-main.project article p {
-	font-size: calc(var(--text-s) / var(--text-quarter-scale));
-	line-height: 1.45;
-	letter-spacing: 0.02em;
-	margin-bottom: var(--space-xs);
-	font-weight: 400;
-}
 main.project img {
 	width: 100%;
 }
