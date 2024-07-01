@@ -171,21 +171,6 @@ section#projects {
 /* Other passions sections */
 #other-passions_list {
 	display: grid;
-	grid-template-columns: 1fr;
+	grid-template-columns: repeat(auto-fill, minmax(14em, 1fr));
 	gap: var(--space-m);
-}
-#other-passions_list-wrapper {
-	container: other-passion-list / inline-size;
-}
-
-@container other-passion-list (min-width: 550px) {
-	#other-passions_list {
-		grid-template-columns: 1fr 1fr;
-	}
-}
-
-@container other-passion-list (min-width: 900px) {
-	#other-passions_list {
-		grid-template-columns: 1fr 1fr 1fr;
-	}
 }
