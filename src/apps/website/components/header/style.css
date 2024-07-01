@@ -73,7 +73,7 @@ header .component-lang_switcher svg {
 
 header .skip-link {
 	position: absolute;
-	top: -30px;
+	top: -100%;
 }
 
 .skip-link:focus-visible {
