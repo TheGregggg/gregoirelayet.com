@@ -5,7 +5,7 @@ from django_components import component
 class Project_technologies(component.Component):
     template_name = "project_technologies/template.html"
 
-    def get_context_data(self, technologies, attrs: dict = None):
+    def get_context_data(self, technologies, attrs: dict | None = None):
         if attrs is None:
             attrs = {}
         return {
