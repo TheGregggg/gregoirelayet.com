@@ -16,18 +16,16 @@
         {% get_current_language as CURRENT_LANGUAGE_CODE %}
         {% for language_code, language_name in LANGUAGES %}
             {% get_language_info for language_code as lang %}
-            {% language language_code %}
-                <span {% if language_code == CURRENT_LANGUAGE_CODE %}class="underlined"{% endif %}>
-                    <form action="{% url 'set_language' %}" method="post">
-                        {% csrf_token %}
-                        <input name="language" type="hidden" value="{{ language_code }}">
-                        <input type="submit"
-                               value="{{ lang.name_local|title }}"
-                               rel="alternate"
-                               hreflang="{{ language_code }}">
-                    </form>
-                </span>
-            {% endlanguage %}
+            <span {% if language_code == CURRENT_LANGUAGE_CODE %}class="underlined"{% endif %}>
+                <form action="{% url 'set_language' %}" method="post">
+                    {% csrf_token %}
+                    <input name="language" type="hidden" value="{{ language_code }}">
+                    <input type="submit"
+                            value="{{ lang.name_local|title }}"
+                            rel="alternate"
+                            hreflang="{{ language_code }}">
+                </form>
+            </span>
         {% endfor %}
     </div>
 </div>
