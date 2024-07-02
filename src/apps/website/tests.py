@@ -25,11 +25,15 @@ class HomePageTests(WagtailPageTestCase):
         projects = ProjectsPage(title="Projects")
         project_one = ProjectPage(
             title="Test Project",
-            description=RichText("<p>project description</p>"),
+            short_description=RichText("<p>project description</p>"),
+            description=RichText("<p>project complete description</p>"),
             show_on_home_page=True,
         )
         project_two = ProjectPage(
             title="invisible_on_home_page_project",
+            short_description=RichText(
+                "<p>project_short_description_should_be_visible</p>"
+            ),
             description=RichText("<p>project_description_should_be_visible</p>"),
             show_on_home_page=False,
         )
