@@ -4,10 +4,11 @@
         hx-swap="innerHTML swap:50ms settle:100ms show:none"
         class="container">
     <a href="#main_page_content" class="skip-link">{% translate "Passer au contenu principal." %}</a>
-    {# djlint:off #}
-	<a href="/" id="main-title"><h1>Grégoire Layet</h1></a>
-    {# djlint:on #}
     <nav>
+        {# djlint:off #}
+        <a href="/" id="main-title"><h1>Grégoire Layet</h1></a>
+        <div class="header__spacer"></div>
+        {# djlint:on #}
         {% for block_page in data.pages %}
             {% with local_page=block_page.value.localized %}
                 <a href="{% pageurl local_page %}">{{ local_page.title }}</a>
