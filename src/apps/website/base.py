@@ -21,7 +21,7 @@ class HtmxPage(Page):
 
 class ComponentStructBlock(StructBlock):
     class Meta:
-        component: None | Component = None
+        component: None | type[Component] = None
 
     def render(self, value, context=None):
         if self.meta.component:
