@@ -12,7 +12,7 @@ from wagtail.search import index
 
 from apps.website.base import HtmxPage
 
-from .blocks import HeadingBlock, ImageBlock
+from .blocks import CodeBlock, HeadingBlock, ImageBlock
 
 
 class BlogPageTag(TaggedItemBase):
@@ -65,6 +65,7 @@ class BlogPage(HtmxPage):
                     icon="media",
                 ),
             ),
+            ("code_block", CodeBlock()),
         ],
         blank=True,
     )

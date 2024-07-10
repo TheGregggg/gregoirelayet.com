@@ -1,0 +1,326 @@
+html[data-theme="dark"] .highlight .hll {
+	background: #6e7681;
+}
+
+html[data-theme="dark"] .highlight {
+	color: #d4d2c8;
+}
+
+html[data-theme="dark"] .highlight .ch {
+	color: #f88f7f;
+	font-style: italic;
+}
+
+html[data-theme="dark"] .highlight .cp {
+	color: #ffad66;
+	font-weight: 700;
+}
+
+html[data-theme="dark"] .highlight .cs {
+	color: #7e8aa1;
+	font-style: italic;
+}
+
+html[data-theme="dark"] .highlight .gd {
+	color: #f88f7f;
+	background: #3d1e20;
+}
+
+html[data-theme="dark"] .highlight .ge {
+	color: #d4d2c8;
+	font-style: italic;
+}
+
+html[data-theme="dark"] .highlight .gi {
+	color: #6ad4af;
+	background: #19362c;
+}
+
+html[data-theme="dark"] .highlight .gs {
+	color: #d4d2c8;
+	font-weight: 700;
+}
+
+html[data-theme="dark"] .highlight .nd {
+	color: #7e8aa1;
+	font-weight: 700;
+	font-style: italic;
+}
+
+html[data-theme="dark"] .highlight .sa {
+	color: #f29e74;
+}
+
+html[data-theme="dark"] td.linenos .normal,
+html[data-theme="dark"] span.linenos {
+	color: #3c4354;
+}
+
+html[data-theme="dark"] td.linenos .special,
+html[data-theme="dark"] span.linenos.special {
+	color: #3c4354;
+	background: #ffffc0;
+}
+
+html[data-theme="dark"] .highlight .c,
+html[data-theme="dark"] .highlight .cm,
+html[data-theme="dark"] .highlight .cpf,
+html[data-theme="dark"] .highlight .c1,
+html[data-theme="dark"] .highlight .go,
+html[data-theme="dark"] .highlight .sd {
+	color: #7e8aa1;
+}
+
+html[data-theme="dark"] .highlight .err,
+html[data-theme="dark"] .highlight .gr,
+html[data-theme="dark"] .highlight .gt {
+	color: #f88f7f;
+}
+
+html[data-theme="dark"] .highlight .esc,
+html[data-theme="dark"] .highlight .g,
+html[data-theme="dark"] .highlight .n,
+html[data-theme="dark"] .highlight .x,
+html[data-theme="dark"] .highlight .p,
+html[data-theme="dark"] .highlight .ges,
+html[data-theme="dark"] .highlight .gh,
+html[data-theme="dark"] .highlight .gp,
+html[data-theme="dark"] .highlight .gu,
+html[data-theme="dark"] .highlight .nl,
+html[data-theme="dark"] .highlight .nn,
+html[data-theme="dark"] .highlight .nx,
+html[data-theme="dark"] .highlight .nv,
+html[data-theme="dark"] .highlight .pm,
+html[data-theme="dark"] .highlight .w,
+html[data-theme="dark"] .highlight .vc,
+html[data-theme="dark"] .highlight .vg,
+html[data-theme="dark"] .highlight .vi,
+html[data-theme="dark"] .highlight .vm {
+	color: #d4d2c8;
+}
+
+html[data-theme="dark"] .highlight .k,
+html[data-theme="dark"] .highlight .o,
+html[data-theme="dark"] .highlight .kc,
+html[data-theme="dark"] .highlight .kd,
+html[data-theme="dark"] .highlight .kn,
+html[data-theme="dark"] .highlight .kp,
+html[data-theme="dark"] .highlight .kr,
+html[data-theme="dark"] .highlight .ow {
+	color: #ffad66;
+}
+
+html[data-theme="dark"] .highlight .l,
+html[data-theme="dark"] .highlight .ld,
+html[data-theme="dark"] .highlight .s,
+html[data-theme="dark"] .highlight .sb,
+html[data-theme="dark"] .highlight .sc,
+html[data-theme="dark"] .highlight .dl,
+html[data-theme="dark"] .highlight .s2,
+html[data-theme="dark"] .highlight .sh,
+html[data-theme="dark"] .highlight .s1 {
+	color: #d5ff80;
+}
+
+html[data-theme="dark"] .highlight .kt,
+html[data-theme="dark"] .highlight .nc,
+html[data-theme="dark"] .highlight .ne {
+	color: #73d0ff;
+}
+
+html[data-theme="dark"] .highlight .m,
+html[data-theme="dark"] .highlight .mb,
+html[data-theme="dark"] .highlight .mf,
+html[data-theme="dark"] .highlight .mh,
+html[data-theme="dark"] .highlight .mi,
+html[data-theme="dark"] .highlight .mo,
+html[data-theme="dark"] .highlight .ss,
+html[data-theme="dark"] .highlight .il {
+	color: #dfbfff;
+}
+
+html[data-theme="dark"] .highlight .na,
+html[data-theme="dark"] .highlight .nb,
+html[data-theme="dark"] .highlight .no,
+html[data-theme="dark"] .highlight .nf,
+html[data-theme="dark"] .highlight .py,
+html[data-theme="dark"] .highlight .fm {
+	color: #ffd173;
+}
+
+html[data-theme="dark"] .highlight .ni,
+html[data-theme="dark"] .highlight .se,
+html[data-theme="dark"] .highlight .si,
+html[data-theme="dark"] .highlight .sx,
+html[data-theme="dark"] .highlight .sr {
+	color: #95e6cb;
+}
+
+html[data-theme="dark"] .highlight .nt,
+html[data-theme="dark"] .highlight .bp {
+	color: #5ccfe6;
+}
+@media (prefers-color-scheme: dark) {
+	html[data-theme="auto"] .highlight .hll {
+		background: #6e7681;
+	}
+
+	html[data-theme="auto"] .highlight {
+		color: #d4d2c8;
+	}
+
+	html[data-theme="auto"] .highlight .ch {
+		color: #f88f7f;
+		font-style: italic;
+	}
+
+	html[data-theme="auto"] .highlight .cp {
+		color: #ffad66;
+		font-weight: 700;
+	}
+
+	html[data-theme="auto"] .highlight .cs {
+		color: #7e8aa1;
+		font-style: italic;
+	}
+
+	html[data-theme="auto"] .highlight .gd {
+		color: #f88f7f;
+		background: #3d1e20;
+	}
+
+	html[data-theme="auto"] .highlight .ge {
+		color: #d4d2c8;
+		font-style: italic;
+	}
+
+	html[data-theme="auto"] .highlight .gi {
+		color: #6ad4af;
+		background: #19362c;
+	}
+
+	html[data-theme="auto"] .highlight .gs {
+		color: #d4d2c8;
+		font-weight: 700;
+	}
+
+	html[data-theme="auto"] .highlight .nd {
+		color: #7e8aa1;
+		font-weight: 700;
+		font-style: italic;
+	}
+
+	html[data-theme="auto"] .highlight .sa {
+		color: #f29e74;
+	}
+
+	html[data-theme="auto"] td.linenos .normal,
+	html[data-theme="auto"] span.linenos {
+		color: #3c4354;
+	}
+
+	html[data-theme="auto"] td.linenos .special,
+	html[data-theme="auto"] span.linenos.special {
+		color: #3c4354;
+		background: #ffffc0;
+	}
+
+	html[data-theme="auto"] .highlight .c,
+	html[data-theme="auto"] .highlight .cm,
+	html[data-theme="auto"] .highlight .cpf,
+	html[data-theme="auto"] .highlight .c1,
+	html[data-theme="auto"] .highlight .go,
+	html[data-theme="auto"] .highlight .sd {
+		color: #7e8aa1;
+	}
+
+	html[data-theme="auto"] .highlight .err,
+	html[data-theme="auto"] .highlight .gr,
+	html[data-theme="auto"] .highlight .gt {
+		color: #f88f7f;
+	}
+
+	html[data-theme="auto"] .highlight .esc,
+	html[data-theme="auto"] .highlight .g,
+	html[data-theme="auto"] .highlight .n,
+	html[data-theme="auto"] .highlight .x,
+	html[data-theme="auto"] .highlight .p,
+	html[data-theme="auto"] .highlight .ges,
+	html[data-theme="auto"] .highlight .gh,
+	html[data-theme="auto"] .highlight .gp,
+	html[data-theme="auto"] .highlight .gu,
+	html[data-theme="auto"] .highlight .nl,
+	html[data-theme="auto"] .highlight .nn,
+	html[data-theme="auto"] .highlight .nx,
+	html[data-theme="auto"] .highlight .nv,
+	html[data-theme="auto"] .highlight .pm,
+	html[data-theme="auto"] .highlight .w,
+	html[data-theme="auto"] .highlight .vc,
+	html[data-theme="auto"] .highlight .vg,
+	html[data-theme="auto"] .highlight .vi,
+	html[data-theme="auto"] .highlight .vm {
+		color: #d4d2c8;
+	}
+
+	html[data-theme="auto"] .highlight .k,
+	html[data-theme="auto"] .highlight .o,
+	html[data-theme="auto"] .highlight .kc,
+	html[data-theme="auto"] .highlight .kd,
+	html[data-theme="auto"] .highlight .kn,
+	html[data-theme="auto"] .highlight .kp,
+	html[data-theme="auto"] .highlight .kr,
+	html[data-theme="auto"] .highlight .ow {
+		color: #ffad66;
+	}
+
+	html[data-theme="auto"] .highlight .l,
+	html[data-theme="auto"] .highlight .ld,
+	html[data-theme="auto"] .highlight .s,
+	html[data-theme="auto"] .highlight .sb,
+	html[data-theme="auto"] .highlight .sc,
+	html[data-theme="auto"] .highlight .dl,
+	html[data-theme="auto"] .highlight .s2,
+	html[data-theme="auto"] .highlight .sh,
+	html[data-theme="auto"] .highlight .s1 {
+		color: #d5ff80;
+	}
+
+	html[data-theme="auto"] .highlight .kt,
+	html[data-theme="auto"] .highlight .nc,
+	html[data-theme="auto"] .highlight .ne {
+		color: #73d0ff;
+	}
+
+	html[data-theme="auto"] .highlight .m,
+	html[data-theme="auto"] .highlight .mb,
+	html[data-theme="auto"] .highlight .mf,
+	html[data-theme="auto"] .highlight .mh,
+	html[data-theme="auto"] .highlight .mi,
+	html[data-theme="auto"] .highlight .mo,
+	html[data-theme="auto"] .highlight .ss,
+	html[data-theme="auto"] .highlight .il {
+		color: #dfbfff;
+	}
+
+	html[data-theme="auto"] .highlight .na,
+	html[data-theme="auto"] .highlight .nb,
+	html[data-theme="auto"] .highlight .no,
+	html[data-theme="auto"] .highlight .nf,
+	html[data-theme="auto"] .highlight .py,
+	html[data-theme="auto"] .highlight .fm {
+		color: #ffd173;
+	}
+
+	html[data-theme="auto"] .highlight .ni,
+	html[data-theme="auto"] .highlight .se,
+	html[data-theme="auto"] .highlight .si,
+	html[data-theme="auto"] .highlight .sx,
+	html[data-theme="auto"] .highlight .sr {
+		color: #95e6cb;
+	}
+
+	html[data-theme="auto"] .highlight .nt,
+	html[data-theme="auto"] .highlight .bp {
+		color: #5ccfe6;
+	}
+}
