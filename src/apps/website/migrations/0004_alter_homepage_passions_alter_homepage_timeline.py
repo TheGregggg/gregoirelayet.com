@@ -8,18 +8,45 @@ from django.db import migrations
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('website', '0003_homepage_delete_skill_delete_skillcategory'),
+        ("website", "0003_homepage_delete_skill_delete_skillcategory"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='homepage',
-            name='passions',
-            field=wagtail.fields.StreamField([('Passion', wagtail.blocks.StructBlock([('title', wagtail.blocks.CharBlock()), ('content', wagtail.blocks.RichTextBlock())]))], blank=True),
+            model_name="homepage",
+            name="passions",
+            field=wagtail.fields.StreamField(
+                [
+                    (
+                        "Passion",
+                        wagtail.blocks.StructBlock(
+                            [
+                                ("title", wagtail.blocks.CharBlock()),
+                                ("content", wagtail.blocks.RichTextBlock()),
+                            ]
+                        ),
+                    )
+                ],
+                blank=True,
+            ),
         ),
         migrations.AlterField(
-            model_name='homepage',
-            name='timeline',
-            field=wagtail.fields.StreamField([('Event', wagtail.blocks.StructBlock([('title', wagtail.blocks.CharBlock()), ('year', wagtail.blocks.CharBlock()), ('description', wagtail.blocks.RichTextBlock())]))], blank=True),
+            model_name="homepage",
+            name="timeline",
+            field=wagtail.fields.StreamField(
+                [
+                    (
+                        "Event",
+                        wagtail.blocks.StructBlock(
+                            [
+                                ("title", wagtail.blocks.CharBlock()),
+                                ("year", wagtail.blocks.CharBlock()),
+                                ("description", wagtail.blocks.RichTextBlock()),
+                            ]
+                        ),
+                    )
+                ],
+                blank=True,
+            ),
         ),
     ]

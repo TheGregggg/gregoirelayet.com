@@ -1,14 +1,12 @@
 {% load wagtailcore_tags %}
 <div class="component-experience-container">
-	<div class="component-experience">
-		<aside class="component-experience__year-container">
-			<h3 class="component-experience__year">
-				<time>{{ year }}</time>
-			</h3>
-		</aside>
-		<h3 class="component-experience__title">{{ title }}</h3>
-		<article class="component-experience__description">
-			{{ description|richtext }}
-		</article>
-	</div>
+    <div class="component-experience">
+        <aside class="component-experience__year-container">
+            <h3 class="component-experience__year">
+                <time>{{ year }}</time>
+            </h3>
+        </aside>
+        <h3 class="component-experience__title">{{ title }}</h3>
+        <article class="component-experience__description">{{ description|richtext }}</article>
+    </div>
 </div>

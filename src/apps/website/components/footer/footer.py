@@ -1,4 +1,5 @@
 from django_components import component
+
 from apps.website.models.components.footer import Footer as FooterModel
 
 

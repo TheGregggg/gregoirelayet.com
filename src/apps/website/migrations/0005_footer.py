@@ -8,17 +8,35 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('website', '0004_alter_homepage_passions_alter_homepage_timeline'),
+        ("website", "0004_alter_homepage_passions_alter_homepage_timeline"),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='Footer',
+            name="Footer",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('pages', wagtail.fields.StreamField([('Page', wagtail.blocks.PageChooserBlock(can_choose_root=True))])),
-                ('github_link', models.URLField(blank=True, null=True)),
-                ('email', models.EmailField(blank=True, max_length=254, null=True)),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                (
+                    "pages",
+                    wagtail.fields.StreamField(
+                        [
+                            (
+                                "Page",
+                                wagtail.blocks.PageChooserBlock(can_choose_root=True),
+                            )
+                        ]
+                    ),
+                ),
+                ("github_link", models.URLField(blank=True, null=True)),
+                ("email", models.EmailField(blank=True, max_length=254, null=True)),
             ],
         ),
     ]

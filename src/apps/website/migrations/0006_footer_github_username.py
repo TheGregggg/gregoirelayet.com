@@ -6,13 +6,13 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('website', '0005_footer'),
+        ("website", "0005_footer"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='footer',
-            name='github_username',
+            model_name="footer",
+            name="github_username",
             field=models.CharField(blank=True, null=True),
         ),
     ]

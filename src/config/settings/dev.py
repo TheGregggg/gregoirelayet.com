@@ -1,4 +1,4 @@
-from .base import *
+from .base import *  # noqa
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -13,11 +13,11 @@ EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 
 WSGI_APPLICATION = "config.wsgi.app"
 
-if not TESTING:
-    INSTALLED_APPS += [
+if not TESTING:  # noqa
+    INSTALLED_APPS += [  # noqa
         "debug_toolbar",
     ]
-    MIDDLEWARE += [
+    MIDDLEWARE += [  # noqa
         "debug_toolbar.middleware.DebugToolbarMiddleware",
     ]
 

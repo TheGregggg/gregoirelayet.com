@@ -1,9 +1,10 @@
-from wagtail.test.utils import WagtailPageTestCase
-from wagtail.rich_text import RichText
 from wagtail.models import Page, Site
-from .models import HomePage
+from wagtail.rich_text import RichText
+from wagtail.test.utils import WagtailPageTestCase
 
-from apps.project.models import ProjectsPage, ProjectPage
+from apps.project.models import ProjectPage, ProjectsPage
+
+from .models.homepage import HomePage
 
 
 # Create your tests here.

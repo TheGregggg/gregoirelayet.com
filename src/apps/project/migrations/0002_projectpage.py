@@ -9,26 +9,70 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('project', '0001_initial'),
-        ('wagtailcore', '0091_remove_revision_submitted_for_moderation'),
-        ('wagtailimages', '0025_alter_image_file_alter_rendition_file'),
+        ("project", "0001_initial"),
+        ("wagtailcore", "0091_remove_revision_submitted_for_moderation"),
+        ("wagtailimages", "0025_alter_image_file_alter_rendition_file"),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='ProjectPage',
+            name="ProjectPage",
             fields=[
-                ('page_ptr', models.OneToOneField(auto_created=True, on_delete=django.db.models.deletion.CASCADE, parent_link=True, primary_key=True, serialize=False, to='wagtailcore.page')),
-                ('description', wagtail.fields.RichTextField(default='', verbose_name="Project's description")),
-                ('technologies', wagtail.fields.StreamField([('Technology', wagtail.blocks.CharBlock())])),
-                ('website_link', models.URLField(default=None, null=True, verbose_name="Projet website's link")),
-                ('repo_link', models.URLField(default=None, null=True, verbose_name="Projet repo's link")),
-                ('show_on_home_page', models.BooleanField(default=False, verbose_name='Show this project on the home page')),
-                ('image', models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.SET_NULL, related_name='+', to='wagtailimages.image')),
+                (
+                    "page_ptr",
+                    models.OneToOneField(
+                        auto_created=True,
+                        on_delete=django.db.models.deletion.CASCADE,
+                        parent_link=True,
+                        primary_key=True,
+                        serialize=False,
+                        to="wagtailcore.page",
+                    ),
+                ),
+                (
+                    "description",
+                    wagtail.fields.RichTextField(
+                        default="", verbose_name="Project's description"
+                    ),
+                ),
+                (
+                    "technologies",
+                    wagtail.fields.StreamField(
+                        [("Technology", wagtail.blocks.CharBlock())]
+                    ),
+                ),
+                (
+                    "website_link",
+                    models.URLField(
+                        default=None, null=True, verbose_name="Projet website's link"
+                    ),
+                ),
+                (
+                    "repo_link",
+                    models.URLField(
+                        default=None, null=True, verbose_name="Projet repo's link"
+                    ),
+                ),
+                (
+                    "show_on_home_page",
+                    models.BooleanField(
+                        default=False, verbose_name="Show this project on the home page"
+                    ),
+                ),
+                (
+                    "image",
+                    models.ForeignKey(
+                        blank=True,
+                        null=True,
+                        on_delete=django.db.models.deletion.SET_NULL,
+                        related_name="+",
+                        to="wagtailimages.image",
+                    ),
+                ),
             ],
             options={
-                'abstract': False,
+                "abstract": False,
             },
-            bases=('wagtailcore.page',),
+            bases=("wagtailcore.page",),
         ),
     ]

@@ -1,0 +1,5 @@
+[tool.djlint]
+custom_blocks="component,endcomponent"
+
+[tool.isort]
+profile = "black"

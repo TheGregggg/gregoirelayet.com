@@ -1,7 +1,7 @@
 from wagtail import blocks
-from wagtail.fields import StreamField
-from wagtail.contrib.settings.models import BaseGenericSetting, register_setting
 from wagtail.admin.panels import FieldPanel
+from wagtail.contrib.settings.models import BaseGenericSetting, register_setting
+from wagtail.fields import StreamField
 
 
 @register_setting

@@ -21,9 +21,9 @@
                     {% csrf_token %}
                     <input name="language" type="hidden" value="{{ language_code }}">
                     <input type="submit"
-                            value="{{ lang.name_local|title }}"
-                            rel="alternate"
-                            hreflang="{{ language_code }}">
+                           value="{{ lang.name_local|title }}"
+                           rel="alternate"
+                           hreflang="{{ language_code }}">
                 </form>
             </span>
         {% endfor %}

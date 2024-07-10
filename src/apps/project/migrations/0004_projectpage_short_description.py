@@ -7,13 +7,16 @@ from django.db import migrations
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('project', '0003_alter_projectpage_repo_link_and_more'),
+        ("project", "0003_alter_projectpage_repo_link_and_more"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='projectpage',
-            name='short_description',
-            field=wagtail.fields.RichTextField(default='', verbose_name="Project's short description, to show on list item"),
+            model_name="projectpage",
+            name="short_description",
+            field=wagtail.fields.RichTextField(
+                default="",
+                verbose_name="Project's short description, to show on list item",
+            ),
         ),
     ]

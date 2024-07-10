@@ -6,8 +6,8 @@ from wagtail.models import Locale
 
 from apps.project.models import ProjectPage
 from apps.website.base import ComponentStructBlock, HtmxPage
-from apps.website.components.other_passion.other_passion import Other_passion
 from apps.website.components.experience.experience import Experience
+from apps.website.components.other_passion.other_passion import Other_passion
 
 
 class TimelineBlock(ComponentStructBlock):

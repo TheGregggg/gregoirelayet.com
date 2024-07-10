@@ -1,13 +1,14 @@
 # Gregoire Layet
 # Idempotent script for seting up the postgres Database for the django app
 #
+import os
+from pathlib import Path
+
 import psycopg
-from psycopg.sql import SQL, Identifier, Literal
 from psycopg.abc import Query
 from psycopg.cursor import Cursor
 from psycopg.errors import DuplicateDatabase, DuplicateObject, DuplicateSchema
-from pathlib import Path
-import os
+from psycopg.sql import SQL, Identifier, Literal
 
 
 def get_secret_content(secret_name):
@@ -25,9 +26,9 @@ db_root_password = get_secret_content("db_root_user_password")
 db_user_name = "gerg"
 db_user_password = get_secret_content("db_user_password")
 
-setup_db_conn = f"dbname={root_db_name} user={db_root_name} password={db_root_password} host=127.0.0.1"
-setup_main_db_conn = f"dbname=gregoirelayet.com user={db_user_name} password={db_user_password} host=127.0.0.1"
-setup_test_db_conn = f"dbname=test_gregoirelayet.com user={db_user_name} password={db_user_password} host=127.0.0.1"
+setup_db_conn = f"dbname={root_db_name} user={db_root_name} password={db_root_password} host=127.0.0.1"  # noqa
+setup_main_db_conn = f"dbname=gregoirelayet.com user={db_user_name} password={db_user_password} host=127.0.0.1"  # noqa
+setup_test_db_conn = f"dbname=test_gregoirelayet.com user={db_user_name} password={db_user_password} host=127.0.0.1"  # noqa
 
 
 def create_if_not_exist(cur: Cursor, query: Query, if_exist_message: str):
