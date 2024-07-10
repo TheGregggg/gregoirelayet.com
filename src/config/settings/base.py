@@ -10,9 +10,11 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 
-from pathlib import Path
 import os
 import sys
+from pathlib import Path
+
+from typing_extensions import TypedDict
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
@@ -113,7 +115,6 @@ with open(
 ) as f:
     DB_PASSWORD = f.read().strip()
 
-from typing_extensions import TypedDict
 
 DB_Options_Typing = TypedDict("DB_Options_Typing", {"options": str})
 DB_Test_Typing = TypedDict("DB_Test_Typing", {"OPTIONS": DB_Options_Typing})
@@ -157,7 +158,7 @@ DATABASES: dict[str, DB_Typing] = {
 
 AUTH_PASSWORD_VALIDATORS = [
     {
-        "NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator",
+        "NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator",  # noqa
     },
     {
         "NAME": "django.contrib.auth.password_validation.MinimumLengthValidator",

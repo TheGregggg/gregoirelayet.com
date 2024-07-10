@@ -9,6 +9,25 @@
 		"mypy.dmypyExecutable": "~/.pyenv/versions/3.12.1/envs/gl.com-3.12.1/bin/dmypy",
 		"mypy.targets": [
 			"src"
-		]
+		],
+		"djlint.configuration": "pyproject.toml",
+		"emmet.includeLanguages": {
+			"django-html": "html"
+		},
+		"[django-html]": {
+			"editor.quickSuggestions": {
+				"other": true,
+				"comments": true,
+				"strings": true
+			},
+			"djlint.enableLinting": true,
+			"djlint.profile": "django"
+		},
+		"[html][django-html]": {
+			"editor.defaultFormatter": "monosans.djlint"
+		},
+		"files.associations": {
+			"**/components/**/*.html": "django-html"
+		}
 	}
 }

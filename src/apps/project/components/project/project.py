@@ -1,4 +1,5 @@
 from django_components import component
+
 from apps.project.models import ProjectPage
 
 

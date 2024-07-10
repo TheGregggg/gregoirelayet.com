@@ -8,23 +8,32 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('project', '0002_projectpage'),
+        ("project", "0002_projectpage"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='projectpage',
-            name='repo_link',
-            field=models.URLField(blank=True, default=None, null=True, verbose_name="Projet repo's link"),
+            model_name="projectpage",
+            name="repo_link",
+            field=models.URLField(
+                blank=True, default=None, null=True, verbose_name="Projet repo's link"
+            ),
         ),
         migrations.AlterField(
-            model_name='projectpage',
-            name='technologies',
-            field=wagtail.fields.StreamField([('Technology', wagtail.blocks.CharBlock())], blank=True, null=True),
+            model_name="projectpage",
+            name="technologies",
+            field=wagtail.fields.StreamField(
+                [("Technology", wagtail.blocks.CharBlock())], blank=True, null=True
+            ),
         ),
         migrations.AlterField(
-            model_name='projectpage',
-            name='website_link',
-            field=models.URLField(blank=True, default=None, null=True, verbose_name="Projet website's link"),
+            model_name="projectpage",
+            name="website_link",
+            field=models.URLField(
+                blank=True,
+                default=None,
+                null=True,
+                verbose_name="Projet website's link",
+            ),
         ),
     ]

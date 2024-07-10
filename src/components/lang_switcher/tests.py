@@ -1,14 +1,15 @@
-from .lang_switcher import Lang_switcher
-from django.test import TestCase
 from django.conf import settings
+from django.test import TestCase
 from django.utils.translation import get_language_info
+
+from .lang_switcher import Lang_switcher
 
 
 class LangSwitcherTestCase(TestCase):
     def test_rendering(self):
         try:
             Lang_switcher.render()
-        except:
+        except:  # noqa
             self.fail("Lang_switcher can't render")
 
     def test_lang_present_in_dorpdown(self):

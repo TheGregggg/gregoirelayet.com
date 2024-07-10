@@ -7,24 +7,45 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('website', '0001_initial'),
+        ("website", "0001_initial"),
     ]
 
     operations = [
         migrations.AlterModelOptions(
-            name='skillcategory',
-            options={'ordering': ['category_order'], 'verbose_name': 'Skill Category', 'verbose_name_plural': 'Skill Categories'},
+            name="skillcategory",
+            options={
+                "ordering": ["category_order"],
+                "verbose_name": "Skill Category",
+                "verbose_name_plural": "Skill Categories",
+            },
         ),
         migrations.CreateModel(
-            name='Skill',
+            name="Skill",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('text', models.TextField(max_length=300)),
-                ('skill_order', models.PositiveSmallIntegerField(db_index=True, default=0)),
-                ('category', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='website.skillcategory')),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("text", models.TextField(max_length=300)),
+                (
+                    "skill_order",
+                    models.PositiveSmallIntegerField(db_index=True, default=0),
+                ),
+                (
+                    "category",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE,
+                        to="website.skillcategory",
+                    ),
+                ),
             ],
             options={
-                'ordering': ['skill_order'],
+                "ordering": ["skill_order"],
             },
         ),
     ]

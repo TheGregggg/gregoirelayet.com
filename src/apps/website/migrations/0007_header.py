@@ -8,18 +8,36 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('website', '0006_footer_github_username'),
+        ("website", "0006_footer_github_username"),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='Header',
+            name="Header",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('pages', wagtail.fields.StreamField([('Page', wagtail.blocks.PageChooserBlock(can_choose_root=True))])),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                (
+                    "pages",
+                    wagtail.fields.StreamField(
+                        [
+                            (
+                                "Page",
+                                wagtail.blocks.PageChooserBlock(can_choose_root=True),
+                            )
+                        ]
+                    ),
+                ),
             ],
             options={
-                'abstract': False,
+                "abstract": False,
             },
         ),
     ]

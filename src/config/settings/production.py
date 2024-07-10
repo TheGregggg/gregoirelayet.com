@@ -1,4 +1,7 @@
-from config.settings.base import *
+import os
+from pathlib import Path
+
+from config.settings.base import *  # noqa
 
 DEBUG = False
 

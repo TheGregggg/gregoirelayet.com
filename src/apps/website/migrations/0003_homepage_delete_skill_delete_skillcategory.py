@@ -9,28 +9,68 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('wagtailcore', '0091_remove_revision_submitted_for_moderation'),
-        ('website', '0002_alter_skillcategory_options_skill'),
+        ("wagtailcore", "0091_remove_revision_submitted_for_moderation"),
+        ("website", "0002_alter_skillcategory_options_skill"),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='HomePage',
+            name="HomePage",
             fields=[
-                ('page_ptr', models.OneToOneField(auto_created=True, on_delete=django.db.models.deletion.CASCADE, parent_link=True, primary_key=True, serialize=False, to='wagtailcore.page')),
-                ('about_me', wagtail.fields.RichTextField(blank=True)),
-                ('timeline', wagtail.fields.StreamField([('Event', wagtail.blocks.StructBlock([('title', wagtail.blocks.CharBlock()), ('year', wagtail.blocks.CharBlock())]))])),
-                ('passions', wagtail.fields.StreamField([('Passion', wagtail.blocks.StructBlock([('title', wagtail.blocks.CharBlock()), ('content', wagtail.blocks.RichTextBlock())]))])),
+                (
+                    "page_ptr",
+                    models.OneToOneField(
+                        auto_created=True,
+                        on_delete=django.db.models.deletion.CASCADE,
+                        parent_link=True,
+                        primary_key=True,
+                        serialize=False,
+                        to="wagtailcore.page",
+                    ),
+                ),
+                ("about_me", wagtail.fields.RichTextField(blank=True)),
+                (
+                    "timeline",
+                    wagtail.fields.StreamField(
+                        [
+                            (
+                                "Event",
+                                wagtail.blocks.StructBlock(
+                                    [
+                                        ("title", wagtail.blocks.CharBlock()),
+                                        ("year", wagtail.blocks.CharBlock()),
+                                    ]
+                                ),
+                            )
+                        ]
+                    ),
+                ),
+                (
+                    "passions",
+                    wagtail.fields.StreamField(
+                        [
+                            (
+                                "Passion",
+                                wagtail.blocks.StructBlock(
+                                    [
+                                        ("title", wagtail.blocks.CharBlock()),
+                                        ("content", wagtail.blocks.RichTextBlock()),
+                                    ]
+                                ),
+                            )
+                        ]
+                    ),
+                ),
             ],
             options={
-                'abstract': False,
+                "abstract": False,
             },
-            bases=('wagtailcore.page',),
+            bases=("wagtailcore.page",),
         ),
         migrations.DeleteModel(
-            name='Skill',
+            name="Skill",
         ),
         migrations.DeleteModel(
-            name='SkillCategory',
+            name="SkillCategory",
         ),
     ]
