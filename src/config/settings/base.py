@@ -24,7 +24,7 @@ SECRET_KEY = "this_is_not_secret"
 TESTING = "test" in sys.argv
 
 # Application definition
-APPS = ["apps.website", "apps.project"]
+APPS = ["apps.website", "apps.project", "apps.blog"]
 
 THIRD_PARTY_APPS = [
     "django_htmx",
