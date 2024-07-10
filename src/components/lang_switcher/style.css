@@ -13,8 +13,7 @@
 }
 .component-lang_switcher .dropdown {
 	position: absolute;
-	left: calc(50% - calc(var(--space-xxxs-fixed) / 2));
-	transform: translate(-50%, 0);
+	right: 0px;
 	background-color: var(--primary);
 	z-index: 20;
 	padding: var(--space-s);
@@ -44,4 +43,11 @@
 	font-family: inherit;
 	cursor: pointer;
 	padding: 0;
+}
+
+@media (min-width: 700px) {
+	.component-lang_switcher .dropdown {
+		right: max(calc(50% + calc(var(--space-xxxs-fixed) / 2)), 0px);
+		transform: translate(+50%, 0);
+	}
 }
