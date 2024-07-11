@@ -12,7 +12,9 @@
                 <h3 class="mb--xxs">{% translate "Etudiant à Polytech Nantes" %}</h3>
             </div>
             <div id="profile-picture-wrapper">
+                {% comment %} djlint:off H006 {% endcomment %}
                 <img id="profile-picture" src="{% static "website/rx7_small.jpg" %}" alt="" class="styled">
+                {% comment %} djlint:on {% endcomment %}
             </div>
             <div id="aboutme">
                 <h2 class="styled_title">{% translate "A propos" %}</h2>
@@ -31,7 +33,7 @@
         <section id="experiences">
             <h2 class="styled_title">{% translate "Expériences" %}</h2>
             <div class="experiences__list">
-                {% for event in page.timeline %}
+                {% for event in page.experiences %}
                     {% include_block event %}
                 {% endfor %}
             </div>
@@ -39,7 +41,7 @@
         <section id="other-passions">
             <h2 class="styled_title">{% translate "Autres centres d'intérêt" %}</h2>
             <div class="other-passions__grid">
-                {% for other_passion in page.passions %}
+                {% for other_passion in page.other_passions %}
                     {% include_block other_passion %}
                 {% endfor %}
             </div>

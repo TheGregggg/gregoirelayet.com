@@ -1,43 +1,23 @@
 from django.http import HttpRequest
-from wagtail import blocks
 from wagtail.admin.panels import FieldPanel
 from wagtail.fields import RichTextField, StreamField
 from wagtail.models import Locale
 
 from apps.project.models import ProjectPage
-from apps.website.base import ComponentStructBlock, HtmxPage
-from apps.website.components.experience.experience import Experience
-from apps.website.components.other_passion.other_passion import Other_passion
-
-
-class TimelineBlock(ComponentStructBlock):
-    title = blocks.CharBlock()
-    year = blocks.CharBlock()
-    description = blocks.RichTextBlock()
-
-    class Meta:
-        icon = "calendar-alt"
-        component = Experience
-
-
-class PassionBlock(ComponentStructBlock):
-    title = blocks.CharBlock()
-    content = blocks.RichTextBlock()
-
-    class Meta:
-        icon = "pick"
-        component = Other_passion
+from apps.website.base import HtmxPage
+from apps.website.components.experience.experience import ExperienceBlock
+from apps.website.components.other_passion.other_passion import OtherPassionBlock
 
 
 class HomePage(HtmxPage):
     about_me = RichTextField(blank=True)
-    timeline = StreamField([("Event", TimelineBlock())], blank=True)
-    passions = StreamField([("Passion", PassionBlock())], blank=True)
+    experiences = StreamField([("Experience", ExperienceBlock())], blank=True)
+    other_passions = StreamField([("Passion", OtherPassionBlock())], blank=True)
 
     content_panels = HtmxPage.content_panels + [
         FieldPanel("about_me"),
-        FieldPanel("timeline"),
-        FieldPanel("passions"),
+        FieldPanel("experiences"),
+        FieldPanel("other_passions"),
     ]
 
     def get_context(self, request: HttpRequest, *args, **kwargs):
