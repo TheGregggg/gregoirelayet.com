@@ -1,7 +1,7 @@
 .component-card_title_content {
 	background-color: var(--primary-light);
 	border-radius: var(--radius);
-	box-shadow: var(--box-shadox);
+	box-shadow: var(--box-shadow);
 
 	padding: var(--text-m);
 	padding-top: calc(var(--text-m) / var(--heading-line-height));

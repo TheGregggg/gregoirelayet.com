@@ -1,14 +1,4 @@
-from pygments import highlight
-from pygments.formatters import HtmlFormatter
-from pygments.lexers import get_lexer_by_name
-from wagtail.blocks import (
-    BooleanBlock,
-    CharBlock,
-    ChoiceBlock,
-    RawHTMLBlock,
-    StructBlock,
-    TextBlock,
-)
+from wagtail.blocks import CharBlock, ChoiceBlock
 from wagtail.images.blocks import ImageChooserBlock
 
 from apps.website.base import ComponentStructBlock
@@ -43,38 +33,3 @@ class HeadingBlock(ComponentStructBlock):
     class Meta:
         icon = "title"
         component = HeaderBlockComponent
-
-
-class CodeBlock(StructBlock):
-    language = ChoiceBlock(
-        choices=[
-            ("bash", "Bash/Shell"),
-            ("css", "CSS"),
-            ("diff", "diff"),
-            ("html", "HTML"),
-            ("javascript", "Javascript"),
-            ("json", "JSON"),
-            ("python", "Python"),
-            ("yaml", "YAML"),
-            ("django", "Django/Jinja"),
-            ("docker", "Dockerfile"),
-        ],
-        group="language_and_lines",
-    )
-    show_lines = BooleanBlock(default=False, group="language_and_lines")
-    code = TextBlock()
-    rendered_code = RawHTMLBlock(blank=True, required=False)
-
-    class Meta:
-        icon = "code"
-        form_template = "blog/block_forms/code_block.html"
-
-    def clean(self, value):
-        result = super().clean(value)
-
-        lexer = get_lexer_by_name(result["language"], stripall=True)
-        formater = HtmlFormatter(linenos=result["show_lines"])
-
-        result["rendered_code"] = highlight(result["code"], lexer, formater)
-
-        return result
