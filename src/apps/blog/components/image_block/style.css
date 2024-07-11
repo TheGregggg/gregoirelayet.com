@@ -1,3 +1,8 @@
-.component-image_block {
-    background: red;
+.component-image_block img,
+.component-image_block picture {
+	display: block;
+}
+.component-image_block__figcaption {
+	width: fit-content;
+	margin-left: auto;
 }
