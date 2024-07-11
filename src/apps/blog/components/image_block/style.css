@@ -2,6 +2,9 @@
 .component-image_block picture {
 	display: block;
 }
+.component-image_block img {
+	width: 100%;
+}
 .component-image_block__figcaption {
 	width: fit-content;
 	margin-left: auto;
