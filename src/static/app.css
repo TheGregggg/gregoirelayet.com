@@ -225,7 +225,7 @@ html {
 
 	--radius: var(--space-xs);
 
-	--box-shadox: var(--space-xxxs-fixed) var(--space-xxxs-fixed) 0px
+	--box-shadow: var(--space-xxxs-fixed) var(--space-xxxs-fixed) 0px
 		var(--accent);
 
 	/* Transitions */
@@ -472,7 +472,7 @@ span.underlined::after {
 
 img.styled {
 	border-radius: var(--radius);
-	box-shadow: var(--box-shadox);
+	box-shadow: var(--box-shadow);
 	transition-property: box-shadow;
 	transition-duration: var(--duration);
 	transition-timing-function: ease-in-out;

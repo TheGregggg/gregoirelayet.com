@@ -10,4 +10,3 @@ class ImageBlock(component.Component):
 
     class Media:
         css = "image_block/style.css"
-        js = "image_block/script.js"
