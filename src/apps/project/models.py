@@ -1,7 +1,7 @@
 from django.db import models
 from django.http import HttpRequest
-from wagtail import blocks
-from wagtail.admin.panels import FieldPanel, FieldRowPanel
+from wagtail.admin.panels import FieldPanel
+from wagtail.blocks import CharBlock, URLBlock
 from wagtail.fields import RichTextField, StreamField
 from wagtail.models import Locale
 
@@ -35,12 +35,8 @@ class ProjectPage(HtmxPage):
         related_name="+",
     )
 
-    technologies = StreamField(
-        [("Technology", blocks.CharBlock())], blank=True, null=True
-    )
-    website_link = models.URLField(
-        "Projet website's link", null=True, blank=True, default=None
-    )
+    technologies = StreamField([("Technology", CharBlock())], blank=True, null=True)
+    links = StreamField([("Link", URLBlock())], blank=True, null=True)
     repo_link = models.URLField(
         "Projet repo's link", null=True, blank=True, default=None
     )
@@ -54,13 +50,9 @@ class ProjectPage(HtmxPage):
         FieldPanel("short_description"),
         FieldPanel("body"),
         FieldPanel("image"),
-        FieldPanel("technologies"),
-        FieldRowPanel(
-            (
-                FieldPanel("website_link"),
-                FieldPanel("repo_link"),
-            )
-        ),
+        FieldPanel("technologies", classname="collapsed"),
+        FieldPanel("repo_link"),
+        FieldPanel("links"),
     ]
 
     parent_page_types = ["ProjectsPage"]

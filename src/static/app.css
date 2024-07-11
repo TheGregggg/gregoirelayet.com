@@ -83,7 +83,9 @@ video {
 	max-width: 100%;
 }
 
-svg {
+svg,
+img,
+picture {
 	display: block;
 }
 
@@ -352,7 +354,8 @@ h5,
 h6,
 span,
 form legend,
-figcaption {
+figcaption,
+svg {
 	transition: var(--color-transition);
 }
 li {
@@ -582,4 +585,7 @@ form.gl button {
 .btn--accent:hover {
 	background-color: var(--background);
 	color: var(--accent);
+}
+.btn--accent-on-background:hover {
+	background-color: var(--primary-light);
 }
