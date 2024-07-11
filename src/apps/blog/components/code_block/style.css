@@ -2,7 +2,7 @@
 	border-radius: var(--radius);
 	box-shadow: var(--box-shadow);
 	padding: var(--space-xs);
-	margin-bottom: var(--space-m);
+	margin-bottom: var(--space-s);
 }
 .glcb table {
 	overflow-x: scroll;
