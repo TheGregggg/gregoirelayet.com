@@ -5,7 +5,7 @@ from wagtail.blocks import BooleanBlock, ChoiceBlock, TextBlock
 
 from apps.website.base import ComponentStructBlock
 
-from .components.code_block.code_block import CodeBlock as CodeBlockComponent
+from ..components.code_block.code_block import CodeBlock as CodeBlockComponent
 
 LANGUAGE_CHOICES = [
     ("bash", "Bash/Shell"),
