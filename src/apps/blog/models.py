@@ -4,13 +4,13 @@ from modelcluster.contrib.taggit import ClusterTaggableManager
 from modelcluster.fields import ParentalKey
 from taggit.models import TaggedItemBase
 from wagtail.admin.panels import FieldPanel
-from wagtail.fields import RichTextField
+from wagtail.fields import RichTextField, StreamField
 from wagtail.models import Locale, Page
 from wagtail.search import index
 
 from apps.website.base import HtmxPage
 
-from .blocks.streamfield import blogStreamField
+from .blocks.streamblock import BlogBlock
 
 
 class BlogPageTag(TaggedItemBase):
@@ -36,7 +36,7 @@ class BlogPage(HtmxPage):
     parent_page_types = ["BlogsIndexPage"]
     date = models.DateField("Post date")
     intro = RichTextField(max_length=250)
-    body = blogStreamField
+    body = StreamField(BlogBlock())
 
     tags = ClusterTaggableManager(through=BlogPageTag, blank=True)
 
