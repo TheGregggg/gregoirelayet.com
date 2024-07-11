@@ -10,4 +10,3 @@ class HeaderBlock(component.Component):
 
     class Media:
         css = "header_block/style.css"
-        js = "header_block/script.js"
