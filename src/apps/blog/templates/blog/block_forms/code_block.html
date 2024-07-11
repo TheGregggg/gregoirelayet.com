@@ -9,7 +9,7 @@
         </span>
     {% endif %}
     {% for child in children.values %}
-        <div {% if child == children.rendered_code %} {% comment %} style="display:none" {% endcomment %} {% endif %}>
+        <div {% if child == children.rendered_code %}style="display:none"{% endif %}>
             {% if child.block.label %}
                 <label class="w-field__label"
                        {% if child.id_for_label %}for="{{ child.id_for_label }}"{% endif %}>

@@ -1,0 +1,753 @@
+.glcb {
+	border-radius: var(--radius);
+	box-shadow: var(--box-shadow);
+	padding: var(--space-xs);
+	margin-bottom: var(--space-m);
+}
+.glcb table {
+	overflow-x: scroll;
+	table-layout: fixed;
+	width: 100%;
+}
+.glcb pre {
+	line-height: 125%;
+}
+.glcb td.code pre {
+	overflow-x: auto;
+}
+.glcb td.linenos {
+	width: 1.5em;
+	overflow: hidden;
+}
+.glcb td.linenos .normal,
+.glcb span.linenos,
+.glcb td.linenos .special,
+.glcb span.linenos.special {
+	padding-left: var(--space-xs);
+	padding-right: var(--space-xs);
+}
+/* Dark theme */
+html[data-theme="dark"] .glcb .hll {
+	background: #6e7681;
+}
+
+html[data-theme="dark"] .glcb {
+	color: #d4d2c8;
+}
+
+html[data-theme="dark"] .glcb .ch {
+	color: #f88f7f;
+	font-style: italic;
+}
+
+html[data-theme="dark"] .glcb .cp {
+	color: #ffad66;
+	font-weight: 700;
+}
+
+html[data-theme="dark"] .glcb .cs {
+	color: #7e8aa1;
+	font-style: italic;
+}
+
+html[data-theme="dark"] .glcb .gd {
+	color: #f88f7f;
+	background: #3d1e20;
+}
+
+html[data-theme="dark"] .glcb .ge {
+	color: #d4d2c8;
+	font-style: italic;
+}
+
+html[data-theme="dark"] .glcb .gi {
+	color: #6ad4af;
+	background: #19362c;
+}
+
+html[data-theme="dark"] .glcb .gs {
+	color: #d4d2c8;
+	font-weight: 700;
+}
+
+html[data-theme="dark"] .glcb .nd {
+	color: #7e8aa1;
+	font-weight: 700;
+	font-style: italic;
+}
+
+html[data-theme="dark"] .glcb .sa {
+	color: #f29e74;
+}
+
+html[data-theme="dark"] td.linenos .normal,
+html[data-theme="dark"] span.linenos {
+	color: #3c4354;
+}
+
+html[data-theme="dark"] td.linenos .special,
+html[data-theme="dark"] span.linenos.special {
+	color: #3c4354;
+	background: #ffffc0;
+}
+
+html[data-theme="dark"] .glcb .c,
+html[data-theme="dark"] .glcb .cm,
+html[data-theme="dark"] .glcb .cpf,
+html[data-theme="dark"] .glcb .c1,
+html[data-theme="dark"] .glcb .go,
+html[data-theme="dark"] .glcb .sd {
+	color: #7e8aa1;
+}
+
+html[data-theme="dark"] .glcb .err,
+html[data-theme="dark"] .glcb .gr,
+html[data-theme="dark"] .glcb .gt {
+	color: #f88f7f;
+}
+
+html[data-theme="dark"] .glcb .esc,
+html[data-theme="dark"] .glcb .g,
+html[data-theme="dark"] .glcb .n,
+html[data-theme="dark"] .glcb .x,
+html[data-theme="dark"] .glcb .p,
+html[data-theme="dark"] .glcb .ges,
+html[data-theme="dark"] .glcb .gh,
+html[data-theme="dark"] .glcb .gp,
+html[data-theme="dark"] .glcb .gu,
+html[data-theme="dark"] .glcb .nl,
+html[data-theme="dark"] .glcb .nn,
+html[data-theme="dark"] .glcb .nx,
+html[data-theme="dark"] .glcb .nv,
+html[data-theme="dark"] .glcb .pm,
+html[data-theme="dark"] .glcb .w,
+html[data-theme="dark"] .glcb .vc,
+html[data-theme="dark"] .glcb .vg,
+html[data-theme="dark"] .glcb .vi,
+html[data-theme="dark"] .glcb .vm {
+	color: #d4d2c8;
+}
+
+html[data-theme="dark"] .glcb .k,
+html[data-theme="dark"] .glcb .o,
+html[data-theme="dark"] .glcb .kc,
+html[data-theme="dark"] .glcb .kd,
+html[data-theme="dark"] .glcb .kn,
+html[data-theme="dark"] .glcb .kp,
+html[data-theme="dark"] .glcb .kr,
+html[data-theme="dark"] .glcb .ow {
+	color: #ffad66;
+}
+
+html[data-theme="dark"] .glcb .l,
+html[data-theme="dark"] .glcb .ld,
+html[data-theme="dark"] .glcb .s,
+html[data-theme="dark"] .glcb .sb,
+html[data-theme="dark"] .glcb .sc,
+html[data-theme="dark"] .glcb .dl,
+html[data-theme="dark"] .glcb .s2,
+html[data-theme="dark"] .glcb .sh,
+html[data-theme="dark"] .glcb .s1 {
+	color: #d5ff80;
+}
+
+html[data-theme="dark"] .glcb .kt,
+html[data-theme="dark"] .glcb .nc,
+html[data-theme="dark"] .glcb .ne {
+	color: #73d0ff;
+}
+
+html[data-theme="dark"] .glcb .m,
+html[data-theme="dark"] .glcb .mb,
+html[data-theme="dark"] .glcb .mf,
+html[data-theme="dark"] .glcb .mh,
+html[data-theme="dark"] .glcb .mi,
+html[data-theme="dark"] .glcb .mo,
+html[data-theme="dark"] .glcb .ss,
+html[data-theme="dark"] .glcb .il {
+	color: #dfbfff;
+}
+
+html[data-theme="dark"] .glcb .na,
+html[data-theme="dark"] .glcb .nb,
+html[data-theme="dark"] .glcb .no,
+html[data-theme="dark"] .glcb .nf,
+html[data-theme="dark"] .glcb .py,
+html[data-theme="dark"] .glcb .fm {
+	color: #ffd173;
+}
+
+html[data-theme="dark"] .glcb .ni,
+html[data-theme="dark"] .glcb .se,
+html[data-theme="dark"] .glcb .si,
+html[data-theme="dark"] .glcb .sx,
+html[data-theme="dark"] .glcb .sr {
+	color: #95e6cb;
+}
+
+html[data-theme="dark"] .glcb .nt,
+html[data-theme="dark"] .glcb .bp {
+	color: #5ccfe6;
+}
+@media (prefers-color-scheme: dark) {
+	html[data-theme="auto"] .glcb .hll {
+		background: #6e7681;
+	}
+
+	html[data-theme="auto"] .glcb {
+		color: #d4d2c8;
+	}
+
+	html[data-theme="auto"] .glcb .ch {
+		color: #f88f7f;
+		font-style: italic;
+	}
+
+	html[data-theme="auto"] .glcb .cp {
+		color: #ffad66;
+		font-weight: 700;
+	}
+
+	html[data-theme="auto"] .glcb .cs {
+		color: #7e8aa1;
+		font-style: italic;
+	}
+
+	html[data-theme="auto"] .glcb .gd {
+		color: #f88f7f;
+		background: #3d1e20;
+	}
+
+	html[data-theme="auto"] .glcb .ge {
+		color: #d4d2c8;
+		font-style: italic;
+	}
+
+	html[data-theme="auto"] .glcb .gi {
+		color: #6ad4af;
+		background: #19362c;
+	}
+
+	html[data-theme="auto"] .glcb .gs {
+		color: #d4d2c8;
+		font-weight: 700;
+	}
+
+	html[data-theme="auto"] .glcb .nd {
+		color: #7e8aa1;
+		font-weight: 700;
+		font-style: italic;
+	}
+
+	html[data-theme="auto"] .glcb .sa {
+		color: #f29e74;
+	}
+
+	html[data-theme="auto"] td.linenos .normal,
+	html[data-theme="auto"] span.linenos {
+		color: #3c4354;
+	}
+
+	html[data-theme="auto"] td.linenos .special,
+	html[data-theme="auto"] span.linenos.special {
+		color: #3c4354;
+		background: #ffffc0;
+	}
+
+	html[data-theme="auto"] .glcb .c,
+	html[data-theme="auto"] .glcb .cm,
+	html[data-theme="auto"] .glcb .cpf,
+	html[data-theme="auto"] .glcb .c1,
+	html[data-theme="auto"] .glcb .go,
+	html[data-theme="auto"] .glcb .sd {
+		color: #7e8aa1;
+	}
+
+	html[data-theme="auto"] .glcb .err,
+	html[data-theme="auto"] .glcb .gr,
+	html[data-theme="auto"] .glcb .gt {
+		color: #f88f7f;
+	}
+
+	html[data-theme="auto"] .glcb .esc,
+	html[data-theme="auto"] .glcb .g,
+	html[data-theme="auto"] .glcb .n,
+	html[data-theme="auto"] .glcb .x,
+	html[data-theme="auto"] .glcb .p,
+	html[data-theme="auto"] .glcb .ges,
+	html[data-theme="auto"] .glcb .gh,
+	html[data-theme="auto"] .glcb .gp,
+	html[data-theme="auto"] .glcb .gu,
+	html[data-theme="auto"] .glcb .nl,
+	html[data-theme="auto"] .glcb .nn,
+	html[data-theme="auto"] .glcb .nx,
+	html[data-theme="auto"] .glcb .nv,
+	html[data-theme="auto"] .glcb .pm,
+	html[data-theme="auto"] .glcb .w,
+	html[data-theme="auto"] .glcb .vc,
+	html[data-theme="auto"] .glcb .vg,
+	html[data-theme="auto"] .glcb .vi,
+	html[data-theme="auto"] .glcb .vm {
+		color: #d4d2c8;
+	}
+
+	html[data-theme="auto"] .glcb .k,
+	html[data-theme="auto"] .glcb .o,
+	html[data-theme="auto"] .glcb .kc,
+	html[data-theme="auto"] .glcb .kd,
+	html[data-theme="auto"] .glcb .kn,
+	html[data-theme="auto"] .glcb .kp,
+	html[data-theme="auto"] .glcb .kr,
+	html[data-theme="auto"] .glcb .ow {
+		color: #ffad66;
+	}
+
+	html[data-theme="auto"] .glcb .l,
+	html[data-theme="auto"] .glcb .ld,
+	html[data-theme="auto"] .glcb .s,
+	html[data-theme="auto"] .glcb .sb,
+	html[data-theme="auto"] .glcb .sc,
+	html[data-theme="auto"] .glcb .dl,
+	html[data-theme="auto"] .glcb .s2,
+	html[data-theme="auto"] .glcb .sh,
+	html[data-theme="auto"] .glcb .s1 {
+		color: #d5ff80;
+	}
+
+	html[data-theme="auto"] .glcb .kt,
+	html[data-theme="auto"] .glcb .nc,
+	html[data-theme="auto"] .glcb .ne {
+		color: #73d0ff;
+	}
+
+	html[data-theme="auto"] .glcb .m,
+	html[data-theme="auto"] .glcb .mb,
+	html[data-theme="auto"] .glcb .mf,
+	html[data-theme="auto"] .glcb .mh,
+	html[data-theme="auto"] .glcb .mi,
+	html[data-theme="auto"] .glcb .mo,
+	html[data-theme="auto"] .glcb .ss,
+	html[data-theme="auto"] .glcb .il {
+		color: #dfbfff;
+	}
+
+	html[data-theme="auto"] .glcb .na,
+	html[data-theme="auto"] .glcb .nb,
+	html[data-theme="auto"] .glcb .no,
+	html[data-theme="auto"] .glcb .nf,
+	html[data-theme="auto"] .glcb .py,
+	html[data-theme="auto"] .glcb .fm {
+		color: #ffd173;
+	}
+
+	html[data-theme="auto"] .glcb .ni,
+	html[data-theme="auto"] .glcb .se,
+	html[data-theme="auto"] .glcb .si,
+	html[data-theme="auto"] .glcb .sx,
+	html[data-theme="auto"] .glcb .sr {
+		color: #95e6cb;
+	}
+
+	html[data-theme="auto"] .glcb .nt,
+	html[data-theme="auto"] .glcb .bp {
+		color: #5ccfe6;
+	}
+}
+
+/* Light theme */
+html[data-theme="light"] .glcb .hll {
+	background: #ffffcc;
+}
+
+html[data-theme="light"] .glcb {
+	background: #f8f8f8;
+}
+
+html[data-theme="light"] .glcb .err {
+	border: 1px solid #ff0000;
+}
+
+html[data-theme="light"] .glcb .cp {
+	color: #9c6500;
+}
+
+html[data-theme="light"] .glcb .gd {
+	color: #a00000;
+}
+
+html[data-theme="light"] .glcb .ge {
+	font-style: italic;
+}
+
+html[data-theme="light"] .glcb .ges {
+	font-weight: 700;
+	font-style: italic;
+}
+
+html[data-theme="light"] .glcb .gr {
+	color: #e40000;
+}
+
+html[data-theme="light"] .glcb .gi {
+	color: #008400;
+}
+
+html[data-theme="light"] .glcb .go {
+	color: #717171;
+}
+
+html[data-theme="light"] .glcb .gs {
+	font-weight: 700;
+}
+
+html[data-theme="light"] .glcb .gu {
+	color: #800080;
+	font-weight: 700;
+}
+
+html[data-theme="light"] .glcb .gt {
+	color: #0044dd;
+}
+
+html[data-theme="light"] .glcb .kt {
+	color: #b00040;
+}
+
+html[data-theme="light"] .glcb .na {
+	color: #687822;
+}
+
+html[data-theme="light"] .glcb .no {
+	color: #880000;
+}
+
+html[data-theme="light"] .glcb .nd {
+	color: #aa22ff;
+}
+
+html[data-theme="light"] .glcb .ni {
+	color: #717171;
+	font-weight: 700;
+}
+
+html[data-theme="light"] .glcb .ne {
+	color: #cb3f38;
+	font-weight: 700;
+}
+
+html[data-theme="light"] .glcb .nl {
+	color: #767600;
+}
+
+html[data-theme="light"] .glcb .ow {
+	color: #aa22ff;
+	font-weight: 700;
+}
+
+html[data-theme="light"] .glcb .w {
+	color: #bbbbbb;
+}
+
+html[data-theme="light"] .glcb .sd {
+	color: #ba2121;
+	font-style: italic;
+}
+
+html[data-theme="light"] .glcb .se {
+	color: #aa5d1f;
+	font-weight: 700;
+}
+
+html[data-theme="light"] .glcb .si {
+	color: #a45a77;
+	font-weight: 700;
+}
+
+html[data-theme="light"] .glcb .sr {
+	color: #a45a77;
+}
+
+html[data-theme="light"] td.linenos .normal,
+html[data-theme="light"] span.linenos {
+	color: inherit;
+}
+
+html[data-theme="light"] td.linenos .special,
+html[data-theme="light"] span.linenos.special {
+	color: #000000;
+	background: #ffffc0;
+}
+
+html[data-theme="light"] .glcb .c,
+html[data-theme="light"] .glcb .ch,
+html[data-theme="light"] .glcb .cm,
+html[data-theme="light"] .glcb .cpf,
+html[data-theme="light"] .glcb .c1,
+html[data-theme="light"] .glcb .cs {
+	color: #3d7b7b;
+	font-style: italic;
+}
+
+html[data-theme="light"] .glcb .k,
+html[data-theme="light"] .glcb .kc,
+html[data-theme="light"] .glcb .kd,
+html[data-theme="light"] .glcb .kn,
+html[data-theme="light"] .glcb .kr,
+html[data-theme="light"] .glcb .nt {
+	color: #008000;
+	font-weight: 700;
+}
+
+html[data-theme="light"] .glcb .o,
+html[data-theme="light"] .glcb .m,
+html[data-theme="light"] .glcb .mb,
+html[data-theme="light"] .glcb .mf,
+html[data-theme="light"] .glcb .mh,
+html[data-theme="light"] .glcb .mi,
+html[data-theme="light"] .glcb .mo,
+html[data-theme="light"] .glcb .il {
+	color: #666666;
+}
+
+html[data-theme="light"] .glcb .gh,
+html[data-theme="light"] .glcb .gp {
+	color: #000080;
+	font-weight: 700;
+}
+
+html[data-theme="light"] .glcb .kp,
+html[data-theme="light"] .glcb .nb,
+html[data-theme="light"] .glcb .sx,
+html[data-theme="light"] .glcb .bp {
+	color: #008000;
+}
+
+html[data-theme="light"] .glcb .s,
+html[data-theme="light"] .glcb .sa,
+html[data-theme="light"] .glcb .sb,
+html[data-theme="light"] .glcb .sc,
+html[data-theme="light"] .glcb .dl,
+html[data-theme="light"] .glcb .s2,
+html[data-theme="light"] .glcb .sh,
+html[data-theme="light"] .glcb .s1 {
+	color: #ba2121;
+}
+
+html[data-theme="light"] .glcb .nc,
+html[data-theme="light"] .glcb .nn {
+	color: #0000ff;
+	font-weight: 700;
+}
+
+html[data-theme="light"] .glcb .nf,
+html[data-theme="light"] .glcb .fm {
+	color: #0000ff;
+}
+
+html[data-theme="light"] .glcb .nv,
+html[data-theme="light"] .glcb .ss,
+html[data-theme="light"] .glcb .vc,
+html[data-theme="light"] .glcb .vg,
+html[data-theme="light"] .glcb .vi,
+html[data-theme="light"] .glcb .vm {
+	color: #19177c;
+}
+@media (prefers-color-scheme: light) {
+	html[data-theme="auto"] .glcb .hll {
+		background: #ffffcc;
+	}
+
+	html[data-theme="auto"] .glcb {
+		background: #f8f8f8;
+	}
+
+	html[data-theme="auto"] .glcb .err {
+		border: 1px solid #ff0000;
+	}
+
+	html[data-theme="auto"] .glcb .cp {
+		color: #9c6500;
+	}
+
+	html[data-theme="auto"] .glcb .gd {
+		color: #a00000;
+	}
+
+	html[data-theme="auto"] .glcb .ge {
+		font-style: italic;
+	}
+
+	html[data-theme="auto"] .glcb .ges {
+		font-weight: 700;
+		font-style: italic;
+	}
+
+	html[data-theme="auto"] .glcb .gr {
+		color: #e40000;
+	}
+
+	html[data-theme="auto"] .glcb .gi {
+		color: #008400;
+	}
+
+	html[data-theme="auto"] .glcb .go {
+		color: #717171;
+	}
+
+	html[data-theme="auto"] .glcb .gs {
+		font-weight: 700;
+	}
+
+	html[data-theme="auto"] .glcb .gu {
+		color: #800080;
+		font-weight: 700;
+	}
+
+	html[data-theme="auto"] .glcb .gt {
+		color: #0044dd;
+	}
+
+	html[data-theme="auto"] .glcb .kt {
+		color: #b00040;
+	}
+
+	html[data-theme="auto"] .glcb .na {
+		color: #687822;
+	}
+
+	html[data-theme="auto"] .glcb .no {
+		color: #880000;
+	}
+
+	html[data-theme="auto"] .glcb .nd {
+		color: #aa22ff;
+	}
+
+	html[data-theme="auto"] .glcb .ni {
+		color: #717171;
+		font-weight: 700;
+	}
+
+	html[data-theme="auto"] .glcb .ne {
+		color: #cb3f38;
+		font-weight: 700;
+	}
+
+	html[data-theme="auto"] .glcb .nl {
+		color: #767600;
+	}
+
+	html[data-theme="auto"] .glcb .ow {
+		color: #aa22ff;
+		font-weight: 700;
+	}
+
+	html[data-theme="auto"] .glcb .w {
+		color: #bbbbbb;
+	}
+
+	html[data-theme="auto"] .glcb .sd {
+		color: #ba2121;
+		font-style: italic;
+	}
+
+	html[data-theme="auto"] .glcb .se {
+		color: #aa5d1f;
+		font-weight: 700;
+	}
+
+	html[data-theme="auto"] .glcb .si {
+		color: #a45a77;
+		font-weight: 700;
+	}
+
+	html[data-theme="auto"] .glcb .sr {
+		color: #a45a77;
+	}
+
+	html[data-theme="auto"] td.linenos .normal,
+	html[data-theme="auto"] span.linenos {
+		color: inherit;
+	}
+
+	html[data-theme="auto"] td.linenos .special,
+	html[data-theme="auto"] span.linenos.special {
+		color: #000000;
+		background: #ffffc0;
+	}
+
+	html[data-theme="auto"] .glcb .c,
+	html[data-theme="auto"] .glcb .ch,
+	html[data-theme="auto"] .glcb .cm,
+	html[data-theme="auto"] .glcb .cpf,
+	html[data-theme="auto"] .glcb .c1,
+	html[data-theme="auto"] .glcb .cs {
+		color: #3d7b7b;
+		font-style: italic;
+	}
+
+	html[data-theme="auto"] .glcb .k,
+	html[data-theme="auto"] .glcb .kc,
+	html[data-theme="auto"] .glcb .kd,
+	html[data-theme="auto"] .glcb .kn,
+	html[data-theme="auto"] .glcb .kr,
+	html[data-theme="auto"] .glcb .nt {
+		color: #008000;
+		font-weight: 700;
+	}
+
+	html[data-theme="auto"] .glcb .o,
+	html[data-theme="auto"] .glcb .m,
+	html[data-theme="auto"] .glcb .mb,
+	html[data-theme="auto"] .glcb .mf,
+	html[data-theme="auto"] .glcb .mh,
+	html[data-theme="auto"] .glcb .mi,
+	html[data-theme="auto"] .glcb .mo,
+	html[data-theme="auto"] .glcb .il {
+		color: #666666;
+	}
+
+	html[data-theme="auto"] .glcb .gh,
+	html[data-theme="auto"] .glcb .gp {
+		color: #000080;
+		font-weight: 700;
+	}
+
+	html[data-theme="auto"] .glcb .kp,
+	html[data-theme="auto"] .glcb .nb,
+	html[data-theme="auto"] .glcb .sx,
+	html[data-theme="auto"] .glcb .bp {
+		color: #008000;
+	}
+
+	html[data-theme="auto"] .glcb .s,
+	html[data-theme="auto"] .glcb .sa,
+	html[data-theme="auto"] .glcb .sb,
+	html[data-theme="auto"] .glcb .sc,
+	html[data-theme="auto"] .glcb .dl,
+	html[data-theme="auto"] .glcb .s2,
+	html[data-theme="auto"] .glcb .sh,
+	html[data-theme="auto"] .glcb .s1 {
+		color: #ba2121;
+	}
+
+	html[data-theme="auto"] .glcb .nc,
+	html[data-theme="auto"] .glcb .nn {
+		color: #0000ff;
+		font-weight: 700;
+	}
+
+	html[data-theme="auto"] .glcb .nf,
+	html[data-theme="auto"] .glcb .fm {
+		color: #0000ff;
+	}
+
+	html[data-theme="auto"] .glcb .nv,
+	html[data-theme="auto"] .glcb .ss,
+	html[data-theme="auto"] .glcb .vc,
+	html[data-theme="auto"] .glcb .vg,
+	html[data-theme="auto"] .glcb .vi,
+	html[data-theme="auto"] .glcb .vm {
+		color: #19177c;
+	}
+}

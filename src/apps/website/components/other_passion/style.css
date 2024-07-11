@@ -1,7 +1,7 @@
 .component-other_passion {
 	background-color: var(--primary-light);
 	border-radius: var(--radius);
-	box-shadow: var(--box-shadox);
+	box-shadow: var(--box-shadow);
 
 	padding: var(--text-l);
 	padding-top: calc(var(--text-l) / var(--heading-line-height));
