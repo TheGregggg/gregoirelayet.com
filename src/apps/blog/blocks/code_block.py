@@ -26,7 +26,7 @@ class CodeBlock(ComponentStructBlock):
         choices=LANGUAGE_CHOICES,
         group="language_and_lines",
     )
-    show_lines = BooleanBlock(default=False)
+    show_lines = BooleanBlock(default=False, required=False)
     code = TextBlock()
     rendered_code = TextBlock(blank=True, required=False)
 
