@@ -1,2 +1,12 @@
+{% load wagtailcore_tags %}
 {% block content %}
 {% endblock content %}
+<title hx-swap-oob="innerHTML:title">
+    {% if page.seo_title %}
+        {{ page.seo_title }}
+    {% else %}
+        {{ page.title }}
+    {% endif %}
+    {% wagtail_site as current_site %}
+    {% if current_site and current_site.site_name %}- {{ current_site.site_name }}{% endif %}
+</title>
