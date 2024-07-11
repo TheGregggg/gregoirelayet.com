@@ -6,6 +6,10 @@
         {% component "project_technologies" technologies=project.technologies attrs:class="mb--s" only %}
         {% endcomponent %}
         <div class="description mb--s">{{ project.short_description|richtext }}</div>
-        <a href="{% pageurl project %}" class="btn btn--accent">Voir ce projet</a>
+        <a href="{% pageurl project %}"
+           class="btn btn--accent"
+           hx-boost="true"
+           hx-target="#main_page_content"
+           hx-swap="innerHTML show:none">Voir ce projet</a>
     </div>
 </div>
