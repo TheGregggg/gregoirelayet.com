@@ -108,6 +108,7 @@ html[data-theme="light"] {
 	--primary: hsl(33, 95%, 83%);
 	--primary-light: hsl(33, 95%, 93%);
 	--secondary: hsl(147, 31%, 79%);
+	--secondary-on-surface: hsl(147, 31%, 35%);
 	--accent: hsl(0, 76%, 50%);
 }
 
@@ -116,7 +117,8 @@ html[data-theme="dark"] {
 	--background: hsl(261, 44%, 8%);
 	--primary: hsl(266, 35%, 34%);
 	--primary-light: hsl(266, 35%, 20%);
-	--secondary: hsl(11, 89%, 78%);
+	--secondary: hsl(11, 89%, 58%);
+	--secondary-on-surface: hsl(11, 89%, 78%);
 	--accent: hsl(97, 76%, 67%);
 }
 
@@ -126,7 +128,8 @@ html[data-theme="dark"] {
 		--background: hsl(261, 44%, 8%);
 		--primary: hsl(266, 35%, 34%);
 		--primary-light: hsl(266, 35%, 20%);
-		--secondary: hsl(11, 89%, 78%);
+		--secondary: hsl(11, 89%, 58%);
+		--secondary-on-surface: hsl(11, 89%, 78%);
 		--accent: hsl(97, 76%, 67%);
 	}
 }
@@ -138,6 +141,8 @@ html[data-theme="dark"] {
 		--primary: hsl(33, 95%, 83%);
 		--primary-light: hsl(33, 95%, 93%);
 		--secondary: hsl(147, 31%, 79%);
+		--secondary-on-surface: hsl(147, 31%, 35%);
+
 		--accent: hsl(0, 76%, 50%);
 	}
 }
@@ -441,13 +446,21 @@ strong {
 }
 
 a {
-	color: var(--primary);
+	color: inherit;
 	cursor: pointer;
 	text-decoration: none;
 }
 
-a:visited {
-	color: var(--secondary);
+a.link {
+	text-decoration: underline var(--accent);
+	text-underline-offset: 0.2em;
+
+	transition-property: text-decoration-color;
+	transition-duration: var(--duration);
+	transition-timing-function: ease-in-out;
+}
+a.link:visited {
+	text-decoration-color: var(--secondary-on-surface);
 }
 
 span.underlined {
