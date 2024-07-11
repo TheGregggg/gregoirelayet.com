@@ -4,7 +4,9 @@
     <main class="blog container">
         <article class="blog__article">
             <h1 class="mb--xs">{{ page.title }}</h1>
-            {% include_block page.body %}
+            {% for block in page.body %}
+                {% include_block block %}
+            {% endfor %}
         </article>
     </main>
 {% endblock content %}
