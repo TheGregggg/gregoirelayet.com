@@ -346,7 +346,8 @@ h4,
 h5,
 h6,
 span,
-form legend {
+form legend,
+figcaption {
 	transition: var(--color-transition);
 }
 li {
@@ -477,21 +478,6 @@ img.styled {
 	transition-duration: var(--duration);
 	transition-timing-function: ease-in-out;
 }
-
-/*
-#main_page_content.htmx-swapping {
-	opacity: 0;
-	transition: opacity 50ms ease-out;
-}
-
-#main_page_content.htmx-added {
-	opacity: 0;
-}
-
-#main_page_content {
-	opacity: 1;
-	transition: opacity 100ms ease-out;
-} */
 
 main.center {
 	display: flex;
