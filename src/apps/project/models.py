@@ -5,6 +5,7 @@ from wagtail.admin.panels import FieldPanel, FieldRowPanel
 from wagtail.fields import RichTextField, StreamField
 from wagtail.models import Locale
 
+from apps.blog.blocks.streamfield import blogStreamField
 from apps.website.base import HtmxPage
 
 
@@ -24,7 +25,7 @@ class ProjectPage(HtmxPage):
     short_description = RichTextField(
         "Project's short description, to show on list item", default=""
     )
-    description = RichTextField("Project's description", default="")
+    body = blogStreamField
 
     image = models.ForeignKey(
         "wagtailimages.Image",
@@ -51,7 +52,7 @@ class ProjectPage(HtmxPage):
     content_panels = HtmxPage.content_panels + [
         FieldPanel("show_on_home_page"),
         FieldPanel("short_description"),
-        FieldPanel("description"),
+        FieldPanel("body"),
         FieldPanel("image"),
         FieldPanel("technologies"),
         FieldRowPanel(
