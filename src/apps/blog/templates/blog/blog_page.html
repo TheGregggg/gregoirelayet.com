@@ -1,8 +1,10 @@
 {% extends base_template %}
 {% load static wagtailcore_tags wagtailimages_tags %}
 {% block content %}
-    <main class="project container">
-        <h1 class="mb--xs">{{ page.title }}</h1>
-        {% include_block page.body %}
+    <main class="blog container">
+        <article class="blog__article">
+            <h1 class="mb--xs">{{ page.title }}</h1>
+            {% include_block page.body %}
+        </article>
     </main>
 {% endblock content %}

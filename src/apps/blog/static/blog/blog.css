@@ -1,0 +1,8 @@
+main.blog img {
+	width: 100%;
+}
+
+.blog__article {
+	max-width: 64ch;
+	margin: 0 auto;
+}
