@@ -10,7 +10,7 @@ from wagtail.search import index
 
 from apps.website.base import HtmxPage
 
-from .blocks.streamblock import BlogBlock
+from .streamblock import BlogBlock
 
 
 class BlogPageTag(TaggedItemBase):

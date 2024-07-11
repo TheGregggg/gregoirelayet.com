@@ -1,16 +1,22 @@
 from django_components import component
+from wagtail import blocks
+
+from apps.website.base import ComponentBlock, StructBlockRenderingAsComponent
 
 
 @component.register("experience")
-class Experience(component.Component):
+class Experience(ComponentBlock):
     template_name = "experience/template.html"
-
-    def get_context_data(self, title: str, year: str, description: str):
-        return {
-            "title": title,
-            "year": year,
-            "description": description,
-        }
 
     class Media:
         css = "experience/style.css"
+
+
+class ExperienceBlock(StructBlockRenderingAsComponent):
+    title = blocks.CharBlock()
+    year = blocks.CharBlock()
+    description = blocks.RichTextBlock()
+
+    class Meta:
+        icon = "calendar-alt"
+        component = Experience
