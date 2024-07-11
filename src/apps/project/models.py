@@ -5,7 +5,7 @@ from wagtail.blocks import CharBlock, URLBlock
 from wagtail.fields import RichTextField, StreamField
 from wagtail.models import Locale
 
-from apps.blog.blocks.streamblock import BlogBlock
+from apps.blog.streamblock import BlogBlock
 from apps.website.base import HtmxPage
 
 

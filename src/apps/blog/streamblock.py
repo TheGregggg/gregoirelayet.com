@@ -1,8 +1,9 @@
 from wagtail.blocks import RichTextBlock, StreamBlock
 from wagtail.embeds.blocks import EmbedBlock
 
-from .base_block import HeadingBlock, ImageBlock
-from .code_block import CodeBlock
+from .components.code_block.code_block import CodeBlock
+from .components.header_block.header_block import HeadingBlock
+from .components.image_block.image_block import ImageBlock
 
 
 class BlogBlock(StreamBlock):
