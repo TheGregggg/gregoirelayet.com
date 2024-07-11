@@ -4,6 +4,7 @@
 	padding: var(--space-xs);
 	margin-bottom: var(--space-s);
 }
+.glcb__table,
 .glcb table {
 	overflow-x: scroll;
 	table-layout: fixed;
@@ -12,7 +13,8 @@
 .glcb pre {
 	line-height: 125%;
 }
-.glcb td.code pre {
+.glcb td.code pre,
+.glcb__tr > td > div.highlight > pre {
 	overflow-x: auto;
 }
 .glcb td.linenos {
