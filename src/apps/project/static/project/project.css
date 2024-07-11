@@ -26,6 +26,16 @@ main.project img {
 	grid-row: 1;
 }
 
+.project__git-logo {
+	height: 1.1em;
+	width: auto;
+	padding-right: var(--space-xs);
+}
+.project__repo-link {
+	align-items: center;
+	margin-bottom: var(--space-s);
+}
+
 @media (min-width: 1370px) {
 	.project__grid {
 		grid-template-columns: minmax(max-content, 1fr) minmax(300px, 500px);
