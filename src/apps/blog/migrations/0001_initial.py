@@ -18,8 +18,7 @@ class Migration(migrations.Migration):
         (
             "taggit",
             "0006_rename_taggeditem_content_type_object_id_taggit_tagg_content_8fc721_idx",
-        ),
-        ("wagtailcore", "0092_embed"),
+        )
     ]
 
     operations = [

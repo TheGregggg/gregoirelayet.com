@@ -1,4 +1,7 @@
-from .base import *  # noqa
+import os
+from pathlib import Path
+
+from config.settings.base import *  # noqa
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -12,6 +15,15 @@ ALLOWED_HOSTS = ["localhost", "127.0.0.1"]
 EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 
 WSGI_APPLICATION = "config.wsgi.app"
+
+with open(
+    os.path.join(
+        Path(__file__).resolve().parent.parent.parent.parent,
+        "secrets/db_user_password.txt",
+    )
+) as f:
+    DATABASES["default"]["PASSWORD"] = f.read().strip()  # noqaO
+
 
 if not TESTING:  # noqa
     INSTALLED_APPS += [  # noqa

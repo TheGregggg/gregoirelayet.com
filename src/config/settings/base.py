@@ -30,7 +30,6 @@ THIRD_PARTY_APPS = [
     "django_htmx",
     "django_components",
     "django_components.safer_staticfiles",
-    "adminsortable2",
     "compressor",
 ]
 WAGTAIL_APPS = [
@@ -107,15 +106,6 @@ TEMPLATES = [
 ]
 
 # Database
-with open(
-    os.path.join(
-        Path(__file__).resolve().parent.parent.parent.parent,
-        "secrets/db_user_password.txt",
-    )
-) as f:
-    DB_PASSWORD = f.read().strip()
-
-
 DB_Options_Typing = TypedDict("DB_Options_Typing", {"options": str})
 DB_Test_Typing = TypedDict("DB_Test_Typing", {"OPTIONS": DB_Options_Typing})
 DB_Typing = TypedDict(
@@ -138,7 +128,7 @@ DATABASES: dict[str, DB_Typing] = {
         "ENGINE": "django.db.backends.postgresql",
         "NAME": "gregoirelayet.com",
         "USER": "gerg",
-        "PASSWORD": DB_PASSWORD,
+        "PASSWORD": "",
         "HOST": "127.0.0.1",
         "PORT": "5432",
         "OPTIONS": {

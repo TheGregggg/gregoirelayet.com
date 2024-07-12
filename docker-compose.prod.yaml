@@ -1,0 +1,42 @@
+version: '3.9'
+
+services:
+  db:
+    image: postgres
+    restart: always
+    shm_size: 128mb
+    environment:
+      POSTGRES_PASSWORD_FILE: /run/secrets/db_root_user_password
+      POSTGRES_USER: gerg_db_admin
+      POSTGRES_DB: postgres
+    secrets:
+      - db_root_user_password
+    volumes:
+      - type: bind
+        source: ./dev-db
+        target: /var/lib/postgresql/data
+    ports:
+      - 5432:5432
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080
+  
+  gregoirelayet:
+    image: test
+    environment:
+      DB_HOSTNAME: db
+      DB_PORT: 5432
+      DJANGO_SETTINGS_MODULE: config.settings.production
+    ports:
+      - 8000:8000
+    secrets:
+      - db_user_password
+
+secrets:
+   db_root_user_password:
+     file: secrets/db_root_user_password.txt
+   db_user_password:
+     file: secrets/db_user_password.txt
