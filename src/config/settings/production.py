@@ -10,6 +10,9 @@ with open(
 ) as f:
     SECRET_KEY = f.read().strip()
 
+with open(os.path.join("run", "secrets", "db_user_password")) as f:
+    DB_PASSWORD = f.read().strip()
+
 DNS_NAME = "gregoirelayet.com"
 
 ALLOWED_HOSTS = [DNS_NAME]
