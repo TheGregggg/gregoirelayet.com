@@ -8,7 +8,7 @@ My personal website V2
 
 #### 👨‍💻 As a developper:
 
--   Dimple to host
+-   Simple to host
 -   Don't break easily
 -   Fast to add feature
 -   Beautiful and usable code
