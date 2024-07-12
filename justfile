@@ -18,13 +18,13 @@ createsuperuser:
 
 makefixtures:
   #!/usr/bin/env bash
-  declare -a apps=(website project);
+  declare -a apps=(website project blog);
   cd src;
   for app in "${apps[@]}"; do
-    mkdir -p apps/${app}/fixtures; python manage.py dumpdata --natural-foreign --indent 2 -o apps/${app}/fixtures/${app}.json ${app};
+    mkdir -p apps/${app}/fixtures; python manage.py dumpdata --natural-foreign --natural-primary --indent 2 -o apps/${app}/fixtures/${app}.json ${app};
   done
   mkdir -p fixtures; 
-  python manage.py dumpdata --natural-foreign --indent 2 -o fixtures/base.json -a -e website -e project -e auth -e wagtailcore.pagelogentry -e contenttypes -e sessions -e wagtailcore.modellogentry -e wagtailcore.groupcollectionpermission -e wagtailcore.grouppagepermission;
+  python manage.py dumpdata --natural-foreign --natural-primary --indent 2 -o fixtures/base.json -a -e website -e blog -e project -e auth -e wagtailcore.pagelogentry -e contenttypes -e sessions -e wagtailcore.modellogentry -e wagtailcore.groupcollectionpermission -e wagtailcore.grouppagepermission;
 
 loaddata:
   #!/usr/bin/env bash
