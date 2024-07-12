@@ -17,10 +17,10 @@ ENV PYTHONUNBUFFERED=1 \
 RUN apt-get update --yes --quiet && apt-get install --yes --quiet --no-install-recommends \
     build-essential \
     libpq-dev \
-    libmariadbclient-dev \
     libjpeg62-turbo-dev \
     zlib1g-dev \
-    libwebp-dev \
+    libwebp-dev \ 
+    netcat-traditional \
  && rm -rf /var/lib/apt/lists/*
 
 # Install the application server.
@@ -43,7 +43,7 @@ COPY --chown=glwagtail:glwagtail src .
 # Use user "wagtail" to run the build commands below and the server itself.
 USER glwagtail
 
-COPY ./entrypoint.sh .
+COPY --chown=glwagtail:glwagtail ./entrypoint.sh .
 RUN chmod +x /app/entrypoint.sh
 
 ENTRYPOINT ["/app/entrypoint.sh"]
