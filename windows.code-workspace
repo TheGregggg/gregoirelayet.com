@@ -6,7 +6,7 @@
 	],
 	"settings": {
 		"mypy.configFile": "src/mypy.ini",
-		"mypy.dmypyExecutable": "${workspaceFolder}/env/Scripts/dmypy.exe",
+		"mypy.dmypyExecutable": "${workspaceFolder}/.venv/Scripts/dmypy.exe",
 		"mypy.targets": ["src"],
 		"djlint.configuration": "pyproject.toml",
 		"emmet.includeLanguages": {
