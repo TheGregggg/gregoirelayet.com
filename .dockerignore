@@ -1,4 +1,5 @@
 *
 !src
-!requirements.txt
+!Pipfile
+!Pipfile.lock
 !entrypoint.sh

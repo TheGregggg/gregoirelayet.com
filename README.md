@@ -8,10 +8,10 @@ My personal website V2
 
 #### 👨‍💻 As a developper:
 
--   Simple to host
--   Don't break easily
--   Fast to add feature
--   Beautiful and usable code
+-   Simple to host -> applying 12 factor apps techniques 
+-   Don't break easily -> testing and simple reliable code
+-   Fast to add feature -> simple code
+-   Beautiful and usable code -> linter and tools, pre commit ...
 
 #### 🌐 As a user:
 

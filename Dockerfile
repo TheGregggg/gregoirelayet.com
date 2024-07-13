@@ -1,50 +1,58 @@
-FROM python:3.12-slim-bookworm
+FROM python:3.12-slim AS builder
 
-# Add user that will be used in the container.
-RUN useradd glwagtail
-
-# Port used by this container to serve HTTP.
-EXPOSE 8000
-
-# Set environment variables.
-# 1. Force Python stdout and stderr streams to be unbuffered.
-# 2. Set PORT variable that is used by Gunicorn. This should match "EXPOSE"
-#    command.
-ENV PYTHONUNBUFFERED=1 \
-    PORT=8000
-
-# Install system packages required by Wagtail and Django.
 RUN apt-get update --yes --quiet && apt-get install --yes --quiet --no-install-recommends \
     build-essential \
     libpq-dev \
     libjpeg62-turbo-dev \
     zlib1g-dev \
-    libwebp-dev \ 
+    libwebp-dev \
+ && rm -rf /var/lib/apt/lists/*
+
+RUN mkdir app
+
+# install pipenv and creating the virtual env
+RUN pip install "pipenv"
+
+# Tell pipenv to create venv in the current directory
+ENV PIPENV_VENV_IN_PROJECT=1
+
+# Pipfile contains requests
+ADD Pipfile.lock Pipfile /app/
+
+WORKDIR /app
+
+RUN pipenv sync
+
+
+FROM python:3.12-slim AS runtime
+
+RUN apt-get update --yes --quiet && apt-get install --yes --quiet --no-install-recommends \
     netcat-traditional \
  && rm -rf /var/lib/apt/lists/*
 
-# Install the application server.
-RUN pip install "gunicorn==22.0.0"
+# Add user that will be used in the container.
+RUN useradd gerg
 
-# Use /app folder as a directory where the source code is stored.
-WORKDIR /app
+# Port used by this container to serve HTTP.
+EXPOSE 8000
 
-# Install the project requirements.
-COPY requirements.txt ./
-RUN pip install -r ./requirements.txt
+ENV PYTHONUNBUFFERED=1 \
+    PORT=8000
 
+RUN mkdir -v -p /app/.venv
 
-# Set this directory to be owned by the "glwagtail" user.
-RUN chown glwagtail:glwagtail /app
+RUN chown gerg:gerg /app
 
-# Copy the source code of the project into the container.
-COPY --chown=glwagtail:glwagtail src .
+COPY --from=builder /app/.venv/ /app/.venv/
 
-# Use user "wagtail" to run the build commands below and the server itself.
-USER glwagtail
+WORKDIR /app/
 
-COPY --chown=glwagtail:glwagtail ./entrypoint.sh .
+COPY --chown=gerg:gerg src .
+
+COPY --chown=gerg:gerg ./entrypoint.sh .
+
+USER gerg
+
 RUN chmod +x /app/entrypoint.sh
-
 ENTRYPOINT ["/app/entrypoint.sh"]
-CMD set -xe; gunicorn config.wsgi:app
+CMD set -xe; ./.venv/bin/gunicorn config.wsgi:app
