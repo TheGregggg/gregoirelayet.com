@@ -18,6 +18,7 @@ mypy = ">=1.9<1.10"
 django-stubs = ">=4.2.7<4.3"
 pre-commit = "*"
 gunicorn = "*"
+whitenoise = ">=6.7.0<6.8"
 
 [dev-packages]
 
