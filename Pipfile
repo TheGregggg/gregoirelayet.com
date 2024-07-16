@@ -19,6 +19,8 @@ django-stubs = ">=4.2.7<4.3"
 pre-commit = "*"
 gunicorn = "*"
 whitenoise = {extras = ["brotli"], version = "*"}
+css-html-js-minify = "*"
+django-pipeline = "*"
 
 [dev-packages]
 
