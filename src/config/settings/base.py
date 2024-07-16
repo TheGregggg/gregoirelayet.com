@@ -23,6 +23,12 @@ SECRET_KEY = "this_is_not_secret"
 
 TESTING = "test" in sys.argv
 
+# Default primary key field type
+# https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
+DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+ROOT_URLCONF = "config.urls"
+
 # Application definition
 APPS = ["apps.website", "apps.project", "apps.blog"]
 
@@ -30,8 +36,8 @@ THIRD_PARTY_APPS = [
     "django_htmx",
     "django_components",
     "django_components.safer_staticfiles",
-    "compressor",
     "whitenoise.runserver_nostatic",
+    "pipeline",
 ]
 WAGTAIL_APPS = [
     "wagtail.contrib.settings",
@@ -77,7 +83,6 @@ MIDDLEWARE = [
     "wagtail.contrib.redirects.middleware.RedirectMiddleware",
 ]
 
-ROOT_URLCONF = "config.urls"
 
 TEMPLATES = [
     {
@@ -189,7 +194,7 @@ LANGUAGE_COOKIE_AGE = 60 * 60 * 24 * 30  # 1 month
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
 STATIC_URL = "static/"
-STATIC_ROOT = os.path.join(BASE_DIR, "dist", "static")
+STATIC_ROOT = os.path.join(BASE_DIR, "static_root")
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
     os.path.join(BASE_DIR, "components"),
@@ -201,7 +206,6 @@ for apps in APPS:
 STATICFILES_FINDERS = (
     "django.contrib.staticfiles.finders.FileSystemFinder",
     "django.contrib.staticfiles.finders.AppDirectoriesFinder",
-    "compressor.finders.CompressorFinder",
 )
 
 STORAGES = {
@@ -212,36 +216,6 @@ STORAGES = {
         "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
     },
 }
-
-MEDIA_ROOT = os.path.join(BASE_DIR, "media")
-MEDIA_URL = "/media/"
-
-# Default primary key field type
-# https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
-
-DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
-
-CACHES = {
-    "default": {
-        "BACKEND": "django.core.cache.backends.locmem.LocMemCache",
-        "LOCATION": "unique-snowflake",
-    },
-    "temp": {
-        "BACKEND": "django.core.cache.backends.locmem.LocMemCache",
-        "LOCATION": "temp-cache",
-    },
-}
-
-# WAGTAIL
-WAGTAIL_SITE_NAME = "Greg's website"
-WAGTAILADMIN_BASE_URL = ""
-TAGGIT_CASE_INSENSITIVE = True
-
-# Django components
-COMPONENTS = {
-    "context_behavior": "django",
-}
-
 
 # whitenoise
 WHITENOISE_SKIP_COMPRESS_EXTENSIONS = (
@@ -263,9 +237,60 @@ WHITENOISE_SKIP_COMPRESS_EXTENSIONS = (
     "woff",
     "woff2",
 )
+WHITENOISE_KEEP_ONLY_HASHED_FILES = True
+WHITENOISE_USE_FINDERS = False
 
-COMPRESS_ENABLED = True
-COMPRESS_OFFLINE = True
-COMPRESS_OFFLINE_CONTEXT = {
-    "base_template": "base.html",
+
+PIPELINE = {
+    "PIPELINE_ENABLED": True,
+    "STYLESHEETS": {
+        "main": {
+            "source_filenames": (
+                "app.css",
+                "*/website.css",
+                "*/project.css",
+                "*/blog.css",
+                "*/style.css",
+            ),
+            "output_filename": "css/main.css",
+        }
+    },
+    "JAVASCRIPT": {
+        "components": {
+            "source_filenames": ("*/script.js",),
+            "output_filename": "js/components.js",
+        }
+    },
+}
+PIPELINE["CSS_COMPRESSOR"] = (
+    "pipeline.compressors.csshtmljsminify.CssHtmlJsMinifyCompressor"
+)
+PIPELINE["JS_COMPRESSOR"] = (
+    "pipeline.compressors.csshtmljsminify.CssHtmlJsMinifyCompressor"
+)
+PIPELINE["DISABLE_WRAPPER"] = True
+
+MEDIA_ROOT = os.path.join(BASE_DIR, "media")
+MEDIA_URL = "/media/"
+
+
+CACHES = {
+    "default": {
+        "BACKEND": "django.core.cache.backends.locmem.LocMemCache",
+        "LOCATION": "unique-snowflake",
+    },
+    "temp": {
+        "BACKEND": "django.core.cache.backends.locmem.LocMemCache",
+        "LOCATION": "temp-cache",
+    },
+}
+
+# WAGTAIL
+WAGTAIL_SITE_NAME = "Greg's website"
+WAGTAILADMIN_BASE_URL = ""
+TAGGIT_CASE_INSENSITIVE = True
+
+# Django components
+COMPONENTS = {
+    "context_behavior": "django",
 }

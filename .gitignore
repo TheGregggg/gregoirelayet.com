@@ -161,3 +161,5 @@ secrets/*
 !secrets/*.exemple
 
 temp
+static_root
+static_build
