@@ -1,4 +1,4 @@
-{% load static compress wagtailcore_tags custom_components_tags %}
+{% load static wagtailcore_tags custom_components_tags pipeline %}
 <!DOCTYPE html>
 <html lang="fr" data-theme="dark">
     <head>
@@ -24,25 +24,14 @@
         {# Force all links in the live preview panel to be opened in a new tab #}
         {% if request.in_preview_panel %}<base target="_blank">{% endif %}
         <meta name="color-scheme" content="light dark">
-        {% compress css %}
-            <link rel="stylesheet"
-                  type="text/css"
-                  media="all"
-                  href="{% static "app.css" %}">
-            <link rel="stylesheet" type="text/css" media="all" href="{% static "website/website.css" %}">
-            <link rel="stylesheet" type="text/css" media="all" href="{% static "project/project.css" %}">
-            <link rel="stylesheet" type="text/css" media="all" href="{% static "blog/blog.css" %}">
-            {% custom_component_css_dependencies %}
-        {% endcompress %}
+        {% stylesheet 'main' %}
         <link rel="preload" href="{% static "font/Montserrat-Bold.ttf" %}" as="font" type="font/ttf" crossorigin>
         <link rel="preload" href="{% static "font/Poppins-Regular.ttf" %}" as="font" type="font/ttf" crossorigin>
         <link rel="preload" href="{% static "font/Poppins-Medium.ttf" %}" as="font" type="font/ttf" crossorigin>
         <link rel="preload" href="{% static "font/Poppins-Bold.ttf" %}" as="font" type="font/ttf" crossorigin>
         {% block head %}
         {% endblock head %}
-        {% compress js %}
-            <script src="{% static 'htmx.min.js' %}" defer></script>
-        {% endcompress %}
+        <script src="{% static 'htmx.min.js' %}" defer></script>
     </head>
     <body class="{% block body_class %}{% endblock body_class %}">
         {% component "header" %}
@@ -53,8 +42,6 @@
         </div>
         {% component "footer" only %}
         {% endcomponent %}
-        {% compress js %}
-            {% custom_component_js_dependencies %}
-        {% endcompress %}
+        {% javascript 'components' %}
     </body>
 </html>
