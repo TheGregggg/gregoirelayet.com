@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "325433b17405829cd0515bf2d401d53809197aa9aae059dee2ca2d094091d5cf"
+            "sha256": "0d3c0a572a731fbf214c4c101ae1f798f7b840a7202af9ff1a444da8c4560fb2"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -256,6 +256,15 @@
             "markers": "python_version >= '2.7' and python_version not in '3.0, 3.1, 3.2, 3.3, 3.4, 3.5, 3.6'",
             "version": "==0.4.6"
         },
+        "css-html-js-minify": {
+            "hashes": [
+                "sha256:3da9d35ac0db8ca648c1b543e0e801d7ca0bab9e6bfd8418fee59d5ae001727a",
+                "sha256:4704e04a0cd6dd56d61bbfa3bfffc630da6b2284be33519be0b456672e2a2438",
+                "sha256:4a9f11f7e0496f5284d12111f3ba4ff5ff2023d12f15d195c9c48bd97013746c"
+            ],
+            "index": "pypi",
+            "version": "==2.5.5"
+        },
         "cssbeautifier": {
             "hashes": [
                 "sha256:9f7064362aedd559c55eeecf6b6bed65e05f33488dcbe39044f0403c26e1c006"
@@ -353,6 +362,14 @@
             ],
             "markers": "python_version >= '3.7'",
             "version": "==0.1"
+        },
+        "django-pipeline": {
+            "hashes": [
+                "sha256:36470aeced4889694b899a995bcd2eda512f45b61ac68d50adc5863c8bad5ee4",
+                "sha256:aa973adeb480762f9d795818140da32e0348b7cd85a90b316205b8e966f986b7"
+            ],
+            "index": "pypi",
+            "version": "==3.1.0"
         },
         "django-stubs": {
             "hashes": [
@@ -1116,11 +1133,11 @@
         },
         "sqlparse": {
             "hashes": [
-                "sha256:714d0a4932c059d16189f58ef5411ec2287a4360f17cdd0edd2d09d4c5087c93",
-                "sha256:c204494cd97479d0e39f28c93d46c0b2d5959c7b9ab904762ea6c7af211c8663"
+                "sha256:773dcbf9a5ab44a090f3441e2180efe2560220203dc2f8c0b0fa141e18b505e4",
+                "sha256:bb6b4df465655ef332548e24f08e205afc81b9ab86cb1c45657a7ff173a3a00e"
             ],
             "markers": "python_version >= '3.8'",
-            "version": "==0.5.0"
+            "version": "==0.5.1"
         },
         "telepath": {
             "hashes": [
