@@ -11,7 +11,4 @@ echo 'PostgreSQL started'
 echo 'Running migrations...'
 ./.venv/bin/python manage.py migrate
 
-echo 'Collecting static files...'
-./.venv/bin/python manage.py collectstatic --no-input
-
 exec "$@"

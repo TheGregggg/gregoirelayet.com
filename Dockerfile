@@ -53,6 +53,12 @@ COPY --chown=gerg:gerg ./entrypoint.sh .
 
 USER gerg
 
+# Building static files from Django Pipeline...
+RUN ./.venv/bin/python manage.py collectstatic --no-input -c --settings config.settings.build
+
+#  Collect files using whitenoise
+RUN ./.venv/bin/python manage.py collectstatic --noinput -c --settings config.settings.whitenoise
+
 RUN chmod +x /app/entrypoint.sh
 ENTRYPOINT ["/app/entrypoint.sh"]
 CMD set -xe; ./.venv/bin/gunicorn config.wsgi:app

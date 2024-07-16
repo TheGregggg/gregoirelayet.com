@@ -3,3 +3,5 @@
 !Pipfile
 !Pipfile.lock
 !entrypoint.sh
+static_root
+static_build
