@@ -4,13 +4,25 @@ from pathlib import Path
 from config.settings.base import *  # noqa
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
+LOGGING = {
+    "version": 1,
+    "disable_existing_loggers": False,
+    "handlers": {
+        "console": {
+            "class": "logging.StreamHandler",
+        },
+    },
+    "loggers": {
+        "django": {"handlers": ["console"], "level": "ERROR"},
+    },
+}
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = "django-insecure-s$fe++l8)hr1&k@^r3t!lw79w(hacm(&&oucvx4+@kl&bnq*2g"
 
 # SECURITY WARNING: define the correct hosts in production!
-ALLOWED_HOSTS = ["localhost", "127.0.0.1"]
+ALLOWED_HOSTS = ["*"]
 
 EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 
@@ -24,8 +36,7 @@ with open(
 ) as f:
     DATABASES["default"]["PASSWORD"] = f.read().strip()  # noqaO
 
-
-if not TESTING:  # noqa
+if not TESTING and False:  # noqa
     INSTALLED_APPS += [  # noqa
         "debug_toolbar",
     ]

@@ -159,3 +159,5 @@ src/original_images
 
 secrets/*
 !secrets/*.exemple
+
+temp
