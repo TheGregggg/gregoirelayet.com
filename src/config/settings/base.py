@@ -242,7 +242,6 @@ WHITENOISE_USE_FINDERS = False
 
 
 PIPELINE = {
-    "PIPELINE_ENABLED": True,
     "STYLESHEETS": {
         "main": {
             "source_filenames": (
@@ -261,14 +260,10 @@ PIPELINE = {
             "output_filename": "js/components.js",
         }
     },
+    "CSS_COMPRESSOR": "pipeline.compressors.csshtmljsminify.CssHtmlJsMinifyCompressor",
+    "JS_COMPRESSOR": "pipeline.compressors.csshtmljsminify.CssHtmlJsMinifyCompressor",
+    "DISABLE_WRAPPER": True,
 }
-PIPELINE["CSS_COMPRESSOR"] = (
-    "pipeline.compressors.csshtmljsminify.CssHtmlJsMinifyCompressor"
-)
-PIPELINE["JS_COMPRESSOR"] = (
-    "pipeline.compressors.csshtmljsminify.CssHtmlJsMinifyCompressor"
-)
-PIPELINE["DISABLE_WRAPPER"] = True
 
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 MEDIA_URL = "/media/"
