@@ -31,6 +31,7 @@ THIRD_PARTY_APPS = [
     "django_components",
     "django_components.safer_staticfiles",
     "compressor",
+    "whitenoise.runserver_nostatic",
 ]
 WAGTAIL_APPS = [
     "wagtail.contrib.settings",
@@ -63,8 +64,9 @@ INSTALLED_APPS = (
 )
 
 MIDDLEWARE = [
-    "django_htmx.middleware.HtmxMiddleware",
     "django.middleware.security.SecurityMiddleware",
+    "whitenoise.middleware.WhiteNoiseMiddleware",
+    "django_htmx.middleware.HtmxMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.locale.LocaleMiddleware",
     "django.middleware.common.CommonMiddleware",
@@ -187,7 +189,7 @@ LANGUAGE_COOKIE_AGE = 60 * 60 * 24 * 30  # 1 month
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
 STATIC_URL = "static/"
-STATIC_ROOT = os.path.join(BASE_DIR, "static", "dist")
+STATIC_ROOT = os.path.join(BASE_DIR, "dist", "static")
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
     os.path.join(BASE_DIR, "components"),
@@ -202,6 +204,15 @@ STATICFILES_FINDERS = (
     "compressor.finders.CompressorFinder",
 )
 
+STORAGES = {
+    "default": {
+        "BACKEND": "django.core.files.storage.FileSystemStorage",
+    },
+    "staticfiles": {
+        "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
+    },
+}
+
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 MEDIA_URL = "/media/"
 
@@ -209,6 +220,17 @@ MEDIA_URL = "/media/"
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+CACHES = {
+    "default": {
+        "BACKEND": "django.core.cache.backends.locmem.LocMemCache",
+        "LOCATION": "unique-snowflake",
+    },
+    "temp": {
+        "BACKEND": "django.core.cache.backends.locmem.LocMemCache",
+        "LOCATION": "temp-cache",
+    },
+}
 
 # WAGTAIL
 WAGTAIL_SITE_NAME = "Greg's website"
@@ -220,5 +242,30 @@ COMPONENTS = {
     "context_behavior": "django",
 }
 
-# django compress
-COMPRESS_ENABLED = False
+
+# whitenoise
+WHITENOISE_SKIP_COMPRESS_EXTENSIONS = (
+    "jpg",
+    "jpeg",
+    "png",
+    "gif",
+    "webp",
+    "avif",
+    "zip",
+    "gz",
+    "tgz",
+    "bz2",
+    "tbz",
+    "xz",
+    "br",
+    "swf",
+    "flv",
+    "woff",
+    "woff2",
+)
+
+COMPRESS_ENABLED = True
+COMPRESS_OFFLINE = True
+COMPRESS_OFFLINE_CONTEXT = {
+    "base_template": "base.html",
+}
