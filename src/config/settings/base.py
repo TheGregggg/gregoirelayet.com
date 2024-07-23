@@ -16,18 +16,21 @@ from pathlib import Path
 
 from typing_extensions import TypedDict
 
+"""
+------------------------------------
+        Project settings
+------------------------------------
+"""
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
-
-SECRET_KEY = "this_is_not_secret"
-
-TESTING = "test" in sys.argv
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 ROOT_URLCONF = "config.urls"
+WSGI_APPLICATION = "config.wsgi.app"
 
 # Application definition
 APPS = ["apps.website", "apps.project", "apps.blog"]
@@ -112,47 +115,8 @@ TEMPLATES = [
     },
 ]
 
-# Database
-DB_Options_Typing = TypedDict("DB_Options_Typing", {"options": str})
-DB_Test_Typing = TypedDict("DB_Test_Typing", {"OPTIONS": DB_Options_Typing})
-DB_Typing = TypedDict(
-    "DB_Typing",
-    {
-        "ENGINE": str,
-        "NAME": str,
-        "USER": str,
-        "PASSWORD": str,
-        "HOST": str,
-        "PORT": str,
-        "OPTIONS": DB_Options_Typing,
-        "TEST": DB_Test_Typing,
-    },
-)
-
-
-DATABASES: dict[str, DB_Typing] = {
-    "default": {
-        "ENGINE": "django.db.backends.postgresql",
-        "NAME": "gregoirelayet.com",
-        "USER": "gerg",
-        "PASSWORD": "",
-        "HOST": "127.0.0.1",
-        "PORT": "5432",
-        "OPTIONS": {
-            "options": "-c search_path=gregoirelayet.com.schema",
-        },
-        "TEST": {
-            "OPTIONS": {
-                "options": "-c search_path=test_gregoirelayet.com.schema",
-            },
-        },
-    }
-}
-
-
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
-
 AUTH_PASSWORD_VALIDATORS = [
     {
         "NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator",  # noqa
@@ -168,11 +132,9 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/5.0/topics/i18n/
 # https://docs.wagtail.org/en/v6.0.5/advanced_topics/i18n.html
-
 LANGUAGE_CODE = "fr-fr"
 TIME_ZONE = "UTC"
 USE_I18N = True
@@ -189,6 +151,7 @@ WAGTAIL_CONTENT_LANGUAGES = LANGUAGES = [
 LANGUAGE_COOKIE_NAME = "gl.com_lang"
 LANGUAGE_COOKIE_HTTPONLY = False
 LANGUAGE_COOKIE_AGE = 60 * 60 * 24 * 30  # 1 month
+
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
@@ -265,8 +228,68 @@ PIPELINE = {
     "DISABLE_WRAPPER": True,
 }
 
+
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 MEDIA_URL = "/media/"
+
+
+# Django components
+COMPONENTS = {
+    "context_behavior": "django",
+}
+
+
+# WAGTAIL
+WAGTAIL_SITE_NAME = "Greg's website"
+TAGGIT_CASE_INSENSITIVE = True
+
+
+"""
+------------------------------------
+        Instance settings
+------------------------------------
+"""
+
+TESTING = "test" in sys.argv
+
+SECRET_KEY = "this_is_not_secret"
+
+# Database
+DB_Options_Typing = TypedDict("DB_Options_Typing", {"options": str})
+DB_Test_Typing = TypedDict("DB_Test_Typing", {"OPTIONS": DB_Options_Typing})
+DB_Typing = TypedDict(
+    "DB_Typing",
+    {
+        "ENGINE": str,
+        "NAME": str,
+        "USER": str,
+        "PASSWORD": str,
+        "HOST": str,
+        "PORT": str,
+        "OPTIONS": DB_Options_Typing,
+        "TEST": DB_Test_Typing,
+    },
+)
+
+
+DATABASES: dict[str, DB_Typing] = {
+    "default": {
+        "ENGINE": "django.db.backends.postgresql",
+        "NAME": "gregoirelayet.com",
+        "USER": "gerg",
+        "PASSWORD": "",
+        "HOST": "127.0.0.1",
+        "PORT": "5432",
+        "OPTIONS": {
+            "options": "-c search_path=gregoirelayet.com.schema",
+        },
+        "TEST": {
+            "OPTIONS": {
+                "options": "-c search_path=test_gregoirelayet.com.schema",
+            },
+        },
+    }
+}
 
 
 CACHES = {
@@ -274,18 +297,4 @@ CACHES = {
         "BACKEND": "django.core.cache.backends.locmem.LocMemCache",
         "LOCATION": "unique-snowflake",
     },
-    "temp": {
-        "BACKEND": "django.core.cache.backends.locmem.LocMemCache",
-        "LOCATION": "temp-cache",
-    },
-}
-
-# WAGTAIL
-WAGTAIL_SITE_NAME = "Greg's website"
-WAGTAILADMIN_BASE_URL = ""
-TAGGIT_CASE_INSENSITIVE = True
-
-# Django components
-COMPONENTS = {
-    "context_behavior": "django",
 }
