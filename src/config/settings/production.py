@@ -26,3 +26,5 @@ ALLOWED_HOSTS = [
     FQDN,
 ]
 CSRF_TRUSTED_ORIGINS = [f"https://{FQDN}"]
+
+WAGTAILADMIN_BASE_URL = f"https://{FQDN}"
