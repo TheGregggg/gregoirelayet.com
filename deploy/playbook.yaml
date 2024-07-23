@@ -1,0 +1,28 @@
+---
+- name: Provision VPS with security settings and docker
+  hosts: all
+  remote_user: debian
+
+  vars_files: vars/main.yml
+
+  pre_tasks:
+      - name: Update apt cache if needed.
+        ansible.builtin.apt:
+            update_cache: "yes"
+            cache_valid_time: "3600"
+
+  tasks:
+      - name: Create deployement user
+        ansible.builtin.import_tasks: tasks/create_user.yaml
+      
+      - name: Secure server
+        ansible.builtin.include_role:
+            name: geerlingguy.security
+
+      - name: Enable firewall
+        ansible.builtin.import_tasks: tasks/firewall.yaml
+
+      - name: Install docker
+        ansible.builtin.include_role:
+            name: geerlingguy.docker
+

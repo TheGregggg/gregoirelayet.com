@@ -1,0 +1,25 @@
+- name: Ensure ufw is running
+  community.general.ufw:
+    state: enabled
+    policy: deny
+
+- name: Configure open ports with ufw
+  community.general.ufw:
+    rule: "{{ item.rule }}"
+    port: "{{ item.port }}"
+    proto: tcp
+  with_items:
+    - { rule: "allow", port: {{ security_ssh_port }} }
+    - { rule: "allow", port: "80" }
+    - { rule: "allow", port: "443" }
+
+- name: Install fail2ban
+  apt:
+    name: fail2ban
+    state: present
+
+- name: Ensure fail2ban is running and enabled on boot
+  service:
+    name: fail2ban
+    state: started
+    enabled: yes

@@ -163,3 +163,4 @@ secrets/*
 temp
 static_root
 static_build
+.vagrant
