@@ -2,21 +2,42 @@ from django.db import models
 from django.http import HttpRequest
 from modelcluster.contrib.taggit import ClusterTaggableManager
 from modelcluster.fields import ParentalKey
-from taggit.models import TaggedItemBase
+from taggit.models import ItemBase, TagBase
 from wagtail.admin.panels import FieldPanel
 from wagtail.fields import RichTextField, StreamField
-from wagtail.models import Locale, Page
+from wagtail.models import Locale, Page, TranslatableMixin
 from wagtail.search import index
+from wagtail.snippets.models import register_snippet
 
 from apps.website.base import HtmxPage
 
 from .streamblock import BlogBlock
 
 
-class BlogPageTag(TaggedItemBase):
-    content_object = ParentalKey(
-        "BlogPage", related_name="tagged_items", on_delete=models.CASCADE
+@register_snippet
+class BlogTag(TagBase, TranslatableMixin):
+    name: "models.CharField" = models.CharField(verbose_name="Name", max_length=100)
+    slug: "models.SlugField" = models.SlugField(
+        verbose_name="slug",
+        max_length=100,
+        allow_unicode=True,
     )
+
+    class Meta(TranslatableMixin.Meta):
+        verbose_name = "tag"
+        verbose_name_plural = "tags"
+
+    panels = [
+        FieldPanel("name"),
+        FieldPanel("slug"),
+    ]
+
+
+class BlogPageTag(ItemBase):
+    tag = models.ForeignKey(
+        BlogTag, related_name="tagged_blogs", on_delete=models.CASCADE
+    )
+    content_object = ParentalKey("BlogPage", related_name="post_tags")
 
 
 class BlogsIndexPage(HtmxPage):
