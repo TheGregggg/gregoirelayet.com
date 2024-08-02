@@ -1,0 +1,25 @@
+.component-blog_tags {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	gap: var(--space-xxs);
+}
+
+.component-blog_tags__elem {
+	line-height: var(--body-line-height);
+	padding: calc(var(--space-xxs) / var(--body-line-height)) var(--space-xs);
+	border-radius: var(--radius);
+	background-color: var(--accent);
+	color: var(--background);
+	font-size: var(--text-xs);
+}
+
+@media (prefers-color-scheme: dark) {
+	html[data-theme="auto"] .component-blog_tags__elem {
+		font-weight: 500;
+	}
+}
+
+html[data-theme="dark"] .component-blog_tags__elem {
+	font-weight: 500;
+}

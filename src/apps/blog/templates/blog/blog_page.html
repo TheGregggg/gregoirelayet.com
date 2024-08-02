@@ -3,14 +3,9 @@
 {% block content %}
     <main class="blog container">
         <article class="blog__article">
-            <h1 class="mb--xs">{{ page.title }}</h1>
-            <ul>
-                {% for tag in page.tags.all %}
-                    <li>
-                        <a>{{ tag.localized }}</a>
-                    </li>
-                {% endfor %}
-            </ul>
+            <h1 class="mb--xxs">{{ page.title }}</h1>
+            {% component "blog_tags" page page.tags attrs:class="mb--s" only %}
+            {% endcomponent %}
             {% for block in page.body %}
                 {% include_block block %}
             {% endfor %}
