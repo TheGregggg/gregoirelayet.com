@@ -47,10 +47,18 @@ class BlogsIndexPage(HtmxPage):
 
     def get_context(self, request: HttpRequest, *args, **kwargs):
         context = super().get_context(request, *args, **kwargs)
+        print(context)
 
-        context["blog_pages"] = BlogPage.objects.filter(
-            locale=Locale.get_active()
-        ).live()
+        # Get blog pages
+        blog_pages = BlogPage.objects.filter(locale=Locale.get_active()).live()
+
+        # Filter by tag
+        tag = request.GET.get("tag")
+        if tag:
+            blog_pages = blog_pages.filter(tags__name=tag)
+            context["tag"] = tag
+
+        context["blog_pages"] = blog_pages
         return context
 
 

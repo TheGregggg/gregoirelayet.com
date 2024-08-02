@@ -7,11 +7,11 @@
 
 .component-blog_tags__elem {
 	line-height: var(--body-line-height);
-	padding: calc(var(--space-xxs) / var(--body-line-height)) var(--space-xs);
-	border-radius: var(--radius);
-	background-color: var(--accent);
-	color: var(--background);
+	color: var(--accent);
 	font-size: var(--text-xs);
+}
+.component-blog_tags__elem:hover {
+	text-decoration: underline;
 }
 
 @media (prefers-color-scheme: dark) {

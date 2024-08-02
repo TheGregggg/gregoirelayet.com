@@ -1,0 +1,16 @@
+.component-article__title:hover {
+	text-decoration: underline;
+}
+
+.component-article__btn {
+	float: right;
+}
+@media (prefers-color-scheme: dark) {
+	html[data-theme="auto"] .component-article__btn {
+		font-weight: 500;
+	}
+}
+
+html[data-theme="dark"] .component-article__btn {
+	font-weight: 500;
+}
