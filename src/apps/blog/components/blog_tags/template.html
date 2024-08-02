@@ -1,0 +1,8 @@
+{% load wagtailcore_tags %}
+<ul {% html_attrs attrs class="component-blog_tags" %}>
+    {% for tag in tags.all %}
+        <a href="{% pageurl blog_index_page %}?tag={{ tag }}">
+            <li class="component-blog_tags__elem">{{ tag.localized }}</li>
+        </a>
+    {% endfor %}
+</ul>
