@@ -9,6 +9,7 @@ from wagtail.admin import urls as wagtailadmin_urls
 from config.admin import admin_site
 
 urlpatterns: list[URLPattern | URLResolver] = [
+    path("", include("apps.blog.urls")),
     path("superadmin/", admin_site.urls),
     path("admin/", include(wagtailadmin_urls)),
     path("i18n/", include("django.conf.urls.i18n")),

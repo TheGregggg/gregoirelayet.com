@@ -22,6 +22,7 @@ class BlogTag(TagBase, TranslatableMixin):
         max_length=100,
         allow_unicode=True,
     )
+    free_tagging = False
 
     class Meta(TranslatableMixin.Meta):
         verbose_name = "tag"
