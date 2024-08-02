@@ -297,6 +297,9 @@ html {
 .mb--xxs {
 	margin-bottom: var(--space-xxs);
 }
+.mb--xxxs {
+	margin-bottom: var(--space-xxxs);
+}
 
 .mb--l {
 	margin-bottom: var(--space-l);

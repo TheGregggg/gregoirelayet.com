@@ -1,0 +1,21 @@
+{% extends base_template %}
+{% load i18n %}
+{% block content %}
+    <main class="container">
+        <div class="blog_index">
+            {% translate "Blog" as blog_h1 %}
+            {% if tag %}
+                <h1 class="mb--xxxs">{{ blog_h1 }}</h1>
+                <p class="mb--m">{% blocktranslate with ttag=tag%}Articles avec le tag '{{ ttag }}'{% endblocktranslate %}</p>
+            {% else %}
+                <h1 class="mb--m">{{ blog_h1 }}</h1>
+            {% endif %}
+            <div class="blog_index__content">
+                {% for article in blog_pages %}
+                    {% component "article" blog=article blog_index_page=page only %}
+                    {% endcomponent %}
+                {% endfor %}
+            </div>
+        </div>
+    </main>
+{% endblock content %}

@@ -3,9 +3,9 @@
 {% block content %}
     <main class="blog container">
         <article class="blog__article">
-            <h1 class="mb--xxs">{{ page.title }}</h1>
-            {% component "blog_tags" page page.tags attrs:class="mb--s" only %}
+            {% component "blog_tags" blog_index_page=page.get_parent tags=page.tags attrs:class="mb--xxs" only %}
             {% endcomponent %}
+            <h1 class="mb--xxs">{{ page.title }}</h1>
             {% for block in page.body %}
                 {% include_block block %}
             {% endfor %}

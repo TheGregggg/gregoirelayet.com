@@ -1,0 +1,16 @@
+{% load wagtailimages_tags wagtailcore_tags i18n %}
+<div class="component-article-container"
+     hx-boost="true"
+     hx-target="#main_page_content"
+     hx-swap="innerHTML show:none">
+    <div class="component-article">
+        <a href="{% pageurl article %}">
+            <h3 class="component-article__title mb--xxs">{{ article.title }}</h3>
+        </a>
+        {% component "blog_tags" blog_index_page=blog_index_page tags=article.tags attrs:class="mb--xs" only %}
+        {% endcomponent %}
+        <div class="description mb--xxs">{{ article.intro|richtext }}</div>
+        <a href="{% pageurl article %}"
+           class="btn btn--accent component-article__btn">{% translate "Voir cet article" %}</a>
+    </div>
+</div>
