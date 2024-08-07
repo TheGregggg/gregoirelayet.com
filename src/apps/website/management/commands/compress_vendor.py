@@ -14,9 +14,7 @@ class CompressLoader(Loader):
         # app_dir = settings.BASE_DIR
         ds = super().get_dirs()
 
-        a = [d for d in ds if "src" in str(d)]
-        print(a)
-        return a
+        return [d for d in ds if "src" in str(d)]
 
 
 class Command(compress.Command):
