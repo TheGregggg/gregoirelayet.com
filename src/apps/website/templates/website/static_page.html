@@ -1,0 +1,10 @@
+{% extends base_template %}
+{% load static wagtailcore_tags i18n %}
+{% block content %}
+    <main class="container">
+        <div class="static__container">
+            <h1>{{ page.title }}</h1>
+            <article>{{ page.body|richtext }}</article>
+        </div>
+    </main>
+{% endblock content %}
