@@ -27,3 +27,16 @@ class HomePage(HtmxPage):
             show_on_home_page=True, locale=Locale.get_active()
         ).live()
         return context
+
+
+class StaticPage(HtmxPage):
+    body = RichTextField("Corps de la page")
+
+    content_panels = HtmxPage.content_panels + [
+        FieldPanel("body"),
+    ]
+
+    parent_page_types = ["HomePage"]
+
+    class Meta:
+        verbose_name = "Static page to use for legals pages"

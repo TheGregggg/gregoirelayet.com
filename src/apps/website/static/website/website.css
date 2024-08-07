@@ -174,3 +174,9 @@ section#projects {
 	grid-template-columns: repeat(auto-fill, minmax(14em, 1fr));
 	gap: var(--space-m);
 }
+
+/* statics pages */
+.static__container {
+	max-width: 64ch;
+	margin: 0 auto;
+}
