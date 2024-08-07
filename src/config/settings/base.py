@@ -243,6 +243,8 @@ COMPONENTS = {
 WAGTAIL_SITE_NAME = "Greg's website"
 TAGGIT_CASE_INSENSITIVE = True
 
+WAGTAILADMIN_BASE_URL = "gregadmin"
+
 
 """
 ------------------------------------
