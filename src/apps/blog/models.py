@@ -47,7 +47,6 @@ class BlogsIndexPage(HtmxPage):
 
     def get_context(self, request: HttpRequest, *args, **kwargs):
         context = super().get_context(request, *args, **kwargs)
-        print(context)
 
         # Get blog pages
         blog_pages = BlogPage.objects.filter(locale=Locale.get_active()).live()
