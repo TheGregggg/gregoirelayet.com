@@ -6,7 +6,7 @@
 	],
 	"settings": {
 		"mypy.configFile": "src/mypy.ini",
-		"mypy.dmypyExecutable": "~/.pyenv/versions/3.12.1/envs/gl.com-3.12.1/bin/dmypy",
+		"mypy.dmypyExecutable": "~/.local/share/virtualenvs/gregoirelayet.com-HuiLBe_u/bin/dmypy",
 		"mypy.targets": [
 			"src"
 		],

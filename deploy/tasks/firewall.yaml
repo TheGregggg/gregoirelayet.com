@@ -1,3 +1,8 @@
+- name: Ensure ufw is install
+  apt:
+    name: ufw
+    state: present
+
 - name: Ensure ufw is running
   community.general.ufw:
     state: enabled
@@ -9,7 +14,7 @@
     port: "{{ item.port }}"
     proto: tcp
   with_items:
-    - { rule: "allow", port: {{ security_ssh_port }} }
+    - { rule: "allow", port: "{{ security_ssh_port }}" }
     - { rule: "allow", port: "80" }
     - { rule: "allow", port: "443" }
 

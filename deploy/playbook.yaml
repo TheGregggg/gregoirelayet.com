@@ -2,8 +2,9 @@
 - name: Provision VPS with security settings and docker
   hosts: all
   remote_user: debian
+  become: true
 
-  vars_files: vars/main.yml
+  vars_files: vars/main.yaml
 
   pre_tasks:
       - name: Update apt cache if needed.
