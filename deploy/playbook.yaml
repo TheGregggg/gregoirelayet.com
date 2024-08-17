@@ -15,7 +15,7 @@
   tasks:
       - name: Create deployement user
         ansible.builtin.import_tasks: tasks/create_user.yaml
-      
+
       - name: Secure server
         ansible.builtin.include_role:
             name: geerlingguy.security
@@ -26,4 +26,3 @@
       - name: Install docker
         ansible.builtin.include_role:
             name: geerlingguy.docker
-
