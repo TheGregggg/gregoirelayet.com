@@ -28,6 +28,7 @@
 		},
 		"files.associations": {
 			"**/components/**/*.html": "django-html"
-		}
+		},
+		"ansible.python.interpreterPath": "/home/gregoire/.pyenv/versions/3.10.13/bin/python"
 	}
 }
