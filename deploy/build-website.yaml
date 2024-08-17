@@ -1,0 +1,57 @@
+---
+- name: Setup services on VPS
+  hosts: all
+  remote_user: debian
+  become: true
+
+  vars_files: vars/main.yaml
+
+  tasks:
+    - name: Ensure temp-build directory exists
+      ansible.builtin.file:
+        path: /home/{{ deployement_user }}/temp-build/gregoirelayet/
+        state: directory
+        owner: "{{ deployement_user }}"
+        group: "{{ deployement_user }}"
+        mode: "0755"
+
+    - name: Copy project code
+      become: true
+      become_user: "{{ deployement_user }}"
+      ansible.posix.synchronize:
+        src: "{{ playbook_dir | dirname }}/"
+        dest: "/home/{{ deployement_user }}/temp-build/gregoirelayet/"
+        use_ssh_args: true
+        rsync_path: "sudo rsync"
+        rsync_opts:
+          - "--include=src"
+          - "--include=src/***"
+          - "--exclude=src/static_root/"
+          - "--exclude=src/static_build/"
+          - "--include=Dockerfile"
+          - "--include=Pipfile"
+          - "--include=Pipfile.lock"
+          - "--include=entrypoint.sh"
+          - "--include=.dockerignore"
+          - "--exclude=__pycache__/"
+          - "--exclude=*"
+
+    - name: Gregoirelayet docker build
+      community.docker.docker_image:
+        name: gregoirelayet
+        tag: latest
+        source: build
+        build:
+          path: "/home/{{ deployement_user }}/temp-build/gregoirelayet/"
+          pull: false
+        state: present
+
+    - name: Copy docker-compose 
+      community.docker.docker_image:
+        name: gregoirelayet
+        tag: latest
+        source: build
+        build:
+          path: "/home/{{ deployement_user }}/temp-build/gregoirelayet/"
+          pull: false
+        state: present

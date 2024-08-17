@@ -1,0 +1,1 @@
+rsync --delay-updates -F -P -avz  --rsync-path="sudo rsync" --include=src --include=src/*** --exclude=src/static_root/ --exclude=src/static_build/ --include=Dockerfile --include=Pipfile --include=Pipfile.lock --include=entrypoint.sh --include=.dockerignore  --exclude=__pycache__/ --exclude=*  ../. default:/home/gerg/temp-build/gregoirelayet/
