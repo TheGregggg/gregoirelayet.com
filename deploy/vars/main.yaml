@@ -16,4 +16,4 @@ docker_compose_package_state: present
 docker_install_compose: false
 
 docker_users:
-    - {{deployement_user}}
+    - "{{deployement_user}}"
