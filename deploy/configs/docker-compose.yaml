@@ -31,19 +31,27 @@ services:
       - ./caddy-config:/config
       - ./caddy-data:/data
     environment:
+      DEPLOYEMENT_USER: "${DEPLOYEMENT_USER}"
       EMAIL: "acme@gregoirelayet.com"                 # The email address to use for ACME registration.
       VW_LOG_FILE: "/data/vw_access.log"
+      VAULTWARDEN_FQDN: "${VAULTWARDEN_FQDN}"
   
   gregoirelayet:
     image: test
     environment:
+      SECRET_KEY_FILE: /run/secrets/django_secret
+      DJANGO_SETTINGS_MODULE: config.settings.production
+      FQDN: "${FQDN}"
       DB_HOSTNAME: db
       DB_PORT: 5432
-      DJANGO_SETTINGS_MODULE: config.settings.production
+      DB_PASSWORD_FILE: /run/secrets/db_user_password
     ports:
       - 8000:8000
     secrets:
+      - django_secret
       - db_user_password
+    volumes:
+      - ./gregoirelayet/media:/app/media
   
   vaultwarden:
     image: vaultwarden/server:latest
@@ -69,6 +77,8 @@ services:
   
 
 secrets:
+   django_secret:
+     file: secrets/django_secret.txt
    db_root_user_password:
      file: secrets/db_root_user_password.txt
    db_user_password:

@@ -11,16 +11,16 @@ gregoirelayet.com {
     route {
         header /media/* Cache-Control "public, max-age=10, must-revalidate"
         file_server /media/* {
-            root /home/gerg/app/
+            root /home/{$DEPLOYEMENT_USER}/gregoirelayet/media
         }
         
-        reverse_proxy localhost:8000 {
+        reverse_proxy gregoirelayet:8000 {
             header_up X-Real-IP {remote_host}
         }
     }
 }
 
-{$VAULTWARDEN_DOMAIN} {
+{$VAULTWARDEN_FQDN} {
   log {
     level INFO
     output file {$VW_LOG_FILE} {

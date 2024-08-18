@@ -20,7 +20,7 @@ with open(config("DB_PASSWORD_FILE"), "r") as f:
 DATABASES["default"]["HOST"] = config("DB_HOST")  # noqa
 DATABASES["default"]["PORT"] = config("DB_PORT")  # noqa
 
-FQDN = config("DNS_NAME", default="127.0.0.1")
+FQDN = config("FQDN", default="127.0.0.1")
 
 ALLOWED_HOSTS = [
     FQDN,
