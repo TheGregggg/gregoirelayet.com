@@ -1,0 +1,16 @@
+---
+- name: Seting up services using docker compose
+  hosts: all
+  remote_user: debian
+  become: true
+
+  tasks:
+    - name: Copy docker-compose
+      community.docker.docker_image:
+        name: gregoirelayet
+        tag: latest
+        source: build
+        build:
+          path: "/home/{{ deployement_user }}/temp-build/gregoirelayet/"
+          pull: false
+        state: present

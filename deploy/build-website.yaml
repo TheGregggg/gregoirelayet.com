@@ -46,12 +46,3 @@
           pull: false
         state: present
 
-    - name: Copy docker-compose 
-      community.docker.docker_image:
-        name: gregoirelayet
-        tag: latest
-        source: build
-        build:
-          path: "/home/{{ deployement_user }}/temp-build/gregoirelayet/"
-          pull: false
-        state: present
