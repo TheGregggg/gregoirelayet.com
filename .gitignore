@@ -158,7 +158,7 @@ src/images
 src/original_images
 
 secrets/*
-!secrets/*.exemple
+!secrets/*.example
 
 temp
 static_root
