@@ -1,0 +1,75 @@
+version: '3.9'
+
+services:
+  db:
+    image: postgres
+    restart: always
+    shm_size: 128mb
+    environment:
+      POSTGRES_PASSWORD_FILE: /run/secrets/db_root_user_password
+      POSTGRES_USER: gerg_db_admin
+      POSTGRES_DB: postgres
+    secrets:
+      - db_root_user_password
+    volumes:
+      - type: bind
+        source: ./pg-data
+        target: /var/lib/postgresql/data
+    ports:
+      - 5432:5432
+  
+  caddy:
+    image: caddy:2
+    container_name: caddy
+    restart: always
+    ports:
+      - 80:80  # Needed for the ACME HTTP-01 challenge.
+      - 443:443
+      - 443:443/udp # Needed for HTTP/3.
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - ./caddy-config:/config
+      - ./caddy-data:/data
+    environment:
+      EMAIL: "acme@gregoirelayet.com"                 # The email address to use for ACME registration.
+      VW_LOG_FILE: "/data/vw_access.log"
+  
+  gregoirelayet:
+    image: test
+    environment:
+      DB_HOSTNAME: db
+      DB_PORT: 5432
+      DJANGO_SETTINGS_MODULE: config.settings.production
+    ports:
+      - 8000:8000
+    secrets:
+      - db_user_password
+  
+  vaultwarden:
+    image: vaultwarden/server:latest
+    container_name: vaultwarden
+    restart: always
+    environment:
+      DOMAIN: "https://${VAULTWARDEN_DOMAIN}"
+      SIGNUPS_ALLOWED: "false"
+      LOG_FILE: "/data/vaultwarden.log"
+      LOG_LEVEL: "warn"
+      EXTENDED_LOGGING: "true"
+      PUSH_ENABLED: "true"
+      PUSH_INSTALLATION_ID: "${VAULTWARDEN_PUSH_INSTALLATION_ID}"
+      PUSH_INSTALLATION_KEY: "${VAULTWARDEN_PUSH_INSTALLATION_KEY}"
+      SMTP_HOST: "${EMAIL_HOST}"
+      SMTP_FROM: "${EMAIL_HOST_USER}"
+      SMTP_PORT: "${EMAIL_PORT}"
+      SMTP_SECURITY: starttls
+      SMTP_USERNAME: "${EMAIL_HOST_USER}"
+      SMTP_PASSWORD: "${EMAIL_HOST_PASSWORD}"
+    volumes:
+      - ./vw-data:/data
+  
+
+secrets:
+   db_root_user_password:
+     file: secrets/db_root_user_password.txt
+   db_user_password:
+     file: secrets/db_user_password.txt

@@ -1,0 +1,13 @@
+tasks:
+    - name: Tear down existing services
+      community.docker.docker_compose_v2:
+          project_src: /home/{{ deployement_user }}/
+          state: absent
+
+    - name: Create and start all services
+      community.docker.docker_compose_v2:
+          project_src: /home/{{ deployement_user }}/
+
+    - name: Remove docker's unused images
+      community.docker.docker_prune:
+          images: true

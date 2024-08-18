@@ -5,12 +5,15 @@
   become: true
 
   tasks:
-    - name: Copy docker-compose
-      community.docker.docker_image:
-        name: gregoirelayet
-        tag: latest
-        source: build
-        build:
-          path: "/home/{{ deployement_user }}/temp-build/gregoirelayet/"
-          pull: false
-        state: present
+      - name: Copy configs files
+        ansible.builtin.copy:
+            src: ./configs
+            dest: /home/{{ deployement_user }}/
+            owner: "{{ deployement_user }}"
+            group: "{{ deployement_user }}"
+            mode: "0644"
+        notify:
+            - Restart docker-compose
+
+  handlers:
+      - name: Restart docker-compose
