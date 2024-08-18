@@ -1,0 +1,15 @@
+tasks:
+    - name: Tear down existing gregoirelayet service
+      community.docker.docker_compose_v2:
+          project_src: /home/{{ deployement_user }}/
+          state: absent
+          services:
+              - gregoirelayet
+
+    - name: Create and start all services
+      community.docker.docker_compose_v2:
+          project_src: /home/{{ deployement_user }}/
+
+    - name: Remove docker's unused images
+      community.docker.docker_prune:
+          images: true
