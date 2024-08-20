@@ -10,8 +10,6 @@ class Migration(migrations.Migration):
 
     dependencies = [
         ("project", "0001_initial"),
-        ("wagtailcore", "0091_remove_revision_submitted_for_moderation"),
-        ("wagtailimages", "0025_alter_image_file_alter_rendition_file"),
     ]
 
     operations = [

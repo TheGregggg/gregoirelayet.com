@@ -9,7 +9,6 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ("wagtailcore", "0091_remove_revision_submitted_for_moderation"),
         ("website", "0002_alter_skillcategory_options_skill"),
     ]
 

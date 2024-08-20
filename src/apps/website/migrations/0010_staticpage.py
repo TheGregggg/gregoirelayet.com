@@ -8,7 +8,6 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ("wagtailcore", "0095_embed"),
         ("website", "0009_alter_homepage_experiences"),
     ]
 

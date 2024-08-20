@@ -10,7 +10,6 @@ class Migration(migrations.Migration):
 
     dependencies = [
         ("blog", "0008_auto_20240725_1119"),
-        ("wagtailcore", "0095_embed"),
     ]
 
     operations = [

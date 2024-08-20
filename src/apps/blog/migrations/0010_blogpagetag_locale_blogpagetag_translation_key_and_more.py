@@ -10,7 +10,6 @@ class Migration(migrations.Migration):
 
     dependencies = [
         ("blog", "0009_alter_blogtag_locale_alter_blogtag_translation_key_and_more"),
-        ("wagtailcore", "0095_embed"),
     ]
 
     operations = [
