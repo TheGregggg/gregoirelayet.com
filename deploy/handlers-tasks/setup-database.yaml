@@ -1,0 +1,24 @@
+- name: Install venv
+  ansible.builtin.apt:
+    package: python3-venv
+    state: present
+
+- name: Install psycopg 2
+  ansible.builtin.pip:
+    name: psycopg[binary]
+    virtualenv: /home/{{ deployement_user }}/.psycopg2venv
+    virtualenv_command: python3 -m venv
+
+- name: Make sure db is up
+  community.docker.docker_compose_v2:
+    project_src: /home/{{ deployement_user }}/
+    state: present
+    services:
+      - db
+
+- name: Setup db
+  ansible.builtin.shell: /home/{{ deployement_user }}/.psycopg2venv/bin/python3 setup_db.py
+  args:
+    chdir: /home/{{ deployement_user }}/
+  notify:
+    - Restart all docker-compose services

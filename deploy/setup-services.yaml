@@ -41,6 +41,19 @@
         notify:
             - Restart all docker-compose services
 
+      - name: Copy setup db
+        ansible.builtin.copy:
+            src: ../setup_db.py
+            dest: /home/{{ deployement_user }}/
+            owner: "{{ deployement_user }}"
+            group: "{{ deployement_user }}"
+            mode: "0600"
+        notify:
+            - Setup database
+
   handlers:
       - name: Restart all docker-compose services
         ansible.builtin.include_tasks: handlers-tasks/restart-all-services.yaml
+
+      - name: Setup database
+        ansible.builtin.include_tasks: handlers-tasks/setup-database.yaml

@@ -25,14 +25,13 @@
     - name: Install docker
       ansible.builtin.include_role:
         name: geerlingguy.docker
-    
+
     - name: Log into DockerHub
-      become_user: "{{deployement_user}}"
+      become: true
+      become_user: "{{ deployement_user }}"
       vars:
         docker_hub_pwd: "{{ lookup('file', './docker-hub-token') }}"
       community.docker.docker_login:
         username: gregggg
-        password: "{{docker_hub_pwd}}"
+        password: "{{ docker_hub_pwd }}"
         timeout: 120
-        debug: yes
-      

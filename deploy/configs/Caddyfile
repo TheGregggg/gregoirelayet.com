@@ -1,8 +1,4 @@
 
-www.gregoirelayet.com {
-	redir https://gregoirelayet.com{uri} permanent
-}
-
 gregoirelayet.com {
     encode zstd gzip
 
