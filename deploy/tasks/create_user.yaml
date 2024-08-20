@@ -1,13 +1,12 @@
 ---
 - name: Add a deployment user
-  user:
+  ansible.builtin.user:
     name: "{{ deployement_user }}"
     shell: /usr/sbin/nologin
     state: present
 
-
 - name: Add sudo rights for deployment user
-  lineinfile:
+  ansible.builtin.lineinfile:
     dest: /etc/sudoers
     regexp: "^{{ deployement_user }}"
     line: "{{ deployement_user }} ALL=(ALL) NOPASSWD: ALL"
