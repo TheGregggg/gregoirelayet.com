@@ -8,9 +8,12 @@
 
   tasks:
       - name: Ensure temp-build directory exists
+        become: true
+        become_user: "{{ deployement_user }}"
         ansible.builtin.file:
             path: /home/{{ deployement_user }}/temp-build/gregoirelayet/
             state: directory
+            modification_time: preserve
             owner: "{{ deployement_user }}"
             group: "{{ deployement_user }}"
             mode: "0755"
@@ -22,8 +25,15 @@
             src: "{{ playbook_dir | dirname }}/"
             dest: "/home/{{ deployement_user }}/temp-build/gregoirelayet/"
             use_ssh_args: true
+            recursive: true
+            archive: false
+            checksum: true
+            delete: true
+            times: false
             rsync_path: "sudo rsync"
             rsync_opts:
+                - "--chown={{ deployement_user }}:{{ deployement_user }}"
+                - "--exclude=__pycache__/"
                 - "--include=src"
                 - "--include=src/***"
                 - "--exclude=src/static_root/"
@@ -33,23 +43,10 @@
                 - "--include=Pipfile.lock"
                 - "--include=entrypoint.sh"
                 - "--include=.dockerignore"
-                - "--exclude=__pycache__/"
                 - "--exclude=*"
         notify:
-            - Rebuild gregoirelayet docker images
+            - Rebuild and restart gregoirelayet docker images
 
   handlers:
-      - name: Rebuild gregoirelayet docker images
-        community.docker.docker_image:
-            name: gregoirelayet
-            tag: latest
-            source: build
-            build:
-                path: "/home/{{ deployement_user }}/temp-build/gregoirelayet/"
-                pull: false
-            state: present
-        notify:
-            - Restart gregoirelayet docker-compose service
-
-      - name: Restart gregoirelayet docker-compose service
-        ansible.builtin.import_tasks: handlers-tasks/restart-gl-service.yaml
+      - name: Rebuild and restart gregoirelayet docker images
+        ansible.builtin.include_tasks: handlers-tasks/restart-gl-service.yaml

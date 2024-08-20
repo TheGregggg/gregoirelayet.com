@@ -1,2 +1,4 @@
 vars/main.yaml
 .env
+docker-hub-token
+inventory.txt

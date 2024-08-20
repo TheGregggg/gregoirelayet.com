@@ -1,15 +1,36 @@
-tasks:
+---
+- name: Rebuild gregoirelayet docker images
+  become_user: "{{deployement_user}}"
+  community.docker.docker_image:
+    name: gregoirelayet
+    tag: latest
+    source: build
+    force_source: true
+    build:
+      path: "/home/{{ deployement_user }}/temp-build/gregoirelayet/"
+      pull: false
+    state: present
+
+- name: Check that the docker-compose file exists
+  ansible.builtin.stat:
+    path: "/home/{{ deployement_user }}/docker-compose.yaml"
+  register: stat_result
+
+- name: Restart gregoilayet container if the dockercompose file is present
+  block:
     - name: Tear down existing gregoirelayet service
       community.docker.docker_compose_v2:
-          project_src: /home/{{ deployement_user }}/
-          state: absent
-          services:
-              - gregoirelayet
+        project_src: /home/{{ deployement_user }}/
+        state: absent
+        services:
+          - gregoirelayet
 
     - name: Create and start all services
       community.docker.docker_compose_v2:
-          project_src: /home/{{ deployement_user }}/
+        recreate: always
+        project_src: /home/{{ deployement_user }}/
 
     - name: Remove docker's unused images
       community.docker.docker_prune:
-          images: true
+        images: true
+  when: stat_result.stat.exists

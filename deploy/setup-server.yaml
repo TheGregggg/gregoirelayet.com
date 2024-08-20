@@ -6,15 +6,14 @@
 
   vars_files: vars/main.yaml
 
-  pre_tasks:
-    - name: Update apt cache if needed.
-      ansible.builtin.apt:
-        update_cache: "yes"
-        cache_valid_time: "3600"
-
   tasks:
     - name: Create deployement user
       ansible.builtin.import_tasks: tasks/create_user.yaml
+
+    - name: Install acl
+      ansible.builtin.apt:
+        name: acl
+        state: present
 
     # - name: Secure server
     #   ansible.builtin.include_role:
@@ -26,3 +25,14 @@
     - name: Install docker
       ansible.builtin.include_role:
         name: geerlingguy.docker
+    
+    - name: Log into DockerHub
+      become_user: "{{deployement_user}}"
+      vars:
+        docker_hub_pwd: "{{ lookup('file', './docker-hub-token') }}"
+      community.docker.docker_login:
+        username: gregggg
+        password: "{{docker_hub_pwd}}"
+        timeout: 120
+        debug: yes
+      

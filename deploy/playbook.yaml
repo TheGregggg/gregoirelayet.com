@@ -5,9 +5,9 @@
   become: true
 
 - name: Setup server
-  ansible.builtin.import_playbook: setup-servers.yaml
+  ansible.builtin.import_playbook: setup-server.yaml
 
-- name: Build website 
+- name: Build website
   ansible.builtin.import_playbook: build-website.yaml
 
 - name: Setup services

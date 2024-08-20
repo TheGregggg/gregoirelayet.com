@@ -4,16 +4,43 @@
   remote_user: debian
   become: true
 
+  vars_files: vars/main.yaml
+
   tasks:
+      - name: Copy secrets files
+        ansible.builtin.copy:
+            src: ../secrets
+            dest: /home/{{ deployement_user }}/
+            owner: "1000" # not the deployement user but the uid of the user in the docker container
+            group: "1000"
+            mode: "0600"
+        notify:
+            - Restart all docker-compose services
+
+      - name: Ensures all necessary docker bind directory exists
+        ansible.builtin.file:
+            path: /home/{{ deployement_user }}/{{ item.dir }}
+            state: directory
+            modification_time: preserve
+            owner: "{{ item.owner }}"
+            group: "{{ item.group }}"
+            mode: "{{ item.mode }}"
+        loop:
+            - {dir: "pg-data", owner: "999", group: "{{ deployement_user }}", mode: "700"}
+            - {dir: "caddy-data", owner: "{{ deployement_user }}", group: "{{ deployement_user }}", mode: "755"}
+            - {dir: "gregoirelayet/media", owner: "{{ deployement_user }}", group: "{{ deployement_user }}", mode: "755"}
+            - {dir: "vw-data", owner: "{{ deployement_user }}", group: "{{ deployement_user }}", mode: "755"}
+
       - name: Copy configs files
         ansible.builtin.copy:
-            src: ./configs
+            src: ./configs/
             dest: /home/{{ deployement_user }}/
             owner: "{{ deployement_user }}"
             group: "{{ deployement_user }}"
-            mode: "0644"
+            mode: "0600"
         notify:
-            - Restart docker-compose
+            - Restart all docker-compose services
 
   handlers:
-      - name: Restart docker-compose
+      - name: Restart all docker-compose services
+        ansible.builtin.include_tasks: handlers-tasks/restart-all-services.yaml
