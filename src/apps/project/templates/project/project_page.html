@@ -5,7 +5,7 @@
         <h1 class="mb--xs">{{ page.title }}</h1>
         <div class="project__grid">
             <div class="project__article">
-                {% picture page.image format-{avif,webp,jpeg} width-{400,600,900} sizes="(max-width: 400px) 400,(max-width: 600px) 600,50vw" class="styled mb--m" %}
+                {% picture page.image format-{avif,webp,jpeg} width-{400,600,900} sizes="(max-width: 400px) 400,(max-width: 600px) 600,50vw" class="styled mb--m" alt=page.image_alt %}
                 <article>{{ page.description|richtext }}
                     {% for block in page.body %}
                         {% include_block block %}
