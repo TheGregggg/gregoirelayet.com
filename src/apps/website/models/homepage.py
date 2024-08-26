@@ -1,5 +1,6 @@
+from django.db import models
 from django.http import HttpRequest
-from wagtail.admin.panels import FieldPanel
+from wagtail.admin.panels import FieldPanel, MultiFieldPanel
 from wagtail.fields import RichTextField, StreamField
 from wagtail.models import Locale
 
@@ -10,11 +11,25 @@ from apps.website.components.other_passion.other_passion import OtherPassionBloc
 
 
 class HomePage(HtmxPage):
+    hero_image = models.ForeignKey(
+        "wagtailimages.Image",
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL,
+        related_name="+",
+    )
+    hero_image_alt = models.CharField(max_length=150, null=True, blank=True)
     about_me = RichTextField(blank=True)
     experiences = StreamField([("Experience", ExperienceBlock())], blank=True)
     other_passions = StreamField([("Passion", OtherPassionBlock())], blank=True)
 
     content_panels = HtmxPage.content_panels + [
+        MultiFieldPanel(
+            [
+                FieldPanel("hero_image"),
+                FieldPanel("hero_image_alt"),
+            ]
+        ),
         FieldPanel("about_me"),
         FieldPanel("experiences"),
         FieldPanel("other_passions"),

@@ -114,7 +114,7 @@ h2.styled_title {
 		grid-row: 1/3;
 	}
 
-	.home #profile-picture {
+	.home #profile-picture-wrapper picture {
 		position: sticky;
 		top: var(--space-xxl);
 	}

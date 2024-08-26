@@ -1,5 +1,5 @@
 {% extends base_template %}
-{% load static wagtailcore_tags i18n %}
+{% load static wagtailcore_tags wagtailimages_tags i18n %}
 {% block content %}
     <div class="halftone"></div>
     <main class="home">
@@ -13,7 +13,8 @@
             </div>
             <div id="profile-picture-wrapper">
                 {% comment %} djlint:off H006 {% endcomment %}
-                <img id="profile-picture" src="{% static "website/rx7_small.jpg" %}" alt="" class="styled">
+                {% picture page.hero_image format-{avif,webp,jpeg} width-{400,600,900} sizes="(max-width: 400px) 400,(max-width: 600px) 600, 50vw" class="styled" id="profile-picture" alt=page.hero_image_alt %}
+                {% comment %} <img id="profile-picture" src="{% static "website/rx7_small.jpg" %}" alt="" class="styled"> {% endcomment %}
                 {% comment %} djlint:on {% endcomment %}
             </div>
             <div id="aboutme">
