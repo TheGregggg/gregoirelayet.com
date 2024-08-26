@@ -1,6 +1,7 @@
 from django.db import models
 from django.http import HttpRequest
 from wagtail.admin.panels import FieldPanel, MultiFieldPanel
+from wagtail.blocks import CharBlock
 from wagtail.fields import RichTextField, StreamField
 from wagtail.models import Locale
 
@@ -19,6 +20,9 @@ class HomePage(HtmxPage):
         related_name="+",
     )
     hero_image_alt = models.CharField(max_length=150, null=True, blank=True)
+
+    catchphrases = StreamField([("catchphrase", CharBlock(max_length=150))], blank=True)
+
     about_me = RichTextField(blank=True)
     experiences = StreamField([("Experience", ExperienceBlock())], blank=True)
     other_passions = StreamField([("Passion", OtherPassionBlock())], blank=True)
@@ -28,8 +32,10 @@ class HomePage(HtmxPage):
             [
                 FieldPanel("hero_image"),
                 FieldPanel("hero_image_alt"),
-            ]
+            ],
+            heading="Hero image",
         ),
+        FieldPanel("catchphrases"),
         FieldPanel("about_me"),
         FieldPanel("experiences"),
         FieldPanel("other_passions"),

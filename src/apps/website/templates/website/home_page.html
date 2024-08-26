@@ -8,8 +8,7 @@
                 <h1 class="mb--xxs">
                     Grégoire <span class="underlined">Layet</span>
                 </h1>
-                <h3 class="mb--xxs">{% translate "Developpeur freelance Django, FastAPI et Python" %}</h3>
-                <h3 class="mb--xxs">{% translate "Etudiant à Polytech Nantes" %}</h3>
+                {% for block in page.catchphrases %}<h3 class="mb--xxs">{{ block.value }}</h3>{% endfor %}
             </div>
             <div id="profile-picture-wrapper">
                 {% comment %} djlint:off H006 {% endcomment %}
