@@ -1,12 +1,19 @@
 ---
 - name: Provision VPS with security settings and docker
   hosts: all
-  remote_user: debian
+  remote_user: ubuntu
   become: true
 
   vars_files: vars/main.yaml
 
   tasks:
+    - name: Secure server
+      ansible.builtin.include_role:
+        name: geerlingguy.security
+
+    - name: Enable firewall
+      ansible.builtin.import_tasks: tasks/firewall.yaml
+
     - name: Create deployement user
       ansible.builtin.import_tasks: tasks/create_user.yaml
 
@@ -15,12 +22,6 @@
         name: acl
         state: present
 
-    # - name: Secure server
-    #   ansible.builtin.include_role:
-    #     name: geerlingguy.security
-
-    # - name: Enable firewall
-    #   ansible.builtin.import_tasks: tasks/firewall.yaml
 
     - name: Install docker
       ansible.builtin.include_role:
