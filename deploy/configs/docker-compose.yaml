@@ -28,6 +28,7 @@ services:
       - ./Caddyfile:/etc/caddy/Caddyfile:ro
       - ./caddy-config:/config
       - ./caddy-data:/data
+      - ./gregoirelayet/media:/srv/media
     environment:
       DEPLOYEMENT_USER: "${DEPLOYEMENT_USER}"
       EMAIL: "acme@gregoirelayet.com"                 # The email address to use for ACME registration.

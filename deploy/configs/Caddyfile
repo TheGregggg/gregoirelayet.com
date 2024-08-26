@@ -5,7 +5,7 @@ gregoirelayet.com {
     route {
         header /media/* Cache-Control "public, max-age=10, must-revalidate"
         file_server /media/* {
-            root /home/{$DEPLOYEMENT_USER}/gregoirelayet/media
+            root /srv
         }
         
         reverse_proxy gregoirelayet:8000 {
