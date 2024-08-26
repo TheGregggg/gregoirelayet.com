@@ -223,7 +223,7 @@ PIPELINE = {
             "output_filename": "js/components.js",
         }
     },
-    "CSS_COMPRESSOR": "pipeline.compressors.csshtmljsminify.CssHtmlJsMinifyCompressor",
+    "CSS_COMPRESSOR": "pipeline.compressors.NoopCompressor",
     "JS_COMPRESSOR": "pipeline.compressors.csshtmljsminify.CssHtmlJsMinifyCompressor",
     "DISABLE_WRAPPER": True,
 }
