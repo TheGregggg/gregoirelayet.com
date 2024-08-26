@@ -10,6 +10,7 @@ class Migration(migrations.Migration):
 
     dependencies = [
         ("project", "0001_initial"),
+        ("wagtailimages", "0001_squashed_0021"),
     ]
 
     operations = [

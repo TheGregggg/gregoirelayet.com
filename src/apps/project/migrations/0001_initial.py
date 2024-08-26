@@ -8,7 +8,7 @@ class Migration(migrations.Migration):
 
     initial = True
 
-    dependencies = []
+    dependencies = [("wagtailcore", "0070_rename_pagerevision_revision")]
 
     operations = [
         migrations.CreateModel(
