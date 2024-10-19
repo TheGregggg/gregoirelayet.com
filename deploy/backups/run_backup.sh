@@ -1,0 +1,1 @@
+ansible-playbook --key-file ~/.ssh/vps-gl -i ../inventory.ini backup.yaml 
