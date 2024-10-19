@@ -1,6 +1,6 @@
 services:
   db:
-    image: postgres
+    image: postgres:16.4-bookworm
     restart: always
     shm_size: 128mb
     environment:
@@ -54,7 +54,7 @@ services:
       - ./gregoirelayet/media:/app/media
   
   vaultwarden:
-    image: vaultwarden/server:latest
+    image: vaultwarden/server:1.32.2
     container_name: vaultwarden
     restart: always
     environment:
