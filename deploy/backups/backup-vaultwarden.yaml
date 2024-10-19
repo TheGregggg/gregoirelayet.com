@@ -1,0 +1,32 @@
+---
+- name: Retrieve db and statics files from gregoirelayet
+  hosts: all
+  remote_user: ubuntu
+  become: true
+  gather_facts: False
+
+  vars_files: ../vars/main.yaml
+
+  tasks:
+    - name: Get current date and time
+      command: date +"%Y-%m-%d_%H-%M-%S"
+      register: current_datetime
+      delegate_to: localhost
+      become: false
+
+    - name: Copy vw files
+      ansible.posix.synchronize:
+        mode: pull
+        src: /home/{{ deployement_user }}/vw-data/
+        dest: "./{{ current_datetime.stdout }}_vw"
+
+    - name: Compress files
+      community.general.archive:
+        path: "./{{ current_datetime.stdout }}_vw/"
+        dest: "./vaultwarden/{{ current_datetime.stdout }}.tar.gz"
+      delegate_to: localhost
+      become: false
+
+    - name: Remove uncompressed folder
+      local_action: ansible.builtin.command rm -r "{{ current_datetime.stdout }}_vw"
+      become: false
