@@ -54,7 +54,7 @@ services:
       - ./gregoirelayet/media:/app/media
   
   vaultwarden:
-    image: vaultwarden/server:1.32.2
+    image: vaultwarden/server:1.32.7
     container_name: vaultwarden
     restart: always
     environment:
