@@ -1,6 +1,11 @@
-
 gregoirelayet.com {
     encode zstd gzip
+
+    header / {
+      X-Content-Type-Options nosniff
+      X-Frame-Options SAMEORIGIN
+      -Server
+  }
 
     route {
         header /media/* Cache-Control "public, max-age=10, must-revalidate"
