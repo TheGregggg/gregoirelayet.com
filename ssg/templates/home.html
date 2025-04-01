@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="halftone"></div>
+    <main class="home">
+        <section id="home">
+            <div id="hero-text">
+                <h1 class="mb--xxs">
+                    Grégoire <span class="underlined">Layet</span>
+                </h1>
+                {% for catchphrase in section.extra.catchphrases %}<h3 class="mb--xxs">{{ catchphrase }}</h3>{% endfor %}
+            </div>
+            <div id="profile-picture-wrapper">
+                {# {% picture page.hero_image format-{avif,webp,jpeg} width-{400,600,900} sizes="(max-width: 400px) 400,(max-width: 600px) 600, 50vw" class="styled" id="profile-picture" alt=page.hero_image_alt %} #}
+            </div>
+            <div id="aboutme">
+                <h2 class="styled_title">{{section.extra.a_propos}}</h2>
+                <article>{{ section.content | safe }}</article>
+            </div>
+        </section>
+        <section id="projects">
+            <h2 class="styled_title mb--m">{{section.extra.projects_title}}</h2>
+            <div class="projects__list">
+                {% for project in section.extra.projects %}
+                     {% set page_project = get_page(path="projects/"  ~  project ~ ".md") %}
+                     <div class="component-project-container">
+                        <div class="component-project">
+                            <div class="component-project__image_wrapper">
+                                {# {% picture project.image format-{avif,webp,jpeg} width-{400,600,900} sizes="(max-width: 400px) 400,(max-width: 600px) 600,90vw" class="styled" alt=project.image_alt %} #}
+                            </div>
+                            <h3 class="component-project__title mb--xs">{{ page_project.title }}</h3>
+                            {# {% component "project_technologies" technologies=project.technologies attrs:class="mb--s" only %}
+                            {% endcomponent %} #}
+                            <div class="component-project__description mb--s">
+                              {# {{ project.short_description|richtext }} #}
+                            </div>
+                            <a href="{{ page_project.permalink | safe }}"
+                               class="component-project__btn btn btn--accent"
+                              >Voir ce projet</a>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </section>
+        <section id="experiences">
+            <h2 class="styled_title">{{section.extra.experiences_title}}</h2>
+            <div class="experiences__list">
+                {% for event in section.extra.experiences %}
+                <div class="component-experience-container">
+                    <div class="component-experience">
+                        <aside class="component-experience__year-container">
+                            <h3 class="component-experience__year">
+                                <time>{{ event.year }}</time>
+                            </h3>
+                        </aside>
+                        <h3 class="component-experience__title">{{ event.title }}</h3>
+                        <article class="component-experience__description">{{ event.description }}</article>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </section>
+        <section id="other-passions">
+            <h2 class="styled_title">{{section.extra.other_passions_title}}</h2>
+            <div class="other-passions__grid">
+                {% for other_passion in section.extra.other_passions %}
+                <div class="component-other_passion">
+                    <h3 class="title">{{ other_passion.title }}</h3>
+                    <article>{{ other_passion.content| safe }}</article>
+                </div>
+                {% endfor %}
+            </div>
+        </section>
+    </main>
+{% endblock content %}
