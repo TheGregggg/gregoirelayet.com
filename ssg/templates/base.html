@@ -82,11 +82,14 @@
                     Layet
                 </h4>
                 <nav>
-                    {#{% for block_page in data.pages %}
-                    {% with local_page=block_page.value.localized %}
-                    <a href="{% pageurl local_page %}">{{ local_page.title }}</a>
-                    {% endwith %}
-                    {% endfor %}#}
+                    {% for link in config.extra.footer_links %}
+                        {% if link.type == "section" %}
+                        {% set link_page = get_section(path=link.path,lang=lang) %}
+                        {% else %}
+                        {% set link_page = get_page(path=link.path,lang=lang) %}
+                        {% endif %}
+                    <a href="{{ link_page.permalink | safe }}">{{ link_page.title }}</a>
+                    {% endfor %}
                 </nav>
                 <div id="footer-sociales">
                     <a href="{{ config.extra.github_link }}" id="git_footer_link">

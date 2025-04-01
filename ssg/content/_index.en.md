@@ -1,5 +1,5 @@
 +++
-title = "Accueil"
+title = "Home"
 sort_by = "date"
 template = "home.html"
 
