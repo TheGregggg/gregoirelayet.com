@@ -9,7 +9,7 @@ catchphrases = ["Etudiant en Électronique et technologies numériques à Polyte
 a_propos = "A propos"
 
 projects_title = "Projets mis en avant"
-projects = ["first"]
+projects = ["ywe/index"]
 
 experiences_title = "Expériences"
 experiences = [

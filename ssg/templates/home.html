@@ -1,5 +1,7 @@
 {% extends "base.html" %}
-
+{% block title %}
+Grégoire Layet
+{% endblock %}
 {% block content %}
     <div class="halftone"></div>
     <main class="home">
@@ -26,14 +28,19 @@
                      <div class="component-project-container">
                         <div class="component-project">
                             <div class="component-project__image_wrapper">
-                                {# {% picture project.image format-{avif,webp,jpeg} width-{400,600,900} sizes="(max-width: 400px) 400,(max-width: 600px) 600,90vw" class="styled" alt=project.image_alt %} #}
+                                {# {% set image = resize_image(path=path, width=width, height=height, op=op) %}
+                                <img src="{{ image.url }}" />
+                                {% picture project.image format-{avif,webp,jpeg} width-{400,600,900} sizes="(max-width: 400px) 400,(max-width: 600px) 600,90vw" class="styled" alt=project.image_alt %} #}
                             </div>
                             <h3 class="component-project__title mb--xs">{{ page_project.title }}</h3>
-                            {# {% component "project_technologies" technologies=project.technologies attrs:class="mb--s" only %}
-                            {% endcomponent %} #}
-                            <div class="component-project__description mb--s">
-                              {# {{ project.short_description|richtext }} #}
-                            </div>
+                            <ul class="mb--s component-project_technologies">
+                                {% for techno in page_project.extra.technologies %}<li class="component-project_technologies__elem">{{ techno }}</li>{% endfor
+                                %}
+                              </ul>
+                        
+                              <div class="component-project__description mb--s">
+                                {{ page_project.extra.short_description|safe }}
+                              </div>
                             <a href="{{ page_project.permalink | safe }}"
                                class="component-project__btn btn btn--accent"
                               >Voir ce projet</a>
@@ -66,7 +73,7 @@
                 {% for other_passion in section.extra.other_passions %}
                 <div class="component-other_passion">
                     <h3 class="title">{{ other_passion.title }}</h3>
-                    <article>{{ other_passion.content| safe }}</article>
+                    <article>{{ other_passion.content | safe }}</article>
                 </div>
                 {% endfor %}
             </div>
