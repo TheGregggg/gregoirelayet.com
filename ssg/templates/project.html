@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% import "macros.html" as macros %}
 
 {% block content %}
 <main class="projects container">
@@ -10,8 +11,8 @@
   <div class="component-project-container">
     <div class="component-project">
       <div class="component-project__image_wrapper">
-        {# {% picture project.image format-{avif,webp,jpeg} width-{400,600,900} sizes="(max-width: 400px)
-        400,(max-width: 600px) 600,90vw" class="styled" alt=project.image_alt %} #}
+        {{ macros::image(path=page.extra.image, alt=page.extra.image_alt, formats=["webp", "jpg"] , sizes=[400,600,900], biggest_size_rel="90vw") }}
+
       </div>
       <h3 class="component-project__title mb--xs">{{ page.title }}</h3>
       <ul class="mb--s component-project_technologies">

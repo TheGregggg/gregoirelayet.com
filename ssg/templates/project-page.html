@@ -1,36 +1,11 @@
 {% extends "base.html" %}
+{% import "macros.html" as macros %}
 {% block content %}
 <main class="project container">
   <h1 class="mb--xs">{{ page.title }}</h1>
   <div class="project__grid">
     <div class="project__article">
-      <picture>
-
-        {% for image_format in ["webp", "jpg"] %}
-        
-        {%- if image_format == "jpg" -%}
-        <img class="styled mb--m" height="225" width="400" alt="{{page.extra.image_alt}}"
-        {%- else -%}
-        <source 
-        {%- endif %}
-        type="image/{{image_format}}"
-        
-        srcset="{%- for image_size in [400,600,900] -%}
-          {% set image = resize_image(path=page.extra.image, width=image_size, op='fit_width', format=image_format)%}
-          {{image.url}} {{image_size}}w {%- if not loop.last -%},{%- endif -%}
-        {%- endfor -%}"
-        sizes="{%- for image_size in [400,600,'50vw'] -%}
-          {%- if loop.last -%}
-            {{image_size}}
-          {%- else -%}
-            (max-width: {{image_size}}px) {{image_size}},
-          {%- endif -%}
-        {%- endfor -%}"
-        >
-        {%- endfor -%}
-        
-       
-      </picture>
+      {{ macros::image(path=page.extra.image, alt=page.extra.image_alt, formats=["webp", "jpg"] , sizes=[400,600,900], biggest_size_rel="50vw") }}
       <article>
         {{ page.content | safe }}
       </article>

@@ -1,0 +1,26 @@
+{% macro image(path, alt, formats , sizes, biggest_size_rel) %}
+<picture>
+    {% for image_format in formats %}
+    
+    {%- if image_format == "jpg" -%}
+    <img class="styled mb--m" height="225" width="400" alt="{{alt}}"
+    {%- else -%}
+    <source 
+    {%- endif %}
+    type="image/{{image_format}}"
+    
+    srcset="{%- for image_size in sizes -%}
+      {% set image = resize_image(path=path, width=image_size, op='fit_width', format=image_format)%}
+      {{image.url}} {{image_size}}w {%- if not loop.last -%},{%- endif -%}
+    {%- endfor -%}"
+    sizes="{%- for image_size in sizes -%}
+      {%- if loop.last -%}
+        {{biggest_size_rel}}
+      {%- else -%}
+        (max-width: {{image_size}}px) {{image_size}},
+      {%- endif -%}
+    {%- endfor -%}"
+    >
+    {%- endfor -%}
+</picture>
+{% endmacro image %}

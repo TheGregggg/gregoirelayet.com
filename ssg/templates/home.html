@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% import "macros.html" as macros %}
 {% block title %}
 Grégoire Layet
 {% endblock %}
@@ -28,9 +29,7 @@ Grégoire Layet
                      <div class="component-project-container">
                         <div class="component-project">
                             <div class="component-project__image_wrapper">
-                                {# {% set image = resize_image(path=path, width=width, height=height, op=op) %}
-                                <img src="{{ image.url }}" />
-                                {% picture project.image format-{avif,webp,jpeg} width-{400,600,900} sizes="(max-width: 400px) 400,(max-width: 600px) 600,90vw" class="styled" alt=project.image_alt %} #}
+                             {{ macros::image(path=page_project.extra.image, alt=page_project.extra.image_alt, formats=["webp", "jpg"] , sizes=[400,600,900], biggest_size_rel="90vw") }}
                             </div>
                             <h3 class="component-project__title mb--xs">{{ page_project.title }}</h3>
                             <ul class="mb--s component-project_technologies">
