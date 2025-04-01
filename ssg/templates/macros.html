@@ -1,9 +1,9 @@
-{% macro image(path, alt, formats , sizes, biggest_size_rel) %}
+{% macro image(path, alt, class, formats , sizes, biggest_size_rel) %}
 <picture>
     {% for image_format in formats %}
     
     {%- if image_format == "jpg" -%}
-    <img class="styled mb--m" height="225" width="400" alt="{{alt}}"
+    <img class="styled {{class}}" height="225" width="400" alt="{{alt}}"
     {%- else -%}
     <source 
     {%- endif %}

@@ -4,7 +4,7 @@ sort_by = "date"
 template = "home.html"
 
 [extra]
-catchphrases = ["Etudiant en Électronique et technologies numériques à Polytech Nantes"]
+catchphrases = ["Student in Electronic and Digital Technologies at Polytech Nantes"]
 
 a_propos = "A propos"
 

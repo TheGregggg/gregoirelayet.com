@@ -29,7 +29,7 @@ Grégoire Layet
                      <div class="component-project-container">
                         <div class="component-project">
                             <div class="component-project__image_wrapper">
-                             {{ macros::image(path=page_project.extra.image, alt=page_project.extra.image_alt, formats=["webp", "jpg"] , sizes=[400,600,900], biggest_size_rel="90vw") }}
+                             {{ macros::image(path=page_project.extra.image, alt=page_project.extra.image_alt,class="", formats=["webp", "jpg"] , sizes=[400,600,900], biggest_size_rel="90vw") }}
                             </div>
                             <h3 class="component-project__title mb--xs">{{ page_project.title }}</h3>
                             <ul class="mb--s component-project_technologies">
@@ -38,7 +38,7 @@ Grégoire Layet
                               </ul>
                         
                               <div class="component-project__description mb--s">
-                                {{ page_project.extra.short_description|safe }}
+                                {{ page_project.extra.short_description | markdown |safe }}
                               </div>
                             <a href="{{ page_project.permalink | safe }}"
                                class="component-project__btn btn btn--accent"
