@@ -4,7 +4,8 @@ date = 2019-11-27
 [extra]
 short_description = "You will Eat est un projet universitaire réalisé lors de l’année 2023-2024 dans le cadre de la Conférence PeiP 2024. YWE est une application de recommandation de repas prenant en compte vos goûts, vos dépenses énergétiques et la salubrité des plats."
 
-image = "ywe/banniere_ywe.png"
+image = "projects/ywe/banniere_ywe.png"
+image_alt = ""
 
 technologies = ["Flutter", "FastAPI", "ESP32", "BLE", "Ansible"]
 links = ["https://polytech.univ-nantes.fr/fr/une-ecole-sur-3-campus/actualites/la-conference-peip-2024"]
