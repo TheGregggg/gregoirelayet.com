@@ -1,0 +1,7 @@
+{% import "macros.html" as macros %}
+<div>
+    <figure class="component-image_block">
+        {{ macros::image(path=path, alt=page_project.extra.image_alt,class="mb--xs", formats=["webp", "jpg"] , sizes=[400,600,900], biggest_size_rel="50vw") }}
+        <figcaption class="component-image_block__figcaption mb--s">{{ caption }}</figcaption>
+    </figure>
+</div>

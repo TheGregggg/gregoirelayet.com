@@ -19,7 +19,7 @@ highlight_code = true
 [extra]
 languages_to_text = {"fr"="Français", "en"="English"}
 
-header_links = ["projects/_index.md"]
+header_links = [{type="section", path="projects/_index.md"}]
 
 footer_links = [{type="section", path="_index.md"}, {type="section", path="projects/_index.md"}, {type="page", path="mentions_legals.md"}]
 

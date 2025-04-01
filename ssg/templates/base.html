@@ -37,7 +37,14 @@
                 <h1>Grégoire Layet</h1>
             </a>
             <div class="header__spacer"></div>
-            <a href="/projects">Projects</a>
+            {% for link in config.extra.header_links %}
+            {% if link.type == "section" %}
+            {% set link_page = get_section(path=link.path,lang=lang) %}
+            {% else %}
+            {% set link_page = get_page(path=link.path,lang=lang) %}
+            {% endif %}
+            <a href="{{ link_page.permalink | safe }}">{{ link_page.title }}</a>
+            {% endfor %}
         </nav>
         <div class="buttons">
             <button id="theme-switcher" class="component-theme_switcher" onclick="theme_switcher()"
