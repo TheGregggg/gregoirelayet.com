@@ -4,32 +4,32 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    {% if page.search_description %}
-    <meta name="description" content="{{ page.search_description }}" />{% endif %}
+    {%- if page.search_description -%}
+    <meta name="description" content="{{ page.search_description }}" />{%- endif -%}
     <meta name="keywords" content="Grégoire Layet" />
     <meta name="author" content="Grégoire Layet" />
-    <link rel="icon" type="image/png" href="/favicon/favicon-16x.png" />
+    <link rel="icon" type="image/png" href="{{ get_url(path='favicon/favicon-16x.png',cachebust=true) }}" />
     <title>
-        {% block title %}
-        {% if page.title %}
+        {%- block title -%}
+        {%- if page.title -%}
         {{page.title}}
-        {% elif section.title %}
+        {%- elif section.title -%}
         {{section.title}}
-        {% endif %} - Grégoire Layet
-        {% endblock title %}
+        {%- endif -%} - Grégoire Layet
+        {%- endblock title -%}
     </title>
 
     <meta name="color-scheme" content="light dark">
-    <link href="/app.css" rel="stylesheet" />
+    <link href="{{ get_url(path='app.css',cachebust=true) }}" rel="stylesheet" />
 
-    <link rel="preload" href="/font/Montserrat-Bold.ttf" as="font" type="font/ttf" crossorigin>
-    <link rel="preload" href="/font/Poppins-Regular.ttf" as="font" type="font/ttf" crossorigin>
-    <link rel="preload" href="/font/Poppins-Medium.ttf" as="font" type="font/ttf" crossorigin>
-    <link rel="preload" href="/font/Poppins-Bold.ttf" as="font" type="font/ttf" crossorigin>
+    <link rel="preload" href="{{ get_url(path='font/Montserrat-Bold.ttf',cachebust=true) }}" as="font" type="font/ttf" crossorigin>
+    <link rel="preload" href="{{ get_url(path='font/Poppins-Regular.ttf',cachebust=true) }}" as="font" type="font/ttf" crossorigin>
+    <link rel="preload" href="{{ get_url(path='font/Poppins-Medium.ttf',cachebust=true) }}" as="font" type="font/ttf" crossorigin>
+    <link rel="preload" href="{{ get_url(path='font/Poppins-Bold.ttf',cachebust=true) }}" as="font" type="font/ttf" crossorigin>
 
 </head>
 
-<body class="{% block body_class %}{% endblock body_class %}">
+<body class="{%- block body_class -%}{%- endblock body_class -%}">
     <header class="container">
         <a href="#main_page_content" class="skip-link">Passer au contenu principal.</a>
         <nav>
@@ -37,14 +37,14 @@
                 <h1>Grégoire Layet</h1>
             </a>
             <div class="header__spacer"></div>
-            {% for link in config.extra.header_links %}
-            {% if link.type == "section" %}
-            {% set link_page = get_section(path=link.path,lang=lang) %}
-            {% else %}
-            {% set link_page = get_page(path=link.path,lang=lang) %}
-            {% endif %}
+            {%- for link in config.extra.header_links -%}
+            {%- if link.type == "section" -%}
+            {%- set link_page = get_section(path=link.path,lang=lang) -%}
+            {%- else -%}
+            {%- set link_page = get_page(path=link.path,lang=lang) -%}
+            {%- endif -%}
             <a href="{{ link_page.permalink | safe }}">{{ link_page.title }}</a>
-            {% endfor %}
+            {%- endfor -%}
         </nav>
         <div class="buttons">
             <button id="theme-switcher" class="component-theme_switcher" onclick="theme_switcher()"
@@ -82,20 +82,20 @@
                     </svg>
                 </button>
                 <div class="dropdown">
-                    {% if page %}
-                    {% set translations = page.translations %}
-                    {% else %}
-                    {% set translations = section.translations %}
-                    {% endif %}
+                    {%- if page -%}
+                    {%- set translations = page.translations -%}
+                    {%- else -%}
+                    {%- set translations = section.translations -%}
+                    {%- endif -%}
 
-                    {% for translated_content in translations %}
+                    {%- for translated_content in translations -%}
 
                     <a href="{{translated_content.permalink}}">
-                        <span {% if translated_content.lang==lang %} class="underlined" {% endif %}>
+                        <span {%- if translated_content.lang==lang -%} class="underlined" {%- endif -%}>
                             {{- config.extra.languages_to_text[translated_content.lang] -}}
                         </span>
                     </a>
-                    {% endfor %}
+                    {%- endfor -%}
 
 
                 </div>
@@ -103,8 +103,8 @@
         </div>
     </header>
     <div id="main_page_content">
-        {% block content %}
-        {% endblock content %}
+        {%- block content -%}
+        {%- endblock content -%}
     </div>
     <footer class="container">
         <div id="footer-content-wrapper">
@@ -115,14 +115,14 @@
                     Layet
                 </h4>
                 <nav>
-                    {% for link in config.extra.footer_links %}
-                    {% if link.type == "section" %}
-                    {% set link_page = get_section(path=link.path,lang=lang) %}
-                    {% else %}
-                    {% set link_page = get_page(path=link.path,lang=lang) %}
-                    {% endif %}
+                    {%- for link in config.extra.footer_links -%}
+                    {%- if link.type == "section" -%}
+                    {%- set link_page = get_section(path=link.path,lang=lang) -%}
+                    {%- else -%}
+                    {%- set link_page = get_page(path=link.path,lang=lang) -%}
+                    {%- endif -%}
                     <a href="{{ link_page.permalink | safe }}">{{ link_page.title }}</a>
-                    {% endfor %}
+                    {%- endfor -%}
                 </nav>
                 <div id="footer-sociales">
                     <a href="{{ config.extra.github_link }}" id="git_footer_link">
@@ -139,7 +139,7 @@
     </footer>
 
 
-    <script type="text/javascript" src="/app.js" charset="utf-8"></script>
+    <script type="text/javascript" src="{{ get_url(path='app.js',cachebust=true) }}" charset="utf-8"></script>
 </body>
 
 </html>
