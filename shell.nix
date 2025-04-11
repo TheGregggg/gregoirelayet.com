@@ -15,6 +15,7 @@ in
     packages = with pkgs; [
       zola
       pigz
+      lightningcss
     ];
 
     shellHook = ''

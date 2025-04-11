@@ -166,3 +166,6 @@ static_build
 .vagrant
 
 */static/processed_images
+
+ssg/public
+ssg/dest
