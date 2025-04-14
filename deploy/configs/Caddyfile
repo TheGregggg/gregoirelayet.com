@@ -1,7 +1,7 @@
 gregoirelayet.com {
     encode zstd gzip
 
-    header / {
+    header {
       X-Content-Type-Options nosniff
       X-Frame-Options SAMEORIGIN
       -Server
@@ -19,7 +19,7 @@ gregoirelayet.com {
     }
 }
 ssg.gregoirelayet.com {
-    header / {
+    header {
         X-Content-Type-Options nosniff
         X-Frame-Options SAMEORIGIN
         -Server
