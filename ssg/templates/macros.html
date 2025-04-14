@@ -11,7 +11,7 @@
     
     srcset="{%- for image_size in sizes -%}
       {% set image = resize_image(path=path, width=image_size, op='fit_width', format=image_format)%}
-      {{image.url}} {{image_size}}w {%- if not loop.last -%},{%- endif -%}
+      {{image.url | safe}} {{image_size}}w {%- if not loop.last -%},{%- endif -%}
     {%- endfor -%}"
     sizes="{%- for image_size in sizes -%}
       {%- if loop.last -%}
