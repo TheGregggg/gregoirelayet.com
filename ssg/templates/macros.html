@@ -10,14 +10,14 @@
     type="image/{{image_format}}"
     
     srcset="{%- for image_size in sizes -%}
-      {% set image = resize_image(path=path, width=image_size, op='fit_width', format=image_format)%}
+      {% set image = resize_image(path=path, width=image_size, op='fit_width', format=image_format,quality=100)%}
       {{image.url | safe}} {{image_size}}w {%- if not loop.last -%},{%- endif -%}
     {%- endfor -%}"
     sizes="{%- for image_size in sizes -%}
       {%- if loop.last -%}
         {{biggest_size_rel}}
       {%- else -%}
-        (max-width: {{image_size}}px) {{image_size}},
+        (max-width: {{image_size}}px) {{image_size}}px,
       {%- endif -%}
     {%- endfor -%}"
     >
