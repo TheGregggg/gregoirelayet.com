@@ -18,6 +18,20 @@ gregoirelayet.com {
         }
     }
 }
+ssg.gregoirelayet.com {
+    header / {
+        X-Content-Type-Options nosniff
+        X-Frame-Options SAMEORIGIN
+        -Server
+    }
+
+    route {
+        file_server * {
+            root /srv/ssg
+            precompressed gzip
+        }
+    }
+}
 
 {$VAULTWARDEN_FQDN} {
   log {

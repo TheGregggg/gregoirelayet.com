@@ -12,3 +12,6 @@
 
 - name: Setup services
   ansible.builtin.import_playbook: setup-services.yaml
+
+- name: Deploy ssg
+  ansible.builtin.import_playbook: deploy-ssg.yaml

@@ -1,0 +1,24 @@
+---
+- name: Deploy SSG
+  hosts: all
+  remote_user: ubuntu
+  become: true
+
+  vars_files: vars/main.yaml
+
+  tasks:
+    - name: Copy project code
+      become: true
+      become_user: "{{ deployement_user }}"
+      ansible.posix.synchronize:
+        src: "{{ playbook_dir | dirname }}/ssg/dest/"
+        dest: "/home/{{ deployement_user }}/gregoirelayet/ssg/"
+        use_ssh_args: true
+        recursive: true
+        archive: false
+        checksum: true
+        delete: true
+        times: false
+        rsync_path: "sudo rsync"
+        rsync_opts:
+          - "--chown=1000:1000"
