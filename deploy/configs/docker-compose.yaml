@@ -1,20 +1,20 @@
 services:
-  db:
-    image: postgres:16.4-bookworm
-    restart: always
-    shm_size: 128mb
-    environment:
-      POSTGRES_PASSWORD_FILE: /run/secrets/db_root_user_password
-      POSTGRES_USER: gerg_db_admin
-      POSTGRES_DB: postgres
-    secrets:
-      - db_root_user_password
-    volumes:
-      - type: bind
-        source: ./pg-data
-        target: /var/lib/postgresql/data
-    ports:
-      - 5432:5432
+  # db:
+  #   image: postgres:16.4-bookworm
+  #   restart: always
+  #   shm_size: 128mb
+  #   environment:
+  #     POSTGRES_PASSWORD_FILE: /run/secrets/db_root_user_password
+  #     POSTGRES_USER: gerg_db_admin
+  #     POSTGRES_DB: postgres
+  #   secrets:
+  #     - db_root_user_password
+  #   volumes:
+  #     - type: bind
+  #       source: ./pg-data
+  #       target: /var/lib/postgresql/data
+  #   ports:
+  #     - 5432:5432
   
   caddy:
     image: caddy:2.9.1
@@ -28,7 +28,7 @@ services:
       - ./Caddyfile:/etc/caddy/Caddyfile:ro
       - ./caddy-config:/config
       - ./caddy-data:/data
-      - ./gregoirelayet/media:/srv/media
+      # - ./gregoirelayet/media:/srv/media
       - ./gregoirelayet/ssg:/srv/ssg
     environment:
       DEPLOYEMENT_USER: "${DEPLOYEMENT_USER}"
@@ -36,23 +36,23 @@ services:
       VW_LOG_FILE: "/data/vw_access.log"
       VAULTWARDEN_FQDN: "${VAULTWARDEN_FQDN}"
   
-  gregoirelayet:
-    image: gregoirelayet:latest
-    environment:
-      SECRET_KEY_FILE: /run/secrets/django_secret
-      DJANGO_SETTINGS_MODULE: config.settings.production
-      FQDN: "${FQDN}"
-      DB_HOST: db
-      DB_PORT: 5432
-      DB_PASSWORD_FILE: /run/secrets/db_user_password
-    ports:
-      - 8000:8000
-    secrets:
-      - django_secret
-      - db_user_password
+  # gregoirelayet:
+  #   image: gregoirelayet:latest
+  #   environment:
+  #     SECRET_KEY_FILE: /run/secrets/django_secret
+  #     DJANGO_SETTINGS_MODULE: config.settings.production
+  #     FQDN: "${FQDN}"
+  #     DB_HOST: db
+  #     DB_PORT: 5432
+  #     DB_PASSWORD_FILE: /run/secrets/db_user_password
+  #   ports:
+  #     - 8000:8000
+  #   secrets:
+  #     - django_secret
+  #     - db_user_password
 
-    volumes:
-      - ./gregoirelayet/media:/app/media
+  #   volumes:
+  #     - ./gregoirelayet/media:/app/media
   
   vaultwarden:
     image: vaultwarden/server:1.32.7
@@ -77,10 +77,10 @@ services:
       - ./vw-data:/data
   
 
-secrets:
-   django_secret:
-     file: secrets/django_secret.txt
-   db_root_user_password:
-     file: secrets/db_root_user_password.txt
-   db_user_password:
-     file: secrets/db_user_password.txt
+# secrets:
+#    django_secret:
+#      file: secrets/django_secret.txt
+#    db_root_user_password:
+#      file: secrets/db_root_user_password.txt
+#    db_user_password:
+#      file: secrets/db_user_password.txt

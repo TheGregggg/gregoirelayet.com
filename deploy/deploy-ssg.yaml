@@ -7,7 +7,7 @@
   vars_files: vars/main.yaml
 
   tasks:
-    - name: Copy project code
+    - name: Copy SSG files
       become: true
       become_user: "{{ deployement_user }}"
       ansible.posix.synchronize:

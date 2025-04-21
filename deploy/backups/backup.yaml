@@ -5,8 +5,5 @@
   become: true
   gather_facts: False
 
-- name: Backup GregoireLayet
-  ansible.builtin.import_playbook: backup-gregoirelayet.yaml
-
 - name: Backup vaultwarden
   ansible.builtin.import_playbook: backup-vaultwarden.yaml

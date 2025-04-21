@@ -7,8 +7,8 @@
 - name: Setup server
   ansible.builtin.import_playbook: setup-server.yaml
 
-- name: Build website
-  ansible.builtin.import_playbook: build-website.yaml
+# - name: Build website
+#   ansible.builtin.import_playbook: build-website.yaml
 
 - name: Setup services
   ansible.builtin.import_playbook: setup-services.yaml

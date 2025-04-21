@@ -1,5 +1,0 @@
-{% load wagtailimages_tags %}
-<figure class="component-image_block">
-    {% picture image format-{avif,webp,jpeg} width-{400,600,900} sizes="(max-width: 400px) 400,(max-width: 600px) 600,50vw" class="styled mb--xs" loading="lazy" alt=alt_text %}
-    <figcaption class="component-image_block__figcaption mb--s">{{ caption }} - {{ attribution }}</figcaption>
-</figure>

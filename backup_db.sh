@@ -1,1 +1,0 @@
-docker exec -t gregoirelayetcom-db-1 pg_dumpall -c -U gerg_db_admin > dump.sql

@@ -7,16 +7,6 @@
   vars_files: vars/main.yaml
 
   tasks:
-    - name: Copy secrets files
-      ansible.builtin.copy:
-        src: ../secrets
-        dest: /home/{{ deployement_user }}/
-        owner: "1000" # not the deployement user but the uid of the user in the docker container
-        group: "1000"
-        mode: "0600"
-      notify:
-        - Restart all docker-compose services
-
     - name: Ensures all necessary docker bind directory exists
       ansible.builtin.file:
         path: /home/{{ deployement_user }}/{{ item.dir }}
@@ -27,21 +17,9 @@
         mode: "{{ item.mode }}"
       loop:
         - {
-            dir: "pg-data",
-            owner: "999",
-            group: "{{ deployement_user }}",
-            mode: "700",
-          }
-        - {
             dir: "caddy-data",
             owner: "{{ deployement_user }}",
             group: "{{ deployement_user }}",
-            mode: "755",
-          }
-        - {
-            dir: "gregoirelayet/media",
-            owner: "1000",
-            group: "1000",
             mode: "755",
           }
         - {
@@ -67,19 +45,7 @@
       notify:
         - Restart all docker-compose services
 
-    - name: Copy setup db
-      ansible.builtin.copy:
-        src: ../setup_db.py
-        dest: /home/{{ deployement_user }}/
-        owner: "{{ deployement_user }}"
-        group: "{{ deployement_user }}"
-        mode: "0600"
-      notify:
-        - Setup database
 
   handlers:
     - name: Restart all docker-compose services
       ansible.builtin.include_tasks: handlers-tasks/restart-all-services.yaml
-
-    - name: Setup database
-      ansible.builtin.include_tasks: handlers-tasks/setup-database.yaml

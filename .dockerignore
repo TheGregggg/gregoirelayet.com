@@ -1,8 +1,0 @@
-*
-!src
-!Pipfile
-!Pipfile.lock
-!entrypoint.sh
-static_root
-static_build
-__pycache__
