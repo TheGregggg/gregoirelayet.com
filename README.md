@@ -2,25 +2,38 @@
 
 All rights reserved
 
-My personal website V2
+This is my personal website, to showcase my projects and talk about stuff I'm interested in.
 
-### 🏆 Goal
+For this projects I have many goals.
+Including the followings ones : 
+- As a developper:
+    -   Simple to host 
+    -   Don't break easily 
+    -   Fast to add feature
+    -   Beautiful and usable code
+- As a user:
+    -   Simple to use as user and admin
+    -   Fast to load
+    -   Beautiful design
 
-#### 👨‍💻 As a developper:
+Initialy the website was a massive Django project, witch embrace 12 factors app techniques, testings, linter tools and pre commit checkings.
 
--   Simple to host -> applying 12 factor apps techniques 
--   Don't break easily -> testing and simple reliable code
--   Fast to add feature -> simple code
--   Beautiful and usable code -> linter and tools, pre commit ...
+But the reality is different and for this type of website, juste a simple SSG is sufficient.
+Thats why I decided to switch to Zola for making the website static.
+It still check all the boxes and is even more simpler.
 
-#### 🌐 As a user:
+It's more optimized in ressource usage, it weight less on my vps cpu and storage.
+I can also remove the postgres container i was running just for this website.
+This allow me more flexibility and more efficient usage of my VPS ressources.
 
--   Simple to use as user and admin
--   Fast to load
--   Beautiful design
+I choose Zola cause it's fast, and provided all the feature I wanted. Also it use Tera as a template language witch is 99% similare to Django template, so the conversion was very fast and the site look the same.
 
-### Things used :
 
+## Actual Tech stack:
+- Zola as SSG
+- Caddy as webserver
+
+### Old version tech stack :
 -   Django, Wagtail and PostgreSQL : rock solid stack and DB
 -   HTMX for SPA-like fealing in page transition and infinite scroll capabilities
 -   django-components and BEM css methodology for easy reusable component and styling
@@ -29,52 +42,21 @@ My personal website V2
 -   automated tests for stress free development (WIP)
 
 ## Dev setup
-
-create secrets files:
-
--   secrets/db_root_user_password
--   secrets/db_user_password
--   src/config/secrets/secret.txt
-
-Launch db
-
+You need to have Zola installed.
+For building the site for production you also need lightningcss and gzip.
+build site :
 ```sh
-docker compose up -d
+cd ssg
+./build_min_comp.sh
 ```
 
-Create Python env and install requirements.txt
-
-Setup db (using the new Python env)
-
+develop site :
 ```sh
-python setup_db.py
+cd ssg
+zola serve
 ```
 
-Migrate db
-
+If you have nix you can just creat a nix shell in the root with the following comand: 
 ```sh
-just migrate
+nix-shell
 ```
-
-Create super user
-
-```sh
-just createsuperuser
-```
-
-Start dev server
-
-```sh
-just dev
-```
-
-## Stack
-
-Python 3.12.1  
-Django 5.0  
-Postgresql  
-HTMX
-
-## Legals
-
-rx7 image : https://unsplash.com/fr/photos/porsche-911-blanche-garee-sur-un-terrain-dherbe-verte-K0mf6Hd3Ehc
