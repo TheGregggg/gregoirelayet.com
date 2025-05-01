@@ -3,6 +3,8 @@
 {% block title %}
 Grégoire Layet
 {% endblock %}
+{% block gl_header %}
+{% endblock gl_header %}
 {% block content %}
     <div class="halftone"></div>
     <main class="home">
@@ -25,7 +27,7 @@ Grégoire Layet
             <h2 class="styled_title mb--m">{{section.extra.projects_title}}</h2>
             <div class="projects__list">
                 {% for project in section.extra.projects %}
-                     {% set page_project = get_page(path="projects/"  ~  project ~ ".md") %}
+                     {% set page_project = get_page(path="projects/"  ~  project ~ ".md",lang=lang) %}
                      <div class="component-project-container">
                         <div class="component-project">
                             <div class="component-project__image_wrapper">

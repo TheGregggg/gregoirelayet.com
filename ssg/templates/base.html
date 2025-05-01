@@ -33,10 +33,13 @@
     <header class="container">
         <a href="#main_page_content" class="skip-link">Passer au contenu principal.</a>
         <nav>
-            <a href="/" id="main-title">
-                <h1>Grégoire Layet</h1>
-            </a>
-            <div class="header__spacer"></div>
+            {%- set home_page = get_section(path='_index.md',lang=lang) -%}
+            {%- block gl_header -%}
+                <a href="{{ home_page.permalink  | safe }}" id="main-title">
+                    <h1>Grégoire Layet</h1>
+                </a>
+            {%- endblock gl_header -%}
+     
             {%- for link in config.extra.header_links -%}
             {%- if link.type == "section" -%}
             {%- set link_page = get_section(path=link.path,lang=lang) -%}

@@ -1831,26 +1831,6 @@ header .buttons {
 	padding-left: var(--space-s);
 }
 
-header #main-title {
-	overflow: hidden;
-	transition: width var(--duration) ease-in-out;
-	margin-right: 0;
-}
-
-header:has(~ #main_page_content > main.home) #main-title {
-	width: 0px !important;
-	transition: width var(--duration) ease-in-out;
-}
-
-.header__spacer {
-	margin-right: var(--space-m);
-	transition: margin var(--duration) ease-in-out;
-}
-header:has(~ #main_page_content > main.home) .header__spacer {
-	margin-right: 0;
-	transition: margin var(--duration) ease-in-out;
-}
-
 header nav {
 	display: flex;
 	flex-direction: row;
