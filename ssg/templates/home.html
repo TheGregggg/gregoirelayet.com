@@ -60,7 +60,7 @@ Grégoire Layet
                             </h3>
                         </aside>
                         <h3 class="component-experience__title">{{ event.title }}</h3>
-                        <article class="component-experience__description">{{ event.description }}</article>
+                        <article class="component-experience__description">{{ event.description | safe  }}</article>
                     </div>
                 </div>
                 {% endfor %}
