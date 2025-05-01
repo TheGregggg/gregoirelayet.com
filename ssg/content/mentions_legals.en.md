@@ -6,4 +6,4 @@ template = "static.html"
 
 Director of publication : Grégoire Layet
 
-This website is hosted on OVH : SAS 2 rue Kellermann - 59100 Roubaix - France
+This website is hosted on PulseHeberg : SAS PulseHeberg - 9, Boulevard de Strasbourg - 83000 Toulon, France

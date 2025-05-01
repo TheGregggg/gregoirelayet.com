@@ -6,4 +6,4 @@ template = "static.html"
 
 Directeur de la publication : Grégoire Layet
 
-Ce site est hébergé sur OVH : SAS 2 rue Kellermann - 59100 Roubaix - France
+Ce site est hébergé sur PulseHeberg : SAS PulseHeberg - 9, Boulevard de Strasbourg - 83000 Toulon
