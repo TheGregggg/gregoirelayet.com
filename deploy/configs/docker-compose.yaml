@@ -1,21 +1,4 @@
-services:
-  # db:
-  #   image: postgres:16.4-bookworm
-  #   restart: always
-  #   shm_size: 128mb
-  #   environment:
-  #     POSTGRES_PASSWORD_FILE: /run/secrets/db_root_user_password
-  #     POSTGRES_USER: gerg_db_admin
-  #     POSTGRES_DB: postgres
-  #   secrets:
-  #     - db_root_user_password
-  #   volumes:
-  #     - type: bind
-  #       source: ./pg-data
-  #       target: /var/lib/postgresql/data
-  #   ports:
-  #     - 5432:5432
-  
+services: 
   caddy:
     image: caddy:2.9.1
     container_name: caddy
@@ -34,26 +17,7 @@ services:
       DEPLOYEMENT_USER: "${DEPLOYEMENT_USER}"
       EMAIL: "acme@gregoirelayet.com"                 # The email address to use for ACME registration.
       VW_LOG_FILE: "/data/vw_access.log"
-      VAULTWARDEN_FQDN: "${VAULTWARDEN_FQDN}"
-  
-  # gregoirelayet:
-  #   image: gregoirelayet:latest
-  #   environment:
-  #     SECRET_KEY_FILE: /run/secrets/django_secret
-  #     DJANGO_SETTINGS_MODULE: config.settings.production
-  #     FQDN: "${FQDN}"
-  #     DB_HOST: db
-  #     DB_PORT: 5432
-  #     DB_PASSWORD_FILE: /run/secrets/db_user_password
-  #   ports:
-  #     - 8000:8000
-  #   secrets:
-  #     - django_secret
-  #     - db_user_password
-
-  #   volumes:
-  #     - ./gregoirelayet/media:/app/media
-  
+      
   vaultwarden:
     image: vaultwarden/server:1.32.7
     container_name: vaultwarden
@@ -75,12 +39,3 @@ services:
       SMTP_PASSWORD: "${EMAIL_HOST_PASSWORD}"
     volumes:
       - ./vw-data:/data
-  
-
-# secrets:
-#    django_secret:
-#      file: secrets/django_secret.txt
-#    db_root_user_password:
-#      file: secrets/db_root_user_password.txt
-#    db_user_password:
-#      file: secrets/db_user_password.txt
