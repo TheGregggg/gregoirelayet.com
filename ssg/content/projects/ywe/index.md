@@ -1,6 +1,6 @@
 +++
 title = "You Will Eat : Recommandation de plats prenant en compte l'activité physique pour les étudiants"
-date = 2019-11-27
+date = 2025-05-01
 [extra]
 short_description = "You will Eat est un projet universitaire réalisé lors de l’année 2023-2024 dans le cadre de la Conférence PeiP 2024. YWE est une application de recommandation de repas prenant en compte vos goûts, vos dépenses énergétiques et la salubrité des plats."
 

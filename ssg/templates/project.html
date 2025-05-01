@@ -19,7 +19,7 @@
       <div class="component-project__description mb--s">
         {{ page.extra.short_description | markdown |safe }}
       </div>
-      <a href="{{ page.permalink | safe }}" class="component-project__btn btn btn--accent">Voir ce projet</a>
+      <a href="{{ page.permalink | safe }}" class="component-project__btn btn btn--accent">{{section.extra.see_this_project_text}}</a>
     </div>
   </div>
   {% endfor %}
