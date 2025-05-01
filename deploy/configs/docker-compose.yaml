@@ -17,6 +17,7 @@ services:
       DEPLOYEMENT_USER: "${DEPLOYEMENT_USER}"
       EMAIL: "acme@gregoirelayet.com"                 # The email address to use for ACME registration.
       VW_LOG_FILE: "/data/vw_access.log"
+      VAULTWARDEN_FQDN: "${VAULTWARDEN_FQDN}"
       
   vaultwarden:
     image: vaultwarden/server:1.32.7
