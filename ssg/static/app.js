@@ -1,13 +1,4 @@
-function onResize() {
-    let header_title = document.getElementById("main-title");
-    header_title.style.width = header_title.firstChild.scrollWidth + "px";
-}
-;(function() {
-    window.addEventListener("load", onResize);
-    window.addEventListener("resize", onResize);
-}
-)();
-;function toggleDropdown() {
+function toggleDropdown() {
     document.getElementById("lang-switcher").getElementsByClassName("dropdown")[0].classList.toggle("open");
 }
 ;function set_theme(theme) {
