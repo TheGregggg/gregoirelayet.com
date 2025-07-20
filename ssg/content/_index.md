@@ -15,12 +15,12 @@ see_this_project_text = "Voir ce projet"
 experiences_title = "Expériences"
 experiences = [
     {"year"="2022 - 2027","title"="Électronique et technologies numériques", "description"= "Diplôme d'ingénieur à Polytech Nantes."},
-    {"year"="2023","title"="Développeur Freelance en développement web", "description"="Développement de sites web complet et de backend.<br>J'ai travailler pour ASISPO, un chatbot de suivi post-opératoire et <a class=link href='https://www.noussommesforet.com'>Nous Sommes Forêt</a>, le podcast sur la protection des forêts."}
+    {"year"="2023","title"="Développeur Freelance en développement web", "description"="Développement de sites web complet et de backend.<br>J'ai travaillé pour ASISPO, un chatbot de suivi post-opératoire et <a class=link href='https://www.noussommesforet.com'>Nous Sommes Forêt</a>, le podcast sur la protection des forêts."}
 ]
 
 other_passions_title = "Autres centres d'intérêt"
 other_passions = [
-    {"title"= "Homelabing", "content"="<p>J'aime setup des server linux, mettre mes services dessus et régler les problemes de reseau</p> <p>J'apprend beaucoup à optimiser la mise en place de ce genre de systeme avec Ansible ou NixOs</p>"},
+    {"title"= "Homelabing", "content"="<p>J'aime setup des serveurs linux, mettre mes services dessus et régler les problèmes de réseau</p> <p>J'apprend beaucoup à optimiser la mise en place de ce genre de système avec Ansible ou NixOs</p>"},
     {"title"= "La musique", "content"="<p>J'adore la techno en particulier la drum and bass. </p> <p>J'essaie là encore de m'écarter de Spotify et d'être vraiment possesseur de la musique que j'écoute mais j'ai encore pas mal de chemin</p><p>Je suis aussi DJ pour certaines soirées étudiantes !</p>"}
 ]
 +++
