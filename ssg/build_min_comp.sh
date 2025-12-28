@@ -3,6 +3,8 @@ zola build
 src="public"
 dst="dest"
 
+rm -Rf "$dst"
+
 cp -R "$src"/. "$dst" && cd "$dst"
 
 # minhtml --keep-closing-tags --keep-html-and-head-opening-tags  $(find . -type f -a -name "*\.html" -o -name "*\.xml" ) 
