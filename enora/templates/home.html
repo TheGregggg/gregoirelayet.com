@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% import "macros.html" as macros %}
+{% block title %}
+Enora Guiot
+{% endblock %}
+{% block eg_header %}
+{% endblock eg_header %}
+{% block content %}
+<div class="halftone"></div>
+<main class="home">
+    <section id="home">
+        <div id="hero-text">
+            <h1 class="mb--xxs">
+                Enora Guiot
+            </h1>
+            {% for catchphrase in section.extra.catchphrases %}<h3 class="mb--xxs">{{ catchphrase }}</h3>{% endfor %}
+
+        </div>
+        <div class="buttons">
+            <a href="" class="btn btn--accent">Mes vitrines</a>
+            <a href="" class="btn btn--accent">Mes notules</a>
+        </div>
+        <div id="profile-picture-wrapper">
+            {{ macros::image(path=section.extra.image, alt=section.extra.image_alt,class="",
+            formats=["webp", "jpg"] , sizes=[400,600,900], biggest_size_rel="90vw") }}
+        </div>
+    </section>
+</main>
+{% endblock content %}

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="dark">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    {%- if page.search_description -%}
+    <meta name="description" content="{{ page.search_description }}" />{%- endif -%}
+    <meta name="keywords" content="Enora Guiot" />
+    <meta name="author" content="Enora Guiot" />
+    <link rel="icon" type="image/png" href="{{ get_url(path='favicon/favicon-16x.png',cachebust=true) }}" />
+    <title>
+        {%- block title -%}{%- endblock title -%}
+    </title>
+    <link href="{{ get_url(path='app.css',cachebust=true) }}" rel="stylesheet" />
+</head>
+
+<body class="{%- block body_class -%}{%- endblock body_class -%}">
+    <header class="container">
+        <a href="#main_page_content" class="skip-link">Passer au contenu principal.</a>
+        <nav>
+            {%- set home_page = get_section(path='_index.md',lang=lang) -%}
+            {%- block eg_header -%}
+            <a href="{{ home_page.permalink | safe }}" id="main-title">
+                <h1>Enora Guiot</h1>
+            </a>
+            {%- endblock eg_header -%}
+
+
+        </nav>
+    </header>
+    <div id="main_page_content">
+        {%- block content -%}
+        {%- endblock content -%}
+    </div>
+    <footer class="container">
+        <div id="footer-content-wrapper">
+            <div id="footer-content">
+
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>
