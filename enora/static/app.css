@@ -1,3 +1,9 @@
+@font-face {
+	font-family: "Montaga";
+	font-weight: 400;
+	src: url("/font/Montaga-Regular.ttf") format("truetype");
+}
+
 /*! minireset.css v0.0.6 | MIT License | github.com/jgthms/minireset.css */
 *,
 *::before,
@@ -109,7 +115,7 @@ html {
 
 :root {
 	/* Typography */
-	--font-primary: Georgia, Times New Roman, Times, serif;
+	--font-primary: "Montaga", Times New Roman, Times, serif;
 	--font-secondary: Helvetica, Arial, sans-serif;
 
 	/* set base values */
@@ -778,6 +784,11 @@ footer a:visited {
 footer h4 {
 	font-size: var(--text-xxxl);
 	font-weight: 500;
+	margin-bottom: 0;
+}
+
+footer p {
+	padding-bottom: 0;
 }
 
 footer nav {
@@ -791,11 +802,6 @@ footer nav {
 	flex-direction: column;
 	justify-content: center;
 	gap: var(--space-m);
-}
-
-#footer-sociales svg {
-	height: 1.4em;
-	width: auto;
 }
 
 #footer-content-wrapper {

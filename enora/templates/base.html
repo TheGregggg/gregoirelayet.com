@@ -13,6 +13,7 @@
         {%- block title -%}{%- endblock title -%}
     </title>
     <link href="{{ get_url(path='app.css',cachebust=true) }}" rel="stylesheet" />
+    <link rel="preload" href="{{ get_url(path='font/Montaga-Regular.ttf') }}" as="font" type="font/ttf" crossorigin>
 </head>
 
 <body class="{%- block body_class -%}{%- endblock body_class -%}">
@@ -35,14 +36,13 @@
     </div>
     <footer class="container">
         <div id="footer-content-wrapper">
-            <h4>
-                Enora
-                <br />
-                Guiot
-            </h4>
             <div id="footer-content">
+                <h4>
+                    Enora Guiot
+                </h4>
                 <div id="footer-sociales">
-                    <a href="mailto:{{ config.extra.email }}">{{ config.extra.email }}</a>
+                    <p>Contact : <a href="mailto:{{ config.extra.email }}">{{ config.extra.email }}</a></p>
+
                 </div>
             </div>
         </div>
