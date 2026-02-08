@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% import "macros.html" as macros %}
+
+{% block content %}
+<main class="notules container">
+    {% for page in section.pages %}
+    <div class="notule">
+        <h3 class="notules__title mb--xs">{{ page.title }}</h3>
+        <h3 class="notules__title mb--xs">{{ page.date }}</h3>
+        <div class="notules__image_wrapper">
+            {{ macros::image(path=page.extra.image, alt=page.extra.image_alt,class="", formats=["webp", "jpg"] ,
+            sizes=[400,600,900], biggest_size_rel="90vw") }}
+
+        </div>
+
+        <div class="component-project__description mb--s">
+            {{ page.content |safe }}
+        </div>
+    </div>
+    {% endfor %}
+
+</main>
+{% endblock content %}

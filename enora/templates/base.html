@@ -10,7 +10,13 @@
     <meta name="author" content="Enora Guiot" />
     <link rel="icon" type="image/png" href="{{ get_url(path='favicon/favicon-16x.png',cachebust=true) }}" />
     <title>
-        {%- block title -%}{%- endblock title -%}
+        {%- block title -%}
+        {%- if page.title -%}
+        {{page.title}}
+        {%- elif section.title -%}
+        {{section.title}}
+        {%- endif -%} - Enora Guiot
+        {%- endblock title -%}
     </title>
     <link href="{{ get_url(path='app.css',cachebust=true) }}" rel="stylesheet" />
     <link rel="preload" href="{{ get_url(path='font/Montaga-Regular.ttf') }}" as="font" type="font/ttf" crossorigin>
@@ -25,6 +31,8 @@
             <a href="{{ home_page.permalink | safe }}" id="main-title">
                 <h1>Enora Guiot</h1>
             </a>
+            <a href="/vitrines">Mes vitrines</a>
+            <a href="/notules">Mes notules</a>
             {%- endblock eg_header -%}
 
 
