@@ -516,10 +516,12 @@ form.gl button {
 	text-decoration: none;
 	line-height: 1;
 
-	padding: var(--space-xs) var(--space-m);
-	border-radius: calc(var(--radius) / 1.5);
-	font-size: var(--text-s);
+	padding: 1.8rem var(--space-m);
+	border-radius: calc(var(--radius));
+	font-size: var(--text-l);
 	color: var(--accent);
+
+	box-shadow: var(--box-shadow);
 
 	transition-property: color, background-color;
 	transition-duration: var(--duration);
@@ -794,12 +796,6 @@ footer nav {
 #footer-sociales svg {
 	height: 1.4em;
 	width: auto;
-}
-
-#git_footer_link {
-	display: flex;
-	justify-self: center;
-	gap: var(--space-xs);
 }
 
 #footer-content-wrapper {
