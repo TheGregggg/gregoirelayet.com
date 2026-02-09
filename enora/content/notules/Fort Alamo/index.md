@@ -1,6 +1,6 @@
 +++
 title = "Fort Alamo de Fabrice Caro"
-date = 2025-03-06
+date = 2024-11-20
 
 [extra]
 
