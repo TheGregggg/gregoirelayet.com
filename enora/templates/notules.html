@@ -5,10 +5,7 @@
 <main class="notules container">
     {% for page in section.pages %}
     <div class="notule">
-        <h3 class="mb--xs"><span>{{ page.title }}</span> <span>{{ page.date | date(format="%B %Y",
-                timezone="Europe/Paris", locale="fr_FR")
-                }}</span>
-        </h3>
+        <h3 class="mb--xs">{{ page.title }}</h3>
         <div class="mb--s">
             {{ macros::image(path=page.extra.image, alt=page.extra.image_alt,class="", formats=["webp", "jpg"] ,
             sizes=[400,600,900], biggest_size_rel="90vw") }}
