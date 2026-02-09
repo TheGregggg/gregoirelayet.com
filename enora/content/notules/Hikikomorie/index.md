@@ -1,6 +1,6 @@
 +++
 title = "Hikikomorie, Dans le silence de ma chambre de Sophie Carquain"
-date = 2025-03-06
+date = 2024-10-26
 
 [extra]
 
