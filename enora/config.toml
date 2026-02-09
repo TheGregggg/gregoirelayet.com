@@ -16,3 +16,5 @@ highlight_code = false
 
 [extra]
 email = "guiotenora@gmail.com"
+
+footer_links = [{type="section", path="_index.md"}, {type="page", path="mentions_legals.md"}]

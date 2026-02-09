@@ -48,6 +48,16 @@
                 <h4>
                     Enora Guiot
                 </h4>
+                <nav>
+                    {%- for link in config.extra.footer_links -%}
+                    {%- if link.type == "section" -%}
+                    {%- set link_page = get_section(path=link.path,lang=lang) -%}
+                    {%- else -%}
+                    {%- set link_page = get_page(path=link.path,lang=lang) -%}
+                    {%- endif -%}
+                    <a href="{{ link_page.permalink | safe }}">{{ link_page.title }}</a>
+                    {%- endfor -%}
+                </nav>
                 <div id="footer-sociales">
                     <p>Contact : <a href="mailto:{{ config.extra.email }}">{{ config.extra.email }}</a></p>
 
