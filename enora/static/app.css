@@ -173,12 +173,12 @@ html {
 
 	/* Other */
 
-	--radius: var(--space-s);
+	--radius: var(--space-xs);
 
 	--box-shadow: var(--space-xxs-fixed) var(--space-xxs-fixed) 0px var(--primary);
 
 	/* Transitions */
-	--duration: 294ms;
+	--duration: 200ms;
 	--color-transition: color var(--duration) ease-out;
 	--bg-color-transition: background-color var(--duration) ease-out;
 }
@@ -522,14 +522,14 @@ form.gl button {
 	text-decoration: none;
 	line-height: 1;
 
-	padding: 1.8rem var(--space-m);
-	border-radius: calc(var(--radius));
+	padding: 1.8rem var(--space-l);
+	border-radius: var(--space-s);
 	font-size: var(--text-l);
 	color: var(--accent);
 
 	box-shadow: var(--box-shadow);
 
-	transition-property: color, background-color;
+	transition-property: color, background-color, box-shadow;
 	transition-duration: var(--duration);
 	transition-timing-function: ease-in-out;
 }
@@ -539,7 +539,7 @@ form.gl button {
 }
 
 .btn:hover {
-	transition-property: color, background-color;
+	transition-property: color, background-color, box-shadow;
 	transition-duration: var(--duration);
 }
 
@@ -555,10 +555,12 @@ form.gl button {
 .btn--accent:hover {
 	background-color: var(--background);
 	color: var(--accent);
+	box-shadow: calc(var(--space-xxs-fixed) * 0.5) calc(var(--space-xxs-fixed) * 0.5) 0px var(--primary);
 }
 
 .btn--accent-on-background:hover {
 	background-color: var(--primary-light);
+	color: var(--accent);
 }
 
 
@@ -624,8 +626,19 @@ h2.styled_title {
 	}
 }
 
+
 .home .buttons {
 	grid-row: 3;
+
+	display: inline-flex;
+	flex-direction: row;
+	gap: var(--space-s);
+}
+
+.home .buttons .btn {
+	font-size: var(--text-m);
+	padding: var(--space-s) var(--space-m);
+
 }
 
 @media (min-width: 700px) {
@@ -633,8 +646,6 @@ h2.styled_title {
 		grid-row: 2;
 		grid-column: 1;
 		align-self: flex-end;
-		display: inline-flex;
-		flex-direction: row;
 		gap: var(--space-m);
 	}
 }
@@ -646,125 +657,23 @@ h2.styled_title {
 	margin: 0 auto;
 }
 
-/* projects */
-main.projects {
-	display: grid;
-	grid-template-columns: 1fr;
-	gap: var(--space-xl);
+/* vitrines */
+.vitrine h3 {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
 }
 
-/* a project page */
-main.project img {
+.vitrine img,
+.notules img {
 	width: 100%;
 }
 
-.project__article {
-	max-width: 64ch;
-	margin: 0 auto;
-}
-
-.project__grid {
+/* notules */
+.notules {
 	display: grid;
-	grid-template-columns: 1fr;
-	row-gap: var(--space-m);
-	max-width: 64ch;
-	margin: 0 auto;
+	grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 }
-
-.project__technos {
-	grid-row: 1;
-}
-
-.project__git-logo {
-	height: 1.1em;
-	width: auto;
-	padding-right: var(--space-xs);
-}
-
-.project__repo-link {
-	align-items: center;
-	margin-bottom: var(--space-s);
-}
-
-@media (min-width: 1370px) {
-	.project__grid {
-		grid-template-columns: minmax(max-content, 1fr) minmax(300px, 500px);
-		column-gap: var(--space-m);
-		max-width: unset;
-		margin: 0;
-	}
-
-	.project__technos {
-		grid-row: unset;
-		grid-column: 2;
-	}
-
-	.project__links {
-		grid-column: 2;
-	}
-
-	.project__article {
-		grid-row: 1/4;
-	}
-}
-
-@media (min-width: 1620px) {
-	.project__grid {
-		column-gap: var(--space-xl);
-	}
-}
-
-/* blogs index page */
-.blog_index__content {
-	display: grid;
-	grid-template-columns: 1fr;
-	gap: var(--space-l);
-}
-
-/* a blog article */
-.blog__article,
-.blog_index {
-	max-width: 64ch;
-	margin: 0 auto;
-}
-
-.component-article__title:hover {
-	text-decoration: underline;
-}
-
-.component-article__btn {
-	float: right;
-}
-
-
-.component-blog_tags {
-	display: flex;
-	flex-direction: row;
-	flex-wrap: wrap;
-	gap: var(--space-xxs);
-}
-
-.component-blog_tags__elem {
-	line-height: var(--body-line-height);
-	color: var(--accent);
-	font-size: var(--text-xs);
-}
-
-.component-blog_tags__elem:hover {
-	text-decoration: underline;
-}
-
-
-
-.component-card_title_content {
-	background-color: var(--primary-light);
-	border-radius: var(--radius);
-	box-shadow: var(--box-shadow);
-
-	padding: var(--text-m);
-	padding-top: calc(var(--text-m) / var(--heading-line-height));
-}
-
 
 
 footer.container {
@@ -794,6 +703,7 @@ footer p {
 footer nav {
 	display: flex;
 	flex-direction: column;
+	justify-content: center;
 	gap: var(--space-xxs);
 }
 
