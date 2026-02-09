@@ -1,5 +1,5 @@
 +++
-title = "Enora Guiot"
+title = "Accueil"
 sort_by = "date"
 template = "home.html"
 
@@ -7,6 +7,6 @@ template = "home.html"
 [extra]
 catchphrases = ["Passionée de livres depuis ..", "Je suis libraire à la librairie ..."]
 
-image = "enora.jpg"
+image = "profile.jpg"
 image_alt = "Enora Guiot"
 +++
