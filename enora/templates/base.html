@@ -20,6 +20,8 @@
     </title>
     <link href="{{ get_url(path='app.css',cachebust=true) }}" rel="stylesheet" />
     <link rel="preload" href="{{ get_url(path='font/Montaga-Regular.ttf') }}" as="font" type="font/ttf" crossorigin>
+
+    {%- block custom_css_and_js -%}{%- endblock custom_css_and_js -%}
 </head>
 
 <body class="{%- block body_class -%}{%- endblock body_class -%}">
@@ -65,6 +67,8 @@
             </div>
         </div>
     </footer>
+
+    {%- block custom_js -%}{%- endblock custom_js -%}
 
 </body>
 

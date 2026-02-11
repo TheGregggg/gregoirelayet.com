@@ -35,11 +35,11 @@
         <nav>
             {%- set home_page = get_section(path='_index.md',lang=lang) -%}
             {%- block gl_header -%}
-                <a href="{{ home_page.permalink  | safe }}" id="main-title">
-                    <h1>Grégoire Layet</h1>
-                </a>
+            <a href="{{ home_page.permalink  | safe }}" id="main-title">
+                <h1>Grégoire Layet</h1>
+            </a>
             {%- endblock gl_header -%}
-     
+
             {%- for link in config.extra.header_links -%}
             {%- if link.type == "section" -%}
             {%- set link_page = get_section(path=link.path,lang=lang) -%}
