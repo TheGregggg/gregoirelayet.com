@@ -190,7 +190,7 @@ html {
 	}
 }
 
-@media (min-width: 1060px) {
+@media (min-width: 1434px) {
 	:root {
 		--text-base-size: 1.25em;
 		--text-scale-ratio: 1.25;
@@ -291,34 +291,6 @@ body {
 	min-height: 100vh;
 }
 
-html,
-body,
-div,
-header,
-footer {
-	transition: var(--bg-color-transition);
-}
-
-a,
-p,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-span,
-form legend,
-figcaption,
-svg {
-	transition: var(--color-transition);
-}
-
-li {
-	transition-property: color, background-color;
-	transition-duration: var(--duration);
-	transition-timing-function: ease-in-out;
-}
 
 #main_page_content {
 	flex-grow: 1;
@@ -350,7 +322,10 @@ section {
 
 	.container,
 	section {
-		padding: 0 var(--space-xxl);
+		padding: 0 0;
+		margin-left: auto;
+		margin-right: auto;
+		max-width: 1306px;
 	}
 }
 
@@ -664,24 +639,11 @@ h2.styled_title {
 	justify-content: space-between;
 }
 
-.vitrine img,
-.notules img {}
-
-.notules .image-container {
-	aspect-ratio: 4/5;
+.vitrine img {
+	width: 100%;
 }
 
-.notules picture {
-	height: 100%;
-}
 
-.notules img {
-	display: block;
-	height: 100%;
-	width: auto;
-	object-fit: cover;
-
-}
 
 /* notules */
 .notules {
@@ -690,9 +652,28 @@ h2.styled_title {
 	gap: var(--space-s);
 }
 
+.notule .image-container {
+	aspect-ratio: 4/5;
+}
 
-footer.container {
+.notule picture {
+	height: 100%;
+}
+
+.notule img {
+	display: block;
+	height: 100%;
+	width: auto;
+	object-fit: cover;
+
+}
+
+footer {
+	width: 100%;
 	background-color: var(--primary-light);
+}
+
+footer .container {
 	padding-top: var(--space-xl);
 	padding-bottom: var(--space-xl);
 }
