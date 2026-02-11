@@ -665,8 +665,22 @@ h2.styled_title {
 }
 
 .vitrine img,
+.notules img {}
+
+.notules .image-container {
+	aspect-ratio: 4/5;
+}
+
+.notules picture {
+	height: 100%;
+}
+
 .notules img {
-	width: 100%;
+	display: block;
+	height: 100%;
+	width: auto;
+	object-fit: cover;
+
 }
 
 /* notules */
