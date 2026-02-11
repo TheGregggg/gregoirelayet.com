@@ -19,6 +19,8 @@
         {%- endblock title -%}
     </title>
     <link href="{{ get_url(path='app.css',cachebust=true) }}" rel="stylesheet" />
+    <link rel="preload" href="{{ get_url(path='font/Cormorant-Bold.ttf') }}" as="font" type="font/ttf" crossorigin>
+    <link rel="preload" href="{{ get_url(path='font/Cormorant-Regular.ttf') }}" as="font" type="font/ttf" crossorigin>
     <link rel="preload" href="{{ get_url(path='font/Montaga-Regular.ttf') }}" as="font" type="font/ttf" crossorigin>
 
     {%- block custom_css_and_js -%}{%- endblock custom_css_and_js -%}

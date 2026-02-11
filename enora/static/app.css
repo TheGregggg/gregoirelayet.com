@@ -4,6 +4,18 @@
 	src: url("/font/Montaga-Regular.ttf") format("truetype");
 }
 
+@font-face {
+	font-family: "Cormorant";
+	font-weight: 800;
+	src: url("/font/Cormorant-Bold.ttf") format("truetype");
+}
+
+@font-face {
+	font-family: "Cormorant";
+	font-weight: 400;
+	src: url("/font/Cormorant-Regular.ttf") format("truetype");
+}
+
 /*! minireset.css v0.0.6 | MIT License | github.com/jgthms/minireset.css */
 *,
 *::before,
@@ -338,6 +350,7 @@ form legend {
 	color: var(--text);
 	margin-bottom: var(--space-s);
 	line-height: var(--heading-line-height);
+	font-weight: 500;
 }
 
 /* text size */
