@@ -13,6 +13,21 @@ gregoirelayet.com {
     }
 }
 
+beautiful.gregoirelayet.com {
+    header {
+        X-Content-Type-Options nosniff
+        X-Frame-Options SAMEORIGIN
+        -Server
+    }
+
+    route {
+        file_server * {
+            root /srv/enora
+            precompressed gzip
+        }
+    }
+}
+
 {$VAULTWARDEN_FQDN} {
   log {
     level INFO

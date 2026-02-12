@@ -22,3 +22,19 @@
         rsync_path: "sudo rsync"
         rsync_opts:
           - "--chown=1000:1000"
+    
+    - name: Copy enora SSG files
+      become: true
+      become_user: "{{ deployement_user }}"
+      ansible.posix.synchronize:
+        src: "{{ playbook_dir | dirname }}/enora/dest/"
+        dest: "/home/{{ deployement_user }}/gregoirelayet/enora/"
+        use_ssh_args: true
+        recursive: true
+        archive: false
+        checksum: true
+        delete: true
+        times: false
+        rsync_path: "sudo rsync"
+        rsync_opts:
+          - "--chown=1000:1000"
