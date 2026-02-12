@@ -80,6 +80,10 @@
 
 
 <script>
-  new Glide('.glide', { gap: 0 }).mount()
+  const sliders = document.querySelectorAll('.glide');
+  const conf = { gap: 0 };
+  sliders.forEach(item => {
+    new Glide(item, conf).mount();
+  });
 </script>
 {% endblock custom_js %}
