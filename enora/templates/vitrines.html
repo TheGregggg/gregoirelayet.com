@@ -10,7 +10,7 @@
 <main class="vitrines container">
   {% for page in section.pages %}
   <div class="vitrine">
-    <h3 class="mb--xs"><span>{{ page.title }}</span> <span>{{ page.date | date(format="%B %Y",
+    <h3 class="mb--xs"><span>{{ page.title }}</span> <span class="date">{{ page.date | date(format="%B %Y",
         timezone="Europe/Paris", locale="fr_FR") | capitalize
         }}</span>
     </h3>
@@ -23,7 +23,7 @@
       {% else %}
       {% set image_alt = page.extra.images_alt | nth(n=loop.index) %}
       {% endif %}
-      {{ macros::image(path=image_path, alt=image_alt, class="glide__slide", formats=["webp", "jpg"] ,
+      {{ macros::image(path=image_path, alt=image_alt, class="", formats=["webp", "jpg"] ,
       sizes=[400,600,900,1200], biggest_size_rel="90vw") }}
       {% else %}
       <div class="glide">
@@ -68,7 +68,7 @@
 
     </div>
 
-    <div class="description mb--s">
+    <div class="description">
       {{ page.content |safe }}
     </div>
   </div>
