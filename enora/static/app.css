@@ -593,10 +593,16 @@ h2.styled_title {
 	font-family: var(--font-secondary);
 }
 
+.home #profile-picture-wrapper {
+	padding-bottom: var(--space-xxs-fixed);
+}
+
+
 @media (min-width: 700px) {
 	.home #profile-picture-wrapper {
 		grid-column: 2;
 		grid-row: 1/3;
+		padding-bottom: 0;
 	}
 }
 
