@@ -19,6 +19,12 @@ beautiful.gregoirelayet.com {
         X-Frame-Options SAMEORIGIN
         -Server
     }
+    @cachedFiles {
+        path *.ico *.css *.js *.gif *.webp *.avif *.jpg *.jpeg *.png *.svg *.woff *.woff2 *.ttf
+    }
+    header @cachedFiles {
+        Cache-Control "public, max-age=31536000, immutable"
+    }
 
     route {
         file_server * {
