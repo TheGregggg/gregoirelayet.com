@@ -1,6 +1,6 @@
 +++
 title = "Je pleure encore la beauté du monde de Charlotte McConaghy"
-date = 2024-10-26
+date = 2026-02-11
 
 [extra]
 
