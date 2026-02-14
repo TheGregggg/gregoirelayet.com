@@ -1,6 +1,6 @@
 +++
 title = "Les grands vivants de Claudius Pan"
-date = 2025-09-3
+date = 2025-09-03
 
 [extra]
 
