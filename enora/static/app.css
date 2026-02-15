@@ -570,11 +570,12 @@ form.gl button {
 	.home #home {
 		gap: 0;
 		column-gap: var(--space-m);
-		grid-template-columns: 3fr 2fr;
+		grid-template-columns: 7fr 4fr;
+		margin-bottom: var(--space-l);
 	}
 
 	#hero-text {
-		padding-top: var(--space-l);
+		padding-top: var(--space-s);
 	}
 }
 
