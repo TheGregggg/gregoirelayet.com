@@ -7,4 +7,4 @@ date = 2025-11-01
 images = ["image1.jpg"]
 images_alt = [""]
 +++
-thème doré
+Réalisée pour Noël 2025 sur le thème doré chic.

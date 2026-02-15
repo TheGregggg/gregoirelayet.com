@@ -13,7 +13,7 @@ gregoirelayet.com {
     }
 }
 
-beautiful.gregoirelayet.com {
+enoraguiot.fr {
     header {
         X-Content-Type-Options nosniff
         X-Frame-Options SAMEORIGIN

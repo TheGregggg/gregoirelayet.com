@@ -566,6 +566,10 @@ form.gl button {
 	padding-bottom: 0;
 }
 
+.home #me p {
+	text-indent: var(--space-l);
+}
+
 @media (min-width: 700px) {
 	.home #home {
 		gap: 0;

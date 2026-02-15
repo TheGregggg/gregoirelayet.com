@@ -7,4 +7,4 @@ date = 2025-05-01
 images = ["image1_crop.jpg", "image2_crop.jpg"]
 images_alt = ["", ""]
 +++
-réalisée au retour du printemps
+Réalisée à l'occasion du retour du printemps.
