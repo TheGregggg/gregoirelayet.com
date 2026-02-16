@@ -553,6 +553,9 @@ form.gl button {
 }
 
 
+.home {
+	margin-top: var(--space-l);
+}
 
 .home #home {
 	display: grid;
@@ -576,6 +579,10 @@ form.gl button {
 		column-gap: var(--space-m);
 		grid-template-columns: 7fr 4fr;
 		margin-bottom: var(--space-l);
+	}
+
+	.home {
+		margin-top: var(--space-xl);
 	}
 
 	#hero-text {

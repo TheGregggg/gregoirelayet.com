@@ -28,21 +28,19 @@
 </head>
 
 <body class="{%- block body_class -%}{%- endblock body_class -%}">
+    {%- block eg_header -%}
     <header class="container">
         <a href="#main_page_content" class="skip-link">Passer au contenu principal.</a>
         <nav>
             {%- set home_page = get_section(path='_index.md',lang=lang) -%}
-            {%- block eg_header -%}
             <a href="{{ home_page.permalink | safe }}" id="main-title">
                 <h1>Enora Guiot</h1>
             </a>
             <a href="/vitrines">Mes vitrines</a>
             <a href="/notules">Mes notules</a>
-            {%- endblock eg_header -%}
-
-
         </nav>
     </header>
+    {%- endblock eg_header -%}
     <div id="main_page_content">
         {%- block content -%}
         {%- endblock content -%}
