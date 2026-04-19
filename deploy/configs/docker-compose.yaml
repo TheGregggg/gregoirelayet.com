@@ -1,6 +1,6 @@
 services: 
   caddy:
-    image: caddy:2.10.2
+    image: caddy:2.11.2
     container_name: caddy
     restart: always
     ports:
@@ -21,7 +21,7 @@ services:
       VAULTWARDEN_FQDN: "${VAULTWARDEN_FQDN}"
       
   vaultwarden:
-    image: vaultwarden/server:1.35.0
+    image: vaultwarden/server:1.35.7
     container_name: vaultwarden
     restart: always
     environment:
