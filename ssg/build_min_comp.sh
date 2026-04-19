@@ -1,3 +1,4 @@
+echo "Build website"
 zola build
 
 src="public"
@@ -8,6 +9,7 @@ rm -Rf "$dst"
 cp -R "$src"/. "$dst" && cd "$dst"
 
 # minhtml --keep-closing-tags --keep-html-and-head-opening-tags  $(find . -type f -a -name "*\.html" -o -name "*\.xml" ) 
+echo "Minify CSS"
 
 css_files=$(find . -type f -name "*\.css" )
 echo "$css_files" | while read -r file
@@ -15,6 +17,7 @@ do
 	lightningcss --minify  "$file" -o  "$file"
 done
 
+echo "Compress static files"
 files=$(find . -type f -a -name "*\.html" -o -name "*\.css" -o -name "*\.js" -o -name "*\.xml" -o -name "*\.ttf" )
 echo "$files" | while read -r file
 do
