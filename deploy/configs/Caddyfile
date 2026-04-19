@@ -13,6 +13,10 @@ gregoirelayet.com {
     }
 }
 
+{$ANALYTICS_FQDN} {
+    reverse_proxy medama:8080 
+}
+
 enoraguiot.fr {
     header {
         X-Content-Type-Options nosniff

@@ -19,7 +19,15 @@ services:
       EMAIL: "acme@gregoirelayet.com"                 # The email address to use for ACME registration.
       VW_LOG_FILE: "/data/vw_access.log"
       VAULTWARDEN_FQDN: "${VAULTWARDEN_FQDN}"
-      
+      ANALYTICS_FQDN: "analytics.${FQDN}"
+
+  medama:
+      image: ghcr.io/medama-io/medama:latest
+      volumes:
+          - medama-data:/app/data
+      environment:
+        CORS_ALLOWED_ORIGINS: "analytics.${FQDN},${FQDN}"
+
   vaultwarden:
     image: vaultwarden/server:1.35.7
     container_name: vaultwarden
@@ -41,3 +49,6 @@ services:
       SMTP_PASSWORD: "${EMAIL_HOST_PASSWORD}"
     volumes:
       - ./vw-data:/data
+
+volumes:
+  medama-data:
