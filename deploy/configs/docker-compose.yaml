@@ -23,6 +23,8 @@ services:
 
   medama:
       image: ghcr.io/medama-io/medama:latest
+      container_name: medama
+      restart: always
       volumes:
           - medama-data:/app/data
       environment:
