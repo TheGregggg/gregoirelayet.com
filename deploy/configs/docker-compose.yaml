@@ -19,7 +19,6 @@ services:
       EMAIL: "acme@gregoirelayet.com"                 # The email address to use for ACME registration.
       VW_LOG_FILE: "/data/vw_access.log"
       VAULTWARDEN_FQDN: "${VAULTWARDEN_FQDN}"
-      ANALYTICS_FQDN: "analytics.${FQDN}"
 
   medama:
       image: ghcr.io/medama-io/medama:latest
@@ -28,7 +27,7 @@ services:
       volumes:
           - medama-data:/app/data
       environment:
-        CORS_ALLOWED_ORIGINS: "analytics.${FQDN},${FQDN}"
+        CORS_ALLOWED_ORIGINS: "analytics.gregoirelayet.com,gregoirelayet.com"
 
   vaultwarden:
     image: vaultwarden/server:1.35.7
@@ -52,5 +51,35 @@ services:
     volumes:
       - ./vw-data:/data
 
+  miniflux:
+    image: miniflux/miniflux:2.2.19
+    restart: always
+    depends_on:
+      miniflux-db:
+        condition: service_healthy
+    environment:
+      - DATABASE_URL=postgres://${MINIFLUX_DB_USER}:${MINIFLUX_DB_PASSWORD}@miniflux-db/miniflux?sslmode=disable
+      - RUN_MIGRATIONS=1
+
+  miniflux-db:
+    image: postgres:18
+    restart: always
+    environment:
+      - POSTGRES_USER=${MINIFLUX_DB_USER}
+      - POSTGRES_PASSWORD=${MINIFLUX_DB_PASSWORD}
+      - POSTGRES_DB=miniflux
+    volumes:
+      # You may have to adjust the volume path depending on the version of Postgres
+      # Postgres 18 uses /var/lib/postgresql
+      # Postgres 17 and below uses /var/lib/postgresql/data
+      # See https://hub.docker.com/_/postgres#pgdata
+      - miniflux-db-data:/var/lib/postgresql
+    healthcheck:
+      test: ["CMD", "pg_isready", "-U", "miniflux"]
+      interval: 10s
+      start_period: 30s
+ 
+
 volumes:
   medama-data:
+  miniflux-db-data:

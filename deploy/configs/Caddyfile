@@ -19,8 +19,12 @@ gregoirelayet.com {
     }
 }
 
-{$ANALYTICS_FQDN} {
+analytics.gregoirelayet.com {
     reverse_proxy medama:8080 
+}
+
+miniflux.gregoirelayet.com {
+    reverse_proxy miniflux:8080 
 }
 
 enoraguiot.fr {
